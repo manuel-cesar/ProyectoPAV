@@ -25,7 +25,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                           "        p.id_perfil, ",
                                           "        p.nombre perfil ",
                                           "   FROM Usuarios u",
-                                          "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
+                                          "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
                                           "  WHERE u.borrado = 0 ");   
             var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
 
@@ -43,11 +43,13 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                           "        usuario, ",
                                           "        password ",
                                           "   FROM Usuarios ",
-                                          "   WHERE usuario = " + nombreUsuario,
+                                          "   WHERE usuario = @usuario",
                                           "   AND borrado = 0");
            
-            DataTable resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
-
+            //DataTable resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("usuario", nombreUsuario);
+            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros);
             if (resultado.Rows.Count > 0)
             {
                 return ObjectMapping(resultado.Rows[0]);

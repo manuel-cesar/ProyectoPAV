@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ActualizarUsuarios.Presentacion
+using ProductosYPlanes.Negocio.Servicios;
+using ProductosYPlanes.Negocio.Entidades;
+namespace ProductosYPlanes.Presentacion
 {
-    public partial class frmUser : Form
+    public partial class frmPlanes : Form
     {
-        public frmUser()
+        private readonly PlanService planService;
+        public frmPlanes()
         {
             InitializeComponent();
         }
@@ -44,6 +47,53 @@ namespace ActualizarUsuarios.Presentacion
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void frmPlanes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            // Dictionary: Representa una colección de claves y valores.
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+
+
+            if (!string.IsNullOrEmpty(txtIdPlan.Text))
+            {
+                var idPlan = txtIdPlan.Text;
+                parametros.Add("id_plan_prueba", idPlan);
+            }
+
+            if (!string.IsNullOrEmpty(txtIdProyecto.Text))
+            {
+                var idProyecto = txtIdProyecto.Text;
+                parametros.Add("id_proyecto", idProyecto);
+            }
+
+            if (!string.IsNullOrEmpty(txtNombre.Text))
+            {
+                var nombre = txtNombre.Text;
+                parametros.Add("nombre", nombre);
+            }
+
+            if (!string.IsNullOrEmpty(txtResponsable.Text))
+            {
+                var idResponsable = txtResponsable.Text;
+                parametros.Add("id_Responsable", idResponsable);
+            }
+
+            IList<Plan> listadoPlanes = planService.ConsultarPlanConFiltros(parametros);
+
+            dgvPlanes.DataSource = listadoPlanes;
+
+            if (dgvPlanes.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
 
         }
     }

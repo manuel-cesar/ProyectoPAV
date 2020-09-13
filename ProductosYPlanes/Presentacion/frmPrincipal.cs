@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProductosYPlanes.Presentacion;
 
-namespace ActualizarUsuarios.Presentacion
+
+namespace ProductosYPlanes.Presentacion
 {
     public partial class frmPrincipal : Form
     {
         public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPlanes form = new frmPlanes();
+            form.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

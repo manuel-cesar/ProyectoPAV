@@ -47,11 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Conexion\DBHelper.cs" />
-    <Compile Include="Datos\Dao\Implementacion\PlanDaoSqlImp.cs" />
+    <Compile Include="Datos\Dao\Implementacion\PlanDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\UsuarioDao.cs" />
     <Compile Include="Datos\Dao\Interfaz\IDao.cs" />
     <Compile Include="Negocio\Entidades\Plan.cs" />
     <Compile Include="Negocio\Entidades\Usuario.cs" />
+    <Compile Include="Negocio\Servicios\PlanService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -81,6 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmUpdatePlanes.resx">
       <DependentUpon>frmUpdatePlanes.cs</DependentUpon>

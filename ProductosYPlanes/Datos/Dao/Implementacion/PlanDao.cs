@@ -11,7 +11,7 @@ using ProductosYPlanes.Negocio.Entidades;
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 
 {
-    class PlanDaoSqlImp
+    public class PlanDao
     {
         //Vamos a reutilizar este método para crear cada objeto Per:
         public Plan findById(int id)
@@ -127,7 +127,8 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 strSql += " AND (P.id_responsable = @id_responsable) ";
 
 
-            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new Object[] { parametros });
+            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
+            //var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new Object[] { parametros });
 
             foreach (DataRow row in resultado.Rows)
                 lst.Add(mapper(row));

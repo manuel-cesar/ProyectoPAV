@@ -1,6 +1,6 @@
-﻿namespace ActualizarUsuarios.Presentacion
+﻿namespace ProductosYPlanes.Presentacion
 {
-    partial class frmUser
+    partial class frmPlanes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
+            this.lblResponsable = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.IdPlanPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdResposable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblProyecto = new System.Windows.Forms.Label();
             this.lblIdPlan = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -38,41 +49,71 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.IdPlanPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdResposable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboProyecto = new System.Windows.Forms.ComboBox();
-            this.txtPlan = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblResponsable = new System.Windows.Forms.Label();
+            this.txtIdProyecto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtIdProyecto);
+            this.groupBox1.Controls.Add(this.txtResponsable);
             this.groupBox1.Controls.Add(this.lblResponsable);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.txtPlan);
-            this.groupBox1.Controls.Add(this.cboProyecto);
+            this.groupBox1.Controls.Add(this.txtIdPlan);
             this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvPlanes);
             this.groupBox1.Controls.Add(this.lblProyecto);
             this.groupBox1.Controls.Add(this.lblIdPlan);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 394);
+            this.groupBox1.Size = new System.Drawing.Size(659, 406);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.Location = new System.Drawing.Point(326, 46);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(105, 20);
+            this.txtResponsable.TabIndex = 13;
+            // 
+            // lblResponsable
+            // 
+            this.lblResponsable.AutoSize = true;
+            this.lblResponsable.Location = new System.Drawing.Point(235, 49);
+            this.lblResponsable.Name = "lblResponsable";
+            this.lblResponsable.Size = new System.Drawing.Size(81, 13);
+            this.lblResponsable.TabIndex = 12;
+            this.lblResponsable.Text = "Id Responsable";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(326, 13);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(105, 20);
+            this.txtNombre.TabIndex = 11;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(235, 16);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // txtIdPlan
+            // 
+            this.txtIdPlan.Location = new System.Drawing.Point(86, 17);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.ShortcutsEnabled = false;
+            this.txtIdPlan.Size = new System.Drawing.Size(105, 20);
+            this.txtIdPlan.TabIndex = 9;
+            this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
             // 
             // btnConsultar
             // 
@@ -82,26 +123,57 @@
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // dataGridView1
+            // dgvPlanes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPlanPrueba,
             this.IdProyecto,
             this.Nombre,
             this.IdResposable,
             this.Descripcion,
             this.Borrado});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(638, 295);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvPlanes.Location = new System.Drawing.Point(6, 99);
+            this.dgvPlanes.Name = "dgvPlanes";
+            this.dgvPlanes.Size = new System.Drawing.Size(638, 295);
+            this.dgvPlanes.TabIndex = 6;
+            // 
+            // IdPlanPrueba
+            // 
+            this.IdPlanPrueba.HeaderText = "Id Plan";
+            this.IdPlanPrueba.Name = "IdPlanPrueba";
+            // 
+            // IdProyecto
+            // 
+            this.IdProyecto.HeaderText = "Id proyecto";
+            this.IdProyecto.Name = "IdProyecto";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // IdResposable
+            // 
+            this.IdResposable.HeaderText = "Id Responsable";
+            this.IdResposable.Name = "IdResposable";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Borrado
+            // 
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
             // 
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
-            this.lblProyecto.Location = new System.Drawing.Point(6, 49);
+            this.lblProyecto.Location = new System.Drawing.Point(19, 44);
             this.lblProyecto.Name = "lblProyecto";
             this.lblProyecto.Size = new System.Drawing.Size(61, 13);
             this.lblProyecto.TabIndex = 3;
@@ -111,7 +183,7 @@
             // lblIdPlan
             // 
             this.lblIdPlan.AutoSize = true;
-            this.lblIdPlan.Location = new System.Drawing.Point(28, 20);
+            this.lblIdPlan.Location = new System.Drawing.Point(41, 20);
             this.lblIdPlan.Name = "lblIdPlan";
             this.lblIdPlan.Size = new System.Drawing.Size(39, 13);
             this.lblIdPlan.TabIndex = 1;
@@ -129,7 +201,7 @@
             // 
             // btnEstado
             // 
-            this.btnEstado.Location = new System.Drawing.Point(364, 417);
+            this.btnEstado.Location = new System.Drawing.Point(358, 440);
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(121, 37);
             this.btnEstado.TabIndex = 2;
@@ -163,100 +235,30 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // IdPlanPrueba
+            // txtIdProyecto
             // 
-            this.IdPlanPrueba.HeaderText = "Id Plan";
-            this.IdPlanPrueba.Name = "IdPlanPrueba";
+            this.txtIdProyecto.Location = new System.Drawing.Point(86, 46);
+            this.txtIdProyecto.Name = "txtIdProyecto";
+            this.txtIdProyecto.Size = new System.Drawing.Size(105, 20);
+            this.txtIdProyecto.TabIndex = 14;
             // 
-            // IdProyecto
-            // 
-            this.IdProyecto.HeaderText = "Id proyecto";
-            this.IdProyecto.Name = "IdProyecto";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // IdResposable
-            // 
-            this.IdResposable.HeaderText = "Id Responsable";
-            this.IdResposable.Name = "IdResposable";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Borrado
-            // 
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            // 
-            // cboProyecto
-            // 
-            this.cboProyecto.FormattingEnabled = true;
-            this.cboProyecto.Location = new System.Drawing.Point(86, 49);
-            this.cboProyecto.Name = "cboProyecto";
-            this.cboProyecto.Size = new System.Drawing.Size(65, 21);
-            this.cboProyecto.TabIndex = 8;
-            // 
-            // txtPlan
-            // 
-            this.txtPlan.Location = new System.Drawing.Point(86, 17);
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.Size = new System.Drawing.Size(105, 20);
-            this.txtPlan.TabIndex = 9;
-            this.txtPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(326, 13);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(105, 20);
-            this.txtNombre.TabIndex = 11;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(235, 16);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(326, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 20);
-            this.textBox2.TabIndex = 13;
-            // 
-            // lblResponsable
-            // 
-            this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(235, 49);
-            this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(81, 13);
-            this.lblResponsable.TabIndex = 12;
-            this.lblResponsable.Text = "Id Responsable";
-            // 
-            // frmUser
+            // frmPlanes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 473);
+            this.ClientSize = new System.Drawing.Size(683, 505);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEstado);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmUser";
+            this.Name = "frmPlanes";
             this.Text = "Planes";
+            this.Load += new System.EventHandler(this.frmPlanes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,7 +269,7 @@
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.Label lblIdPlan;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPlanes;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.Button btnSalir;
@@ -279,11 +281,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResposable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.ComboBox cboProyecto;
-        private System.Windows.Forms.TextBox txtPlan;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIdPlan;
+        private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.Label lblResponsable;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtIdProyecto;
     }
 }

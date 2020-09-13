@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActualizarUsuarios.Negocio.Entidades
+namespace ProductosYPlanes.Negocio.Entidades
 {
     public class Plan
     {
@@ -16,6 +16,7 @@ namespace ActualizarUsuarios.Negocio.Entidades
         public bool Borrado { get; set; }
 
 
+        public Plan() { }
 
         public Plan(int id_plan_prueba, int id_proyecto, String nombre, int id_responsable, String descripcion)
         {

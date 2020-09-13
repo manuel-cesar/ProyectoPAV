@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace ActualizarUsuarios.Datos.Conexion
+namespace ProductosYPlanes.Datos.Conexion
 {
     public class DBHelper
     {

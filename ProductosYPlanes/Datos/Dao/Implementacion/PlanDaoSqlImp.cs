@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace ActualizarUsuarios.Datos.Dao.Implementacion
+using ProductosYPlanes.Datos.Conexion;
+using ProductosYPlanes.Datos.Dao.Implementacion;
+using ProductosYPlanes.Datos.Dao.Interfaz;
+using ProductosYPlanes.Negocio.Entidades;
+
+
+
+namespace ProductosYPlanes.Datos.Dao.Implementacion
+
 {
     class PlanDaoSqlImp
     {
@@ -18,12 +27,12 @@ using System.Threading.Tasks;
             if (planPruebaDT != null && planPruebaDT.Rows.Count > 0)
             {
                 sql = "SELECT PL.* FROM PlanesDePrueba PL, Proyecto PR WHERE PL.id_proyecto = PR.id_proyecto AND PL.id_plan_prueba = " + id;
-               PlanProyectoDT = DBHelper.getDBHelper().ConsultaSQL(sql);
+                PlanProyectoDT = DBHelper.getDBHelper().ConsultaSQL(sql);
                 if (PlanProyectoDT.Rows.Count > 0)
-                    return mapper(perfileDT.Rows[0], opcionesMenuDT);
+                    return mapper(PlanProyectoDT.Rows[0]); //, PlanProyectoDT
             }
             return null;
-        }
+        } //Creo que funciona 
 
         /*public List<OpcionMenu> getOpcionesMenuAll()
         {
@@ -41,47 +50,27 @@ using System.Threading.Tasks;
             return lst;
         }
 
-       public List<Perfil> FindByNombre(string filter)
-        {
-            string sql = "SELECT id_perfil FROM Perfiles WHERE borrado = 'N' AND n_perfil LIKE '%' + @param1 + '%'";
-            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(sql, new Object[] { filter });
-            List<Perfil> list = new List<Perfil>();
-            foreach (DataRow row in data.Rows)
-            {
-                int id = Convert.ToInt32(row[0].ToString());
-                list.Add(findById(id));
-            }
-
-            return list;
-        }
-
-        public List<OpcionMenu> getOpcionesByPerfil(int id)
-        {
-            return findById(id).OpcionesMenu;
-        }
-
-
         public bool delete(int id)
         {
             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO 
-            String sql = "UPDATE Perfiles SET borrado = 'S' WHERE id_perfil=" + id;
+            String sql = "UPDATE PlanesDePrueba SET borrado = 'S' WHERE id_plan_prueba=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
-        }
+        } //LISTO 
 
         private Plan mapper(DataRow PlanRow)
         {
-          Plan oPlan = new Plan();
+            Plan oPlan = new Plan();
 
-            oPlan.Id = Convert.ToInt32(PlanRow["id_plan_prueba"].ToString());
-            oPlan.Id_Proyecto = PlanRow["id_proyecto"].ToString();
-            oPlan.Nombre = PlanRow["nombre"].toString();
-            oPlan.Id_Responsable = = Convert.ToInt32(PlanRow["id_responsable"].ToString());
-            oPlan.Descripcion = PlanRow["descripcion"].toString();
+            oPlan.Id_Plan_Prueba = Convert.ToInt32(PlanRow["id_plan_prueba"].ToString());
+            oPlan.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());
+            oPlan.Nombre = PlanRow["nombre"].ToString();
+            oPlan.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
+            oPlan.Descripcion = PlanRow["descripcion"].ToString();
 
             //agregamos este atributo tanto en la tabla como en la entidad
             //para trabajar solo con  registros activos, no borrados.
-            oPlan.Borrado = planRow["borrado"].ToString().Equals("S");
+            oPlan.Borrado = PlanRow["borrado"].ToString().Equals("S");
        
         } // LISTO 
 
@@ -97,24 +86,52 @@ using System.Threading.Tasks;
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {
-                listadoPlanes.Add(ObjectMapping(row));
+                listadoPlanes.Add(mapper(row));
             }
 
             return listadoPlanes;
             return null;
         } //LISTO 
 
-        public bool add(Perfil obj)
+        public bool add(Plan obj) //LISTO pero dudoso
         {
-            string query = "DECLARE @idPerfil int;";
-            query += "Insert INTO Perfiles (n_perfil, borrado) VALUES ('" + obj.Nombre + "', 'N');";
-            query += "SELECT @idPerfil = @@IDENTITY;";
-            foreach (OpcionMenu om in obj.OpcionesMenu)
-            {
-                query += "Insert INTO Opciones_perfil(id_opcion_menu, id_perfil) VALUES(" + om.Id.ToString() + ", @idPerfil);";
-            }
+          string query = "DECLARE @id_plan_prueba int, @id_proyecto int, @nombre string, @id_responsable string, @descripcion string, @borrado char";
+          query += "Insert INTO PlanesDePrueba (id_plan_prueba, id_proyecto, nombre, id_responsable, descripcion, borrado)";
+          query +=" VALUES ('" + obj.Id_Plan_Prueba + "', '" + obj.Id_Proyecto +"', '" + obj.Id_Proyecto + "', '" + obj.Id_Responsable + "', '" + obj.Descripcion + "', 'N')";
 
+            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
             return DBHelper.getDBHelper().ejecutarSQL(query) > 0;
         }
+
+        public IList<Plan> GetByFilters(Dictionary<string, object> parametros)
+        {
+            List<Plan> lst = new List<Plan>();
+            String strSql = string.Concat(" SELECT P.id_plan_prueba, ",
+                                          " FROM PlanesDePrueba P ",
+                                              "  WHERE P.borrado = N");
+
+            if (parametros.ContainsKey("id_plan_prueba")) 
+                strSql += " AND (P.id_plan_prueba = @id_plan_prueba) ";
+
+            if (parametros.ContainsKey("id_proyecto"))
+                strSql += " AND (P.id_proyecto = @id_proyecto) ";
+
+            if (parametros.ContainsKey("nombre"))
+                strSql += " AND (P.nombre LIKE '%' + @nombre + '%') ";
+
+            if (parametros.ContainsKey("descripcion"))
+                strSql += " AND (P.descripcion LIKE '%' + @descripcion + '%') ";
+
+            if (parametros.ContainsKey("id_responsable"))
+                strSql += " AND (P.id_responsable = @id_responsable) ";
+
+
+            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new Object[] { parametros });
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(mapper(row));
+
+            return lst;
+        } //PUEDE QUE FUNCIONE
     }
 }*/

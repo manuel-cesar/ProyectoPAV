@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActualizarUsuarios.Datos.Dao.Implementacion
+/*namespace ActualizarUsuarios.Datos.Dao.Implementacion
 {
     class PlanDaoSqlImp
     {
@@ -39,9 +39,9 @@ namespace ActualizarUsuarios.Datos.Dao.Implementacion
                 lst.Add(op);
             }
             return lst;
-        }*/
+        }
 
-        public List<Perfil> FindByNombre(string filter)
+       public List<Perfil> FindByNombre(string filter)
         {
             string sql = "SELECT id_perfil FROM Perfiles WHERE borrado = 'N' AND n_perfil LIKE '%' + @param1 + '%'";
             DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(sql, new Object[] { filter });
@@ -117,4 +117,4 @@ namespace ActualizarUsuarios.Datos.Dao.Implementacion
             return DBHelper.getDBHelper().ejecutarSQL(query) > 0;
         }
     }
-}
+}*/

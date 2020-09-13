@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace ActualizarUsuarios.Datos.Conexion
 {
@@ -23,6 +25,11 @@ namespace ActualizarUsuarios.Datos.Conexion
             return instance;
         }
 
+        internal object ConsultaSQL(string strSql)
+        {
+            throw new NotImplementedException();
+        }
+
         // Resumen: Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”. Recibe por valor una sentencia sql como string
         // Devuelve: un valor entero con el número de filas afectadas por la sentencia ejecutada
         // Excepciones: System.Data.SqlClient.SqlException:
@@ -30,7 +37,7 @@ namespace ActualizarUsuarios.Datos.Conexion
         //              a) durante la apertura de la conexión
         //              b) durante la ejecución del comando.
 
-        public int ejecutarSQL(string strSql)
+        public int ejecutarSQL(string strSql, Dictionary<string, object> parametros)
         {
             int afectadas = 0;
             SqlConnection cnn = new SqlConnection();
@@ -74,7 +81,7 @@ namespace ActualizarUsuarios.Datos.Conexion
         //              a) durante la apertura de la conexión
         //              b) durante la ejecución del comando.
 
-        public DataTable ConsultaSQL(string strSql)
+        public DataTable ConsultaSQL(string strSql, Dictionary<string, object> parametros)
         {
             SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();

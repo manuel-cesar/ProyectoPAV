@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ActualizarUsuarios.Negocio.Entidades;
 using ActualizarUsuarios.Datos.Conexion;
 using System.Data;
-using ActualizarUsuarios.Datos.Conexion;
 
 
 namespace ActualizarUsuarios.Datos.Dao.Implementacion
@@ -26,7 +22,7 @@ namespace ActualizarUsuarios.Datos.Dao.Implementacion
                                           "   FROM Usuarios u",
                                           "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil " +
                                           "  WHERE u.borrado = 0 ");   
-            var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(sql);
+            var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {

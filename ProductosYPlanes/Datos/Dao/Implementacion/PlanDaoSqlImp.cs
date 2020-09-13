@@ -13,6 +13,7 @@ using ProductosYPlanes.Negocio.Entidades;
 
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
+
 {
     class PlanDaoSqlImp
     {
@@ -47,7 +48,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 lst.Add(op);
             }
             return lst;
-        }*/
+        }
 
         public bool delete(int id)
         {
@@ -133,4 +134,4 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return lst;
         } //PUEDE QUE FUNCIONE
     }
-}
+}*/

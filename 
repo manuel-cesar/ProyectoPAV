@@ -1,0 +1,206 @@
+[1mdiff --git a/ProductosYPlanes/Datos/Conexion/DBHelper.cs b/ProductosYPlanes/Datos/Conexion/DBHelper.cs[m
+[1mindex c1aa9b9..f33f776 100644[m
+[1m--- a/ProductosYPlanes/Datos/Conexion/DBHelper.cs[m
+[1m+++ b/ProductosYPlanes/Datos/Conexion/DBHelper.cs[m
+[36m@@ -4,7 +4,7 @@[m [musing System.Linq;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+ [m
+[31m-namespace ActualizarUsuarios.Datos.Conexion[m
+[32m+[m[32mnamespace ProductosYPlanes.Datos.Conexion[m
+ {[m
+     public class DBHelper[m
+     {[m
+[1mdiff --git a/ProductosYPlanes/Datos/Dao/Implementacion/PlanDaoSqlImp.cs b/ProductosYPlanes/Datos/Dao/Implementacion/PlanDaoSqlImp.cs[m
+[1mindex 25fad4e..ec29e36 100644[m
+[1m--- a/ProductosYPlanes/Datos/Dao/Implementacion/PlanDaoSqlImp.cs[m
+[1m+++ b/ProductosYPlanes/Datos/Dao/Implementacion/PlanDaoSqlImp.cs[m
+[36m@@ -1,10 +1,18 @@[m
+ ﻿using System;[m
+ using System.Collections.Generic;[m
+[32m+[m[32musing System.Data;[m
+ using System.Linq;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+ [m
+[31m-namespace ActualizarUsuarios.Datos.Dao.Implementacion[m
+[32m+[m[32musing ProductosYPlanes.Datos.Conexion;[m
+[32m+[m[32musing ProductosYPlanes.Datos.Dao.Implementacion;[m
+[32m+[m[32musing ProductosYPlanes.Datos.Dao.Interfaz;[m
+[32m+[m[32musing ProductosYPlanes.Negocio.Entidades;[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mnamespace ProductosYPlanes.Datos.Dao.Implementacion[m
+ {[m
+     class PlanDaoSqlImp[m
+     {[m
+[36m@@ -18,12 +26,12 @@[m [mnamespace ActualizarUsuarios.Datos.Dao.Implementacion[m
+             if (planPruebaDT != null && planPruebaDT.Rows.Count > 0)[m
+             {[m
+                 sql = "SELECT PL.* FROM PlanesDePrueba PL, Proyecto PR WHERE PL.id_proyecto = PR.id_proyecto AND PL.id_plan_prueba = " + id;[m
+[31m-               PlanProyectoDT = DBHelper.getDBHelper().ConsultaSQL(sql);[m
+[32m+[m[32m                PlanProyectoDT = DBHelper.getDBHelper().ConsultaSQL(sql);[m
+                 if (PlanProyectoDT.Rows.Count > 0)[m
+[31m-                    return mapper(perfileDT.Rows[0], opcionesMenuDT);[m
+[32m+[m[32m                    return mapper(PlanProyectoDT.Rows[0]); //, PlanProyectoDT[m
+             }[m
+             return null;[m
+[31m-        }[m
+[32m+[m[32m        } //Creo que funciona[m[41m [m
+ [m
+         /*public List<OpcionMenu> getOpcionesMenuAll()[m
+         {[m
+[36m@@ -41,47 +49,27 @@[m [mnamespace ActualizarUsuarios.Datos.Dao.Implementacion[m
+             return lst;[m
+         }*/[m
+ [m
+[31m-        public List<Perfil> FindByNombre(string filter)[m
+[31m-        {[m
+[31m-            string sql = "SELECT id_perfil FROM Perfiles WHERE borrado = 'N' AND n_perfil LIKE '%' + @param1 + '%'";[m
+[31m-            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(sql, new Object[] { filter });[m
+[31m-            List<Perfil> list = new List<Perfil>();[m
+[31m-            foreach (DataRow row in data.Rows)[m
+[31m-            {[m
+[31m-                int id = Convert.ToInt32(row[0].ToString());[m
+[31m-                list.Add(findById(id));[m
+[31m-            }[m
+[31m-[m
+[31m-            return list;[m
+[31m-        }[m
+[31m-[m
+[31m-        public List<OpcionMenu> getOpcionesByPerfil(int id)[m
+[31m-        {[m
+[31m-            return findById(id).OpcionesMenu;[m
+[31m-        }[m
+[31m-[m
+[31m-[m
+         public bool delete(int id)[m
+         {[m
+             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO [m
+[31m-            String sql = "UPDATE Perfiles SET borrado = 'S' WHERE id_perfil=" + id;[m
+[32m+[m[32m            String sql = "UPDATE PlanesDePrueba SET borrado = 'S' WHERE id_plan_prueba=" + id;[m
+             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;[m
+ [m
+[31m-        }[m
+[32m+[m[32m        } //LISTO[m[41m [m
+ [m
+         private Plan mapper(DataRow PlanRow)[m
+         {[m
+[31m-          Plan oPlan = new Plan();[m
+[32m+[m[32m            Plan oPlan = new Plan();[m
+ [m
+[31m-            oPlan.Id = Convert.ToInt32(PlanRow["id_plan_prueba"].ToString());[m
+[31m-            oPlan.Id_Proyecto = PlanRow["id_proyecto"].ToString();[m
+[31m-            oPlan.Nombre = PlanRow["nombre"].toString();[m
+[31m-            oPlan.Id_Responsable = = Convert.ToInt32(PlanRow["id_responsable"].ToString());[m
+[31m-            oPlan.Descripcion = PlanRow["descripcion"].toString();[m
+[32m+[m[32m            oPlan.Id_Plan_Prueba = Convert.ToInt32(PlanRow["id_plan_prueba"].ToString());[m
+[32m+[m[32m            oPlan.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());[m
+[32m+[m[32m            oPlan.Nombre = PlanRow["nombre"].ToString();[m
+[32m+[m[32m            oPlan.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());[m
+[32m+[m[32m            oPlan.Descripcion = PlanRow["descripcion"].ToString();[m
+ [m
+             //agregamos este atributo tanto en la tabla como en la entidad[m
+             //para trabajar solo con  registros activos, no borrados.[m
+[31m-            oPlan.Borrado = planRow["borrado"].ToString().Equals("S");[m
+[32m+[m[32m            oPlan.Borrado = PlanRow["borrado"].ToString().Equals("S");[m
+        [m
+         } // LISTO [m
+ [m
+[36m@@ -97,24 +85,52 @@[m [mnamespace ActualizarUsuarios.Datos.Dao.Implementacion[m
+ [m
+             foreach (DataRow row in resultadoConsulta.Rows)[m
+             {[m
+[31m-                listadoPlanes.Add(ObjectMapping(row));[m
+[32m+[m[32m                listadoPlanes.Add(mapper(row));[m
+             }[m
+ [m
+             return listadoPlanes;[m
+             return null;[m
+         } //LISTO [m
+ [m
+[31m-        public bool add(Perfil obj)[m
+[32m+[m[32m        public bool add(Plan obj) //LISTO pero dudoso[m
+         {[m
+[31m-            string query = "DECLARE @idPerfil int;";[m
+[31m-            query += "Insert INTO Perfiles (n_perfil, borrado) VALUES ('" + obj.Nombre + "', 'N');";[m
+[31m-            query += "SELECT @idPerfil = @@IDENTITY;";[m
+[31m-            foreach (OpcionMenu om in obj.OpcionesMenu)[m
+[31m-            {[m
+[31m-                query += "Insert INTO Opciones_perfil(id_opcion_menu, id_perfil) VALUES(" + om.Id.ToString() + ", @idPerfil);";[m
+[31m-            }[m
+[32m+[m[32m          string query = "DECLARE @id_plan_prueba int, @id_proyecto int, @nombre string, @id_responsable string, @descripcion string, @borrado char";[m
+[32m+[m[32m          query += "Insert INTO PlanesDePrueba (id_plan_prueba, id_proyecto, nombre, id_responsable, descripcion, borrado)";[m
+[32m+[m[32m          query +=" VALUES ('" + obj.Id_Plan_Prueba + "', '" + obj.Id_Proyecto +"', '" + obj.Id_Proyecto + "', '" + obj.Id_Responsable + "', '" + obj.Descripcion + "', 'N')";[m
+ [m
+[32m+[m[32m            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE[m
+             return DBHelper.getDBHelper().ejecutarSQL(query) > 0;[m
+         }[m
+[32m+[m
+[32m+[m[32m        public IList<Plan> GetByFilters(Dictionary<string, object> parametros)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            List<Plan> lst = new List<Plan>();[m
+[32m+[m[32m            String strSql = string.Concat(" SELECT P.id_plan_prueba, ",[m
+[32m+[m[32m                                          " FROM PlanesDePrueba P ",[m
+[32m+[m[32m                                              "  WHERE P.borrado = N");[m
+[32m+[m
+[32m+[m[32m            if (parametros.ContainsKey("id_plan_prueba"))[m[41m [m
+[32m+[m[32m                strSql += " AND (P.id_plan_prueba = @id_plan_prueba) ";[m
+[32m+[m
+[32m+[m[32m            if (parametros.ContainsKey("id_proyecto"))[m
+[32m+[m[32m                strSql += " AND (P.id_proyecto = @id_proyecto) ";[m
+[32m+[m
+[32m+[m[32m            if (parametros.ContainsKey("nombre"))[m
+[32m+[m[32m                strSql += " AND (P.nombre LIKE '%' + @nombre + '%') ";[m
+[32m+[m
+[32m+[m[32m            if (parametros.ContainsKey("descripcion"))[m
+[32m+[m[32m                strSql += " AND (P.descripcion LIKE '%' + @descripcion + '%') ";[m
+[32m+[m
+[32m+[m[32m            if (parametros.ContainsKey("id_responsable"))[m
+[32m+[m[32m                strSql += " AND (P.id_responsable = @id_responsable) ";[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new Object[] { parametros });[m
+[32m+[m
+[32m+[m[32m            foreach (DataRow row in resultado.Rows)[m
+[32m+[m[32m                lst.Add(mapper(row));[m
+[32m+[m
+[32m+[m[32m            return lst;[m
+[32m+[m[32m        } //PUEDE QUE FUNCIONE[m
+     }[m
+ }[m
+[1mdiff --git a/ProductosYPlanes/Datos/Dao/Interfaz/IDao.cs b/ProductosYPlanes/Datos/Dao/Interfaz/IDao.cs[m
+[1mindex 602a145..965e916 100644[m
+[1m--- a/ProductosYPlanes/Datos/Dao/Interfaz/IDao.cs[m
+[1m+++ b/ProductosYPlanes/Datos/Dao/Interfaz/IDao.cs[m
+[36m@@ -4,7 +4,7 @@[m [musing System.Linq;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+ [m
+[31m-namespace ActualizarUsuarios.Datos.Dao.Interfaz[m
+[32m+[m[32mnamespace ProductosYPlanes.Datos.Dao.Interfaz[m
+ {[m
+     interface IDao[m
+     {[m
+[1mdiff --git a/ProductosYPlanes/Negocio/Entidades/Plan.cs b/ProductosYPlanes/Negocio/Entidades/Plan.cs[m
+[1mindex 08515b5..65ff680 100644[m
+[1m--- a/ProductosYPlanes/Negocio/Entidades/Plan.cs[m
+[1m+++ b/ProductosYPlanes/Negocio/Entidades/Plan.cs[m
+[36m@@ -4,7 +4,7 @@[m [musing System.Linq;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+ [m
+[31m-namespace ActualizarUsuarios.Negocio.Entidades[m
+[32m+[m[32mnamespace ProductosYPlanes.Negocio.Entidades[m
+ {[m
+     public class Plan[m
+     {[m
+[36m@@ -16,6 +16,7 @@[m [mnamespace ActualizarUsuarios.Negocio.Entidades[m
+         public bool Borrado { get; set; }[m
+ [m
+ [m
+[32m+[m[32m        public Plan() { }[m
+ [m
+         public Plan(int id_plan_prueba, int id_proyecto, String nombre, int id_responsable, String descripcion)[m
+         {[m

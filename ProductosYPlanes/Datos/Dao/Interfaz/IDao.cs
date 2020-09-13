@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActualizarUsuarios.Datos.Dao.Interfaz
+namespace ProductosYPlanes.Datos.Dao.Interfaz
 {
     interface IDao
     {

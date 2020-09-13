@@ -24,7 +24,8 @@ namespace ProductosYPlanes.Negocio.Servicios
 
         public Usuario ValidarUsuario(string usuario, string password)
         {
-            var usr = oUsuarioDao.GetUser(usuario);
+            Usuario usr = oUsuarioDao.GetUser(usuario);
+            //var usr = oUsuarioDao.GetUser(usuario); LA VARIABLE ESTABA COMO VAR
 
             if (usr.Password != null && usr.Password.Equals(password))
             {

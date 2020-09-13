@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Conexion;
+
 using System.Data;
 
 
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 {
-    class UsuarioDao
-    {
+    //class UsuarioDao
+    public class UsuarioDao { 
         public IList<Usuario> GetAll()
         {
             List<Usuario> listadoBugs = new List<Usuario>();
@@ -37,17 +38,15 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         }
         public Usuario GetUser(string nombreUsuario)
         {
-            //Construimos la consulta sql para buscar el usuario en la base de datos.
+            //Construimos la consulta sql para buscar el usuario en la base de dato
             String strSql = string.Concat(" SELECT id_usuario, ",
                                           "        usuario, ",
-                                          "        email, ",
-                                          "        password, ",
-                                          "        p.id_perfil, ",
-                                          "        p.nombre perfil ",
-                                          "   FROM Usuarios u",
-                                          "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
-                                          "  WHERE usuario = " + nombreUsuario);
-            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
+                                          "        password ",
+                                          "   FROM Usuarios ",
+                                          "   WHERE usuario = " + nombreUsuario,
+                                          "   AND borrado = 0");
+           
+            DataTable resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
 
             if (resultado.Rows.Count > 0)
             {
@@ -62,14 +61,13 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         
         private Usuario ObjectMapping(DataRow row)
         {
-            Usuario oUsuario = new Usuario
-            {
-                IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
-                NombreUsuario = row["usuario"].ToString(),
-                Email = row["email"].ToString(),
-                Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
-               id_Perfil = Convert.ToInt32(row["id_Perfil"].ToString()),
-            };
+            Usuario oUsuario = new Usuario();
+
+            oUsuario.IdUsuario = Convert.ToInt32(row["id_usuario"].ToString());
+            oUsuario.NombreUsuario = row["usuario"].ToString();
+            //oUsuario.Email = row["email"].ToString();
+            oUsuario.Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null;
+              
 
             return oUsuario;
         }

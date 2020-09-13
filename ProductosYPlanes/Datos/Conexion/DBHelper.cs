@@ -94,7 +94,7 @@ namespace ProductosYPlanes.Datos.Conexion
             }
             catch (SqlException ex)
             {
-                throw (ex);
+              throw (ex);
             }
             finally
             {

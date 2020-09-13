@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+<<<<<<< HEAD
 namespace ProductosYPlanes.Negocio.Entidades
+=======
+namespace ActualizarUsuarios.Negocio.Entidades
+>>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
 {
     public class Usuario
     {

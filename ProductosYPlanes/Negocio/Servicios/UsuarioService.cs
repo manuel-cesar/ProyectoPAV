@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 
 
 using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Dao.Implementacion;
 
 namespace ProductosYPlanes.Negocio.Servicios
+=======
+using ActualizarUsuarios.Negocio.Entidades;
+using ActualizarUsuarios.Datos.Dao.Implementacion;
+
+namespace ActualizarUsuarios.Negocio.Servicios
+>>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
 {
     public class UsuarioService
     {

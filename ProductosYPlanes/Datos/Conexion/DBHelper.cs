@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace ProductosYPlanes.Datos.Conexion
 {
@@ -25,11 +25,6 @@ namespace ProductosYPlanes.Datos.Conexion
             return instance;
         }
 
-        internal object ConsultaSQL(string strSql)
-        {
-            throw new NotImplementedException();
-        }
-
         // Resumen: Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”. Recibe por valor una sentencia sql como string
         // Devuelve: un valor entero con el número de filas afectadas por la sentencia ejecutada
         // Excepciones: System.Data.SqlClient.SqlException:
@@ -37,7 +32,7 @@ namespace ProductosYPlanes.Datos.Conexion
         //              a) durante la apertura de la conexión
         //              b) durante la ejecución del comando.
 
-        public int ejecutarSQL(string strSql, Dictionary<string, object> parametros)
+        public int ejecutarSQL(string strSql)
         {
             int afectadas = 0;
             SqlConnection cnn = new SqlConnection();
@@ -81,7 +76,7 @@ namespace ProductosYPlanes.Datos.Conexion
         //              a) durante la apertura de la conexión
         //              b) durante la ejecución del comando.
 
-        public DataTable ConsultaSQL(string strSql, Dictionary<string, object> parametros)
+        public DataTable ConsultaSQL(string strSql)
         {
             SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();

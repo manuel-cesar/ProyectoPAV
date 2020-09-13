@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Datos.Dao.Interfaz
 {
-    interface IDao
+    interface IDao<T>
     {
         T findById(int id);
         IList<T> getAll();

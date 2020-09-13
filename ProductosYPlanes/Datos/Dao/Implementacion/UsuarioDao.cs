@@ -1,29 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-<<<<<<< HEAD
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Conexion;
-=======
-using ActualizarUsuarios.Negocio.Entidades;
-using ActualizarUsuarios.Datos.Conexion;
->>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
 using System.Data;
 
 
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
-=======
-using ActualizarUsuarios.Negocio.Entidades;
-using ActualizarUsuarios.Datos.Conexion;
-using System.Data;
-
-
-namespace ActualizarUsuarios.Datos.Dao.Implementacion
->>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
 {
     class UsuarioDao
     {
@@ -60,10 +46,8 @@ namespace ActualizarUsuarios.Datos.Dao.Implementacion
                                           "        p.nombre perfil ",
                                           "   FROM Usuarios u",
                                           "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
-                                          "  WHERE usuario = @usuario");
-            var parametros = new Dictionary<String, Object>();
-            parametros.Add("usuario", nombreUsuario);
-            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros);
+                                          "  WHERE usuario = " + nombreUsuario);
+            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
 
             if (resultado.Rows.Count > 0)
             {
@@ -72,60 +56,10 @@ namespace ActualizarUsuarios.Datos.Dao.Implementacion
 
             return null;
         }
-        public IList<Usuario> GetByFilters(Dictionary<string, object> parametros)
-        {
-            List<Usuario> lst = new List<Usuario>();
-            String strSql = string.Concat(" SELECT id_usuario, ",
-                                              "        usuario, ",
-                                              "        email, ",
-                                              "        password, ",
-                                              "        p.id_perfil, ",
-                                              "        p.nombre perfil ",
-                                              "   FROM Usuarios u",
-                                              "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
-                                              "  WHERE u.borrado = 0");
-
-            if (parametros.ContainsKey("idPerfil"))
-                strSql += " AND (u.id_perfil = @idPerfil) ";
-
-
-            if (parametros.ContainsKey("usuario"))
-                strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
-
-            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros);
-
-            foreach (DataRow row in resultado.Rows)
-                lst.Add(ObjectMapping(row));
-
-            return lst;
-
-        }
-
-        internal bool Create(Usuario oUsuario)
-        {
-            string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, borrado)" +
-                             "     VALUES (@usuario, @password, @email, @id_perfil, 0)";
-
-            var parametros = new Dictionary<string, object>();
-            parametros.Add("usuario", oUsuario.NombreUsuario);
-            parametros.Add("password", oUsuario.Password);
-            parametros.Add("email", oUsuario.Email);
-            parametros.Add("id_perfil", oUsuario.id_Perfil);
-
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-            return (DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros) == 1);
-        }
-
-        internal bool Update(Usuario oUsuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal bool Delete(Usuario oUsuario)
-        {
-            throw new NotImplementedException();
-        }
-
+        //public IList<Usuario> GetByFilters(Dictionary<string, object> parametros)
+        //internal bool Create(Usuario oUsuario)
+        //internal bool Update(Usuario oUsuario)
+        
         private Usuario ObjectMapping(DataRow row)
         {
             Usuario oUsuario = new Usuario

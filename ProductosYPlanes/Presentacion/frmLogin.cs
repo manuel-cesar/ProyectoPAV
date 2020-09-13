@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ActualizarUsuarios.Negocio.Servicios;
-using ActualizarUsuarios.Datos.Conexion;
+
+using ProductosYPlanes.Negocio.Servicios;
+using ProductosYPlanes.Datos.Conexion;
 using System.Data.SqlClient;
 
-namespace ActualizarUsuarios
+namespace ProductosYPlanes
 {
-    public partial class frmLogin_ : Form
+    public partial class frmLogin : Form
     {
         private readonly UsuarioService usuarioService;
 
         public string UsuarioLogueado { get; internal set; }
-        public frmLogin_()
+        public frmLogin()
         {
             InitializeComponent();
             usuarioService = new UsuarioService();

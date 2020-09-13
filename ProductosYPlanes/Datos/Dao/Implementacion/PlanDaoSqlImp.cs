@@ -6,17 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ProductosYPlanes.Datos.Conexion;
-using ProductosYPlanes.Datos.Dao.Implementacion;
-using ProductosYPlanes.Datos.Dao.Interfaz;
 using ProductosYPlanes.Negocio.Entidades;
 
-
-
 namespace ProductosYPlanes.Datos.Dao.Implementacion
-<<<<<<< HEAD
-=======
 
->>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
 {
     class PlanDaoSqlImp
     {
@@ -25,6 +18,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         {
             string sql = "SELECT * FROM PlanesDePrueba plan WHERE borrado = '0' AND plan.id_plan_prueba = " + id.ToString();
             DataTable planPruebaDT = DBHelper.getDBHelper().ConsultaSQL(sql);
+            
             DataTable PlanProyectoDT = null;
 
             if (planPruebaDT != null && planPruebaDT.Rows.Count > 0)
@@ -51,11 +45,10 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 lst.Add(op);
             }
             return lst;
-<<<<<<< HEAD
+
         }*/
-=======
-        }
->>>>>>> 9ae76c8fa45c3d4efbce57b93ac0dab2dbb4b852
+
+   
 
         public bool delete(int id)
         {
@@ -90,14 +83,16 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                           "  WHERE u.borrado = 0 ");
 
             var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
-
-            foreach (DataRow row in resultadoConsulta.Rows)
+            if (resultadoConsulta.Rows.Count > 0)
             {
-                listadoPlanes.Add(mapper(row));
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listadoPlanes.Add(mapper(row));
+                }
+                return listadoPlanes;
             }
 
-            return listadoPlanes;
-            return null;
+                return null;
         } //LISTO 
 
         public bool add(Plan obj) //LISTO pero dudoso
@@ -141,4 +136,4 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return lst;
         } //PUEDE QUE FUNCIONE
     }
-}*/
+}

@@ -1,6 +1,6 @@
-﻿namespace ActualizarUsuarios
+﻿namespace ProductosYPlanes
 {
-    partial class frmLogin_
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // frmLogin_
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +97,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblBugTracker);
-            this.Name = "frmLogin_";
+            this.Name = "frmLogin";
             this.Text = "Ingreso al sistema";
             this.ResumeLayout(false);
             this.PerformLayout();

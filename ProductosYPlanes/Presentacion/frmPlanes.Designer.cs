@@ -37,18 +37,17 @@
             this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
-            this.lblProyecto = new System.Windows.Forms.Label();
-            this.lblIdPlan = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEstado = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.IdPlanPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdResposable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblProyecto = new System.Windows.Forms.Label();
+            this.lblIdPlan = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
             this.SuspendLayout();
@@ -65,9 +64,11 @@
             this.groupBox1.Controls.Add(this.dgvPlanes);
             this.groupBox1.Controls.Add(this.lblProyecto);
             this.groupBox1.Controls.Add(this.lblIdPlan);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(22, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(659, 406);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(1208, 750);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -75,57 +76,64 @@
             // 
             // txtIdProyecto
             // 
-            this.txtIdProyecto.Location = new System.Drawing.Point(86, 46);
+            this.txtIdProyecto.Location = new System.Drawing.Point(158, 85);
+            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdProyecto.Name = "txtIdProyecto";
-            this.txtIdProyecto.Size = new System.Drawing.Size(105, 20);
+            this.txtIdProyecto.Size = new System.Drawing.Size(189, 29);
             this.txtIdProyecto.TabIndex = 14;
             // 
             // txtResponsable
             // 
-            this.txtResponsable.Location = new System.Drawing.Point(326, 46);
+            this.txtResponsable.Location = new System.Drawing.Point(598, 85);
+            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
             this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(105, 20);
+            this.txtResponsable.Size = new System.Drawing.Size(189, 29);
             this.txtResponsable.TabIndex = 13;
             // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(235, 49);
+            this.lblResponsable.Location = new System.Drawing.Point(431, 90);
+            this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(81, 13);
+            this.lblResponsable.Size = new System.Drawing.Size(147, 25);
             this.lblResponsable.TabIndex = 12;
             this.lblResponsable.Text = "Id Responsable";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(326, 13);
+            this.txtNombre.Location = new System.Drawing.Point(598, 24);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(105, 20);
+            this.txtNombre.Size = new System.Drawing.Size(189, 29);
             this.txtNombre.TabIndex = 11;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(235, 16);
+            this.lblNombre.Location = new System.Drawing.Point(431, 30);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(81, 25);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
             // txtIdPlan
             // 
-            this.txtIdPlan.Location = new System.Drawing.Point(86, 17);
+            this.txtIdPlan.Location = new System.Drawing.Point(158, 31);
+            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.ShortcutsEnabled = false;
-            this.txtIdPlan.Size = new System.Drawing.Size(105, 20);
+            this.txtIdPlan.Size = new System.Drawing.Size(189, 29);
             this.txtIdPlan.TabIndex = 9;
             this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(509, 20);
+            this.btnConsultar.Location = new System.Drawing.Point(927, 37);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(100, 42);
+            this.btnConsultar.Size = new System.Drawing.Size(254, 78);
             this.btnConsultar.TabIndex = 7;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -142,18 +150,61 @@
             this.Nombre,
             this.IdResposable,
             this.Descripcion});
-            this.dgvPlanes.Location = new System.Drawing.Point(6, 99);
+            this.dgvPlanes.Location = new System.Drawing.Point(11, 183);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
-            this.dgvPlanes.Size = new System.Drawing.Size(638, 295);
+            this.dgvPlanes.RowHeadersWidth = 72;
+            this.dgvPlanes.Size = new System.Drawing.Size(1170, 545);
             this.dgvPlanes.TabIndex = 6;
+            // 
+            // IdPlanPrueba
+            // 
+            this.IdPlanPrueba.HeaderText = "Id Plan";
+            this.IdPlanPrueba.MinimumWidth = 9;
+            this.IdPlanPrueba.Name = "IdPlanPrueba";
+            this.IdPlanPrueba.ReadOnly = true;
+            this.IdPlanPrueba.Width = 175;
+            // 
+            // IdProyecto
+            // 
+            this.IdProyecto.HeaderText = "Id proyecto";
+            this.IdProyecto.MinimumWidth = 9;
+            this.IdProyecto.Name = "IdProyecto";
+            this.IdProyecto.ReadOnly = true;
+            this.IdProyecto.Width = 175;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 9;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 175;
+            // 
+            // IdResposable
+            // 
+            this.IdResposable.HeaderText = "Id Responsable";
+            this.IdResposable.MinimumWidth = 9;
+            this.IdResposable.Name = "IdResposable";
+            this.IdResposable.ReadOnly = true;
+            this.IdResposable.Width = 175;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 9;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 175;
             // 
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
-            this.lblProyecto.Location = new System.Drawing.Point(19, 44);
+            this.lblProyecto.Location = new System.Drawing.Point(35, 81);
+            this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProyecto.Name = "lblProyecto";
-            this.lblProyecto.Size = new System.Drawing.Size(61, 13);
+            this.lblProyecto.Size = new System.Drawing.Size(110, 25);
             this.lblProyecto.TabIndex = 3;
             this.lblProyecto.Text = "Id Proyecto";
             this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
@@ -161,36 +212,31 @@
             // lblIdPlan
             // 
             this.lblIdPlan.AutoSize = true;
-            this.lblIdPlan.Location = new System.Drawing.Point(41, 20);
+            this.lblIdPlan.Location = new System.Drawing.Point(75, 37);
+            this.lblIdPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIdPlan.Name = "lblIdPlan";
-            this.lblIdPlan.Size = new System.Drawing.Size(39, 13);
+            this.lblIdPlan.Size = new System.Drawing.Size(70, 25);
             this.lblIdPlan.TabIndex = 1;
             this.lblIdPlan.Text = "Id plan";
             this.lblIdPlan.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(47, 424);
+            this.btnAdd.Location = new System.Drawing.Point(33, 784);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(138, 42);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.Location = new System.Drawing.Point(358, 440);
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(121, 37);
-            this.btnEstado.TabIndex = 2;
-            this.btnEstado.Text = "Cambiar Estado";
-            this.btnEstado.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(581, 431);
+            this.btnSalir.Location = new System.Drawing.Point(1065, 785);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(138, 42);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -198,64 +244,41 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(128, 424);
+            this.btnUpdate.Location = new System.Drawing.Point(193, 783);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(138, 42);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(209, 424);
+            this.btnEliminar.Location = new System.Drawing.Point(355, 784);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(138, 42);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // IdPlanPrueba
-            // 
-            this.IdPlanPrueba.HeaderText = "Id Plan";
-            this.IdPlanPrueba.Name = "IdPlanPrueba";
-            this.IdPlanPrueba.ReadOnly = true;
-            // 
-            // IdProyecto
-            // 
-            this.IdProyecto.HeaderText = "Id proyecto";
-            this.IdProyecto.Name = "IdProyecto";
-            this.IdProyecto.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // IdResposable
-            // 
-            this.IdResposable.HeaderText = "Id Responsable";
-            this.IdResposable.Name = "IdResposable";
-            this.IdResposable.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmPlanes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnConsultar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 505);
+            this.ClientSize = new System.Drawing.Size(1252, 855);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnEstado);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "frmPlanes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.frmPlanes_Load);
             this.groupBox1.ResumeLayout(false);
@@ -273,7 +296,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvPlanes;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEliminar;

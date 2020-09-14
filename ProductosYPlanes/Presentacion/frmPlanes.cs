@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using ProductosYPlanes.Negocio.Servicios;
 using ProductosYPlanes.Negocio.Entidades;
+using ActualizarUsuarios.Presentacion;
 
 namespace ProductosYPlanes.Presentacion
 {
@@ -143,6 +144,28 @@ namespace ProductosYPlanes.Presentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmUpdatePlanes agregarVentana = new frmUpdatePlanes();
+            agregarVentana.Text = "Agregar Plan";
+            agregarVentana.Show();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmUpdatePlanes modificarVentana = new frmUpdatePlanes();
+            modificarVentana.Text = "Modificar Plan";
+            modificarVentana.Show();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmUpdatePlanes eliminarVentana = new frmUpdatePlanes();
+            eliminarVentana.Text = "Eliminar Plan";
+            eliminarVentana.Show();
         }
     }
 }

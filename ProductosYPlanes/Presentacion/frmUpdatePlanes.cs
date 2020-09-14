@@ -15,11 +15,27 @@ namespace ActualizarUsuarios.Presentacion
         public frmUpdatePlanes()
         {
             InitializeComponent();
+            
         }
 
         private void lblNombre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmUpdatePlanes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -21,6 +21,11 @@ namespace ProductosYPlanes.Negocio.Servicios
             return oPlanDao.GetByFilters(parametros);
         }
 
+        public IList<Plan> ConsultarTodos()
+        {
+            return oPlanDao.getAll();
+        }
+
         public Plan ConsultarPlanPorId(int id)
         {
             return oPlanDao.findById(id);

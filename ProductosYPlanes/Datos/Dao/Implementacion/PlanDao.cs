@@ -63,12 +63,12 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             Plan oPlan = new Plan();
                       
             oPlan.Id_Plan_Prueba = Convert.ToInt32(PlanRow["id_plan_prueba"].ToString());
-            oPlan.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());
+            oPlan.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString()); 
             oPlan.Nombre = PlanRow["nombre"].ToString();
             oPlan.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
             oPlan.Descripcion = PlanRow["descripcion"].ToString();
             //agregamos este atributo tanto en la tabla como en la entidad para trabajar solo con  registros activos, no borrados.
-            oPlan.Borrado = PlanRow["borrado"].ToString().Equals("S");
+            oPlan.Borrado = PlanRow["borrado"].ToString().Equals("S"); 
             
             return oPlan;
         } // LISTO 
@@ -105,11 +105,11 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         }
 
         public IList<Plan> GetByFilters(Dictionary<string, object> parametros)
-        {
-            List<Plan> lst = new List<Plan>();
-            String strSql = string.Concat(" SELECT P.id_plan_prueba, ",
+        {       
+            List<Plan> lista = new List<Plan>();
+            String strSql = string.Concat(" SELECT P.* ",
                                           " FROM PlanesDePrueba P ",
-                                              "  WHERE P.borrado = N");
+                                              "  WHERE P.borrado = 'False'");
 
             if (parametros.ContainsKey("id_plan_prueba")) 
                 strSql += " AND (P.id_plan_prueba = @id_plan_prueba) ";
@@ -127,13 +127,15 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 strSql += " AND (P.id_responsable = @id_responsable) ";
 
 
-            var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
-            //var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new Object[] { parametros });
+            //var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
 
-            foreach (DataRow row in resultado.Rows)
-                lst.Add(mapper(row));
+            var resultado = (DataRowCollection)DBHelper.getDBHelper().ConsultaSQL(strSql, parametros).Rows;
 
-            return lst;
+
+            foreach (DataRow row in resultado)
+                lista.Add(mapper(row));
+
+            return lista;
         } //PUEDE QUE FUNCIONE
     }
 }

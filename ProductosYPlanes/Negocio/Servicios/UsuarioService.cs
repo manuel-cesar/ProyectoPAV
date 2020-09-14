@@ -26,8 +26,8 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             Usuario usr = oUsuarioDao.GetUser(usuario);
             //var usr = oUsuarioDao.GetUser(usuario); LA VARIABLE ESTABA COMO VAR
-
-            if (usr.Password != null && usr.Password.Equals(password))
+            
+            if (usr != null && usr.Password != null && usr.Password.Equals(password))
             {
                 return usr;
             }

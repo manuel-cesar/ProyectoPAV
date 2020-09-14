@@ -58,6 +58,7 @@ namespace ProductosYPlanes
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
                 this.Close();
+
             }
             else
             {

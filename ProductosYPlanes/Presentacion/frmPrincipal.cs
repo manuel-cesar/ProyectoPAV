@@ -29,5 +29,13 @@ namespace ProductosYPlanes.Presentacion
         {
             this.Close();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            toolStripStatusLabelUsuario.Text = login.UsuarioLogueado;
+        }
     }
 }

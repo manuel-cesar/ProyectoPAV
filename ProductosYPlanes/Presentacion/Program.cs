@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ProductosYPlanes.Presentacion;
+
 namespace ProductosYPlanes
 {
     static class Program
@@ -16,7 +18,7 @@ namespace ProductosYPlanes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin ());
+            Application.Run(new  frmPrincipal());
         }
     }
 }

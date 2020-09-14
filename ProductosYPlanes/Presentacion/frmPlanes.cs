@@ -61,7 +61,7 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender = null , EventArgs e = null)
         {
             // Dictionary: Representa una colección de claves y valores.
             Dictionary<string, object> parametros = new Dictionary<string, object>();
@@ -163,9 +163,31 @@ namespace ProductosYPlanes.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmUpdatePlanes eliminarVentana = new frmUpdatePlanes();
-            eliminarVentana.Text = "Eliminar Plan";
-            eliminarVentana.Show();
+            //check que la grilla tiene al menos una fila para quitar
+            if (dgvPlanes.Rows.Count > 0)
+            {
+                if (MessageBox.Show("Desea eliminar el perfil seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    int idPlan = Convert.ToInt32(dgvPlanes.CurrentRow.Cells["ID"].Value);
+                    if (planService.EliminarPlan(idPlan))
+                    {
+                        btnConsultar_Click();
+                        MessageBox.Show("Perfil eliminado!", "Aviso");
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error al intentar borrar el perfil!", "Error");
+                }
+            }
+            else
+                btnEliminar.Enabled = false;
+
+        }
+
+        private void dgvPlanes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Si hay una fila clickeada entonces se habilitan los botones para eliminar y modificar
+            btnEliminar.Enabled = true;
+            btnUpdate.Enabled = true;
         }
     }
 }

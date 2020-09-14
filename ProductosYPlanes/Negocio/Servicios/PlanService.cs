@@ -30,10 +30,5 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             return oPlanDao.findById(id);
         }
-
-        public bool EliminarPlan(int idPlan)
-        {
-            return oPlanDao.delete(idPlan);
-        }
     }
 }

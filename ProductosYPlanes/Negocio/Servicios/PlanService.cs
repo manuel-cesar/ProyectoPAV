@@ -30,5 +30,17 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             return oPlanDao.findById(id);
         }
+
+        public bool ActualizarPlan(Plan OplanSelected)
+        {
+            return oPlanDao.Update(OplanSelected);
+        }
+
+        internal bool crearPlan(Plan oPlan)
+        {
+            return oPlanDao.CrearPlan(oPlan);
+        }
+
+
     }
 }

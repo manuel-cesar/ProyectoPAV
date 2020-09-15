@@ -12,6 +12,7 @@ using ProductosYPlanes.Negocio.Servicios;
 using ProductosYPlanes.Negocio.Entidades;
 using ActualizarUsuarios.Presentacion;
 
+
 namespace ProductosYPlanes.Presentacion
 {
     public partial class frmPlanes : Form
@@ -157,15 +158,14 @@ namespace ProductosYPlanes.Presentacion
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             frmUpdatePlanes modificarVentana = new frmUpdatePlanes();
-            modificarVentana.Text = "Modificar Plan";
-            modificarVentana.Show();
+            var plan = (Plan)dgvPlanes.CurrentRow.DataBoundItem;
+            modificarVentana.InicializarFormulario(frmUpdatePlanes.FormMode.update, plan);
+            modificarVentana.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+            private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmUpdatePlanes eliminarVentana = new frmUpdatePlanes();
-            eliminarVentana.Text = "Eliminar Plan";
-            eliminarVentana.Show();
+            this.Close();
         }
     }
 }

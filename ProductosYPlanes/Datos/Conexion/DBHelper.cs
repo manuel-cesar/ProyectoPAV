@@ -17,7 +17,9 @@ namespace ProductosYPlanes.Datos.Conexion
         public DBHelper()
         {
             dbConnection = new SqlConnection();
-            var string_conexion = "Data Source=DESKTOP-UVCDA9M\\SQLEXPRESS;Initial Catalog=bugs-extend;Integrated Security=True";
+
+            var string_conexion = "Data Source=localhost;Initial Catalog=BugTracker_Extendida;Integrated Security=True;";
+
             dbConnection.ConnectionString = string_conexion;
         }
 
@@ -97,7 +99,7 @@ namespace ProductosYPlanes.Datos.Conexion
 
             SqlCommand cmd = new SqlCommand();
 
-            int rtdo = 0;
+            int rtdo;
 
             // Try Catch Finally
             // Trata de ejecutar el código contenido dentro del bloque Try - Catch
@@ -125,6 +127,7 @@ namespace ProductosYPlanes.Datos.Conexion
             catch (Exception ex)
             {
                 throw ex;
+
             }
             return rtdo;
         }

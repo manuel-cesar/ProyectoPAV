@@ -74,12 +74,14 @@
             this.groupBox1.Controls.Add(this.txtIdPlan);
             this.groupBox1.Controls.Add(this.lblProyecto);
             this.groupBox1.Controls.Add(this.lblIdPlan);
+
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 22);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(1208, 734);
+
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de busqueda";
@@ -87,6 +89,7 @@
             // 
             // txtIdProyecto
             // 
+
             this.txtIdProyecto.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdProyecto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdProyecto.Location = new System.Drawing.Point(164, 106);
@@ -104,19 +107,23 @@
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.Size = new System.Drawing.Size(285, 24);
             this.txtResponsable.TabIndex = 4;
+
             // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
+
             this.lblResponsable.Location = new System.Drawing.Point(468, 105);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(173, 25);
+
             this.lblResponsable.TabIndex = 12;
             this.lblResponsable.Text = "Id Responsable :";
             // 
             // txtNombre
             // 
+
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Location = new System.Drawing.Point(637, 43);
@@ -124,19 +131,23 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(285, 24);
             this.txtNombre.TabIndex = 3;
+
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+
             this.lblNombre.Location = new System.Drawing.Point(541, 46);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(99, 25);
+
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre :";
             // 
             // txtIdPlan
             // 
+
             this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPlan.Location = new System.Drawing.Point(164, 47);
@@ -145,10 +156,12 @@
             this.txtIdPlan.ShortcutsEnabled = false;
             this.txtIdPlan.Size = new System.Drawing.Size(286, 24);
             this.txtIdPlan.TabIndex = 1;
+
             this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
             // 
             // btnConsultar
             // 
+
             this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +170,7 @@
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(205, 78);
             this.btnConsultar.TabIndex = 5;
+
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -175,12 +189,14 @@
             this.Nombre,
             this.IdResposable,
             this.Descripcion});
+
             this.dgvPlanes.Location = new System.Drawing.Point(26, 167);
             this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
+
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.RowHeadersWidth = 72;
-            this.dgvPlanes.Size = new System.Drawing.Size(1170, 545);
+            this.dgvPlanes.Size = new System.Drawing.Size(653, 269);
             this.dgvPlanes.TabIndex = 6;
             // 
             // IdPlanPrueba
@@ -221,10 +237,12 @@
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
+
             this.lblProyecto.Location = new System.Drawing.Point(31, 105);
             this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProyecto.Name = "lblProyecto";
             this.lblProyecto.Size = new System.Drawing.Size(132, 25);
+
             this.lblProyecto.TabIndex = 3;
             this.lblProyecto.Text = "Id Proyecto :";
             this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
@@ -232,16 +250,19 @@
             // lblIdPlan
             // 
             this.lblIdPlan.AutoSize = true;
+
             this.lblIdPlan.Location = new System.Drawing.Point(73, 46);
             this.lblIdPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIdPlan.Name = "lblIdPlan";
             this.lblIdPlan.Size = new System.Drawing.Size(90, 25);
+
             this.lblIdPlan.TabIndex = 1;
             this.lblIdPlan.Text = "Id Plan :";
             this.lblIdPlan.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAdd
             // 
+
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,12 +271,14 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(138, 42);
             this.btnAdd.TabIndex = 8;
+
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSalir
             // 
+
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,12 +287,14 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(138, 42);
             this.btnSalir.TabIndex = 11;
+
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnUpdate
             // 
+
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -279,12 +304,14 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(138, 42);
             this.btnUpdate.TabIndex = 9;
+
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEliminar
             // 
+
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -294,6 +321,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(138, 42);
             this.btnEliminar.TabIndex = 10;
+
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -333,17 +361,21 @@
             // frmPlanes
             // 
             this.AcceptButton = this.btnConsultar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1252, 855);
+
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
+
             this.MaximizeBox = false;
             this.Name = "frmPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

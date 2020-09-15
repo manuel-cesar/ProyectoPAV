@@ -119,27 +119,17 @@ namespace ProductosYPlanes.Presentacion
 
                 case FormMode.update:
                     {
-                        txtplanMod.Text = oPlanSelected.Id_Plan_Prueba.ToString();
-                        txtProyecto.Text = oPlanSelected.Id_Proyecto.ToString();
-                        TxtNombre.Text = oPlanSelected.Nombre;
-                        txtResp.Text = oPlanSelected.Id_Responsable.ToString();
-                        txtDescripcion.Text = oPlanSelected.Descripcion;
-
                         if (ValidarCampos())
-                        {
-                            var oPlan = new Plan
-                            {
-                                Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
-                                Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
-                                Nombre = TxtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(txtResp.Text),
-                                Descripcion = txtDescripcion.Text,
-                                Borrado = false
-                            };
+                        { 
+                            
+                            oPlanSelected.Id_Plan_Prueba  = Convert.ToInt32(txtplanMod.Text);
+                            oPlanSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
+                            oPlanSelected.Nombre = TxtNombre.Text;
+                            oPlanSelected.Id_Responsable = Convert.ToInt32(txtResp.Text);
+                            oPlanSelected.Descripcion = txtDescripcion.Text;
 
-                            if (oPlanService.ActualizarPlan(oPlan))
+                            if (oPlanService.ActualizarPlan(oPlanSelected))
                             {
-                                // btnConsultar_Click(sender, e); / Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }

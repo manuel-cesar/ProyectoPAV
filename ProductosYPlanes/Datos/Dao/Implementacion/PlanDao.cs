@@ -54,7 +54,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         public bool delete(int id)
         {
             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO 
-            String sql = "UPDATE PlanesDePrueba SET borrado = 'S' WHERE id_plan_prueba=" + id;
+            String sql = "UPDATE PlanesDePrueba SET borrado = 1 WHERE id_plan_prueba=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
         } //LISTO 

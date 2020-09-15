@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProductosYPlanes.Negocio.Servicios;
 using ProductosYPlanes.Negocio.Entidades;
-using ActualizarUsuarios.Presentacion;
 
-namespace ActualizarUsuarios.Presentacion
+
+namespace ProductosYPlanes.Presentacion
 {
     public partial class frmUpdatePlanes : Form
     {
@@ -104,6 +104,7 @@ namespace ActualizarUsuarios.Presentacion
                             };                            
                             if (oPlanService.crearPlan(oPlan))
                             {
+                                //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
@@ -131,6 +132,7 @@ namespace ActualizarUsuarios.Presentacion
 
                             if (oPlanService.ActualizarPlan(oPlanSelected))
                             {
+                                // btnConsultar_Click(sender, e); / Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }

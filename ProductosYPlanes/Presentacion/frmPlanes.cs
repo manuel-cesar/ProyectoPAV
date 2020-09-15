@@ -165,7 +165,29 @@ namespace ProductosYPlanes.Presentacion
         }
             private void btnEliminar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (dgvPlanes.Rows.Count > 0)
+            {
+                if (MessageBox.Show("Desea eliminar el plan seleccionado", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    int idPlan = Convert.ToInt32(dgvPlanes.CurrentRow.Cells["ID"].Value);
+                    if (planService.EliminarPlan(idPlan))
+                    {
+                        btnConsultar_Click(sender, e);
+                        MessageBox.Show("Plan eliminado", "Aviso");
+
+                    }
+                    else
+                        MessageBox.Show("Ho ocurrido un error al intentar borrar el plan", "Error");
+                }
+            }
+            else
+                btnEliminar.Enabled = false;
+        }
+
+        private void dgvPlanes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = false;
+            btnUpdate.Enabled = false;
         }
     }
 }

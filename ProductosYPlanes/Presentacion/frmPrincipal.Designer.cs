@@ -47,17 +47,15 @@
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.soporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.MaximumSize = new System.Drawing.Size(0, 80);
-            this.menuStrip1.MinimumSize = new System.Drawing.Size(0, 80);
+            this.menuStrip1.MaximumSize = new System.Drawing.Size(0, 43);
+            this.menuStrip1.MinimumSize = new System.Drawing.Size(0, 43);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(1467, 80);
+            this.menuStrip1.Size = new System.Drawing.Size(596, 43);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,13 +66,13 @@
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(110, 72);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(65, 39);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -84,13 +82,13 @@
             this.planesToolStripMenuItem});
             this.soporteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(112, 72);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(67, 39);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
-            this.planesToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.planesToolStripMenuItem.Text = "Planes";
             this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 
@@ -105,17 +103,16 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 809);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 405);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 26, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1467, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(596, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelUsuario
             // 
             this.toolStripStatusLabelUsuario.Name = "toolStripStatusLabelUsuario";
-            this.toolStripStatusLabelUsuario.Size = new System.Drawing.Size(0, 13);
+            this.toolStripStatusLabelUsuario.Size = new System.Drawing.Size(0, 17);
             // 
             // contextMenuStrip2
             // 
@@ -129,24 +126,24 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Verdana", 26.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 735);
+            this.label1.Location = new System.Drawing.Point(0, 363);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(451, 74);
+            this.label1.Size = new System.Drawing.Size(254, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bug Tracker";
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.ClientSize = new System.Drawing.Size(596, 427);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);

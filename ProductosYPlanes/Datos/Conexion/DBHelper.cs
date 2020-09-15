@@ -19,7 +19,6 @@ namespace ProductosYPlanes.Datos.Conexion
             dbConnection = new SqlConnection();
 
             var string_conexion = "Data Source=localhost;Initial Catalog=BugTracker_Extendida;Integrated Security=True;";
-
             dbConnection.ConnectionString = string_conexion;
         }
 

@@ -94,7 +94,8 @@ namespace ProductosYPlanes.Presentacion
                     {
                         if (ValidarCampos())
                         {
-                            var oPlan = new Plan{
+                            var oPlan = new Plan
+                            {
                                 Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
                                 Nombre = TxtNombre.Text,
@@ -118,6 +119,12 @@ namespace ProductosYPlanes.Presentacion
 
                 case FormMode.update:
                     {
+                        txtplanMod.Text = oPlanSelected.Id_Plan_Prueba.ToString();
+                        txtProyecto.Text = oPlanSelected.Id_Proyecto.ToString();
+                        TxtNombre.Text = oPlanSelected.Nombre;
+                        txtResp.Text = oPlanSelected.Id_Responsable.ToString();
+                        txtDescripcion.Text = oPlanSelected.Descripcion;
+
                         if (ValidarCampos())
                         {
                             var oPlan = new Plan
@@ -130,7 +137,7 @@ namespace ProductosYPlanes.Presentacion
                                 Borrado = false
                             };
 
-                            if (oPlanService.ActualizarPlan(oPlanSelected))
+                            if (oPlanService.ActualizarPlan(oPlan))
                             {
                                 // btnConsultar_Click(sender, e); / Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

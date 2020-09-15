@@ -41,6 +41,11 @@ namespace ProductosYPlanes.Negocio.Servicios
             return oPlanDao.CrearPlan(oPlan);
         }
 
+        public bool EliminarPlan(int idPlan)
+        {
+            return oPlanDao.delete(idPlan);
+        }
+
 
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
+using ProductosYPlanes.Datos.Conexion;
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 
@@ -94,14 +95,30 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 return null;
         } //LISTO 
 
-        public bool add(Plan obj) //LISTO pero dudoso
+        public bool CrearPlan(Plan oPlan) 
         {
-          string query = "DECLARE @id_plan_prueba int, @id_proyecto int, @nombre string, @id_responsable string, @descripcion string, @borrado char";
-          query += "Insert INTO PlanesDePrueba (id_plan_prueba, id_proyecto, nombre, id_responsable, descripcion, borrado)";
-          query +=" VALUES ('" + obj.Id_Plan_Prueba + "', '" + obj.Id_Proyecto +"', '" + obj.Id_Proyecto + "', '" + obj.Id_Responsable + "', '" + obj.Descripcion + "', 'N')";
+            string str_sql ="SET IDENTITY_INSERT PlanesDePrueba ON INSERT INTO PlanesDePrueba (id_plan_prueba, id_proyecto, nombre, id_responsable, descripcion, borrado)" +
+                            " VALUES (@id_plan_prueba, @id_proyecto, @nombre, @id_responsable, @descripcion, 0) SET IDENTITY_INSERT PlanesDePrueba OFF";
 
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-            return DBHelper.getDBHelper().ejecutarSQL(query) > 0;
+
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("id_plan_prueba", oPlan.Id_Plan_Prueba);
+            parametros.Add("id_proyecto", oPlan.Id_Proyecto);
+            parametros.Add("nombre", oPlan.Nombre);
+            parametros.Add("id_responsable", oPlan.Id_Responsable);
+            parametros.Add("descripcion", oPlan.Descripcion);
+            
+
+            if ((DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros)) == 1)
+
+            {
+                return true;
+            }
+
+            return false;
+
+
+
         }
 
         public IList<Plan> GetByFilters(Dictionary<string, object> parametros)
@@ -137,5 +154,32 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
             return lista;
         } //PUEDE QUE FUNCIONE
+
+        public bool Update(Plan oPlan)
+        {
+            string str_sql = "UPDATE PlanesDePrueba " +
+                             " SET id_proyecto = @id_proyecto, " +
+                             "     nombre = @nombre ," +
+                             "     id_responsable = @id_responsable, " +
+                             "     descripcion  = @descripcion " +
+                             " WHERE id_plan_prueba = @id_plan_prueba";
+           
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("id_plan_prueba", oPlan.Id_Plan_Prueba);
+            parametros.Add("id_proyecto", oPlan.Id_Proyecto);
+            parametros.Add("nombre", oPlan .Nombre);
+            parametros.Add("id_responsable", oPlan.Id_Responsable);
+            parametros.Add("descripcion", oPlan.Descripcion);
+
+           if( (DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros) )== 1)
+
+            {
+                return true;
+            }
+
+            return false;
+
+        }
+
     }
 }

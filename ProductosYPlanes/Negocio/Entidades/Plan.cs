@@ -8,12 +8,14 @@ namespace ProductosYPlanes.Negocio.Entidades
 {
     public class Plan
     {
+    
         public int Id_Plan_Prueba { get; set; }
         public int Id_Proyecto { get; set; }
         public String Nombre { get; set; }
         public int Id_Responsable{ get; set; }
         public String Descripcion { get; set; }
         public bool Borrado { get; set; }
+        
 
 
         public Plan() { }

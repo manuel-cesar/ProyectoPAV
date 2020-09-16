@@ -76,9 +76,9 @@
             this.groupBox1.Controls.Add(this.lblIdPlan);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(671, 398);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -114,7 +114,7 @@
             this.txtResponsable.BackColor = System.Drawing.SystemColors.Control;
             this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResponsable.Location = new System.Drawing.Point(347, 75);
-            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.Size = new System.Drawing.Size(135, 14);
             this.txtResponsable.TabIndex = 4;
@@ -142,7 +142,7 @@
             this.txtIdProyecto.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdProyecto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdProyecto.Location = new System.Drawing.Point(96, 75);
-            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdProyecto.Name = "txtIdProyecto";
             this.txtIdProyecto.Size = new System.Drawing.Size(118, 14);
             this.txtIdProyecto.TabIndex = 2;
@@ -152,7 +152,7 @@
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Location = new System.Drawing.Point(347, 36);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(135, 14);
             this.txtNombre.TabIndex = 3;
@@ -173,7 +173,7 @@
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Location = new System.Drawing.Point(519, 36);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(122, 61);
             this.btnConsultar.TabIndex = 5;
@@ -196,12 +196,13 @@
             this.IdResposable,
             this.Descripcion});
             this.dgvPlanes.Location = new System.Drawing.Point(20, 115);
-            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.RowHeadersWidth = 72;
             this.dgvPlanes.Size = new System.Drawing.Size(634, 269);
             this.dgvPlanes.TabIndex = 6;
+            this.dgvPlanes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanes_CellClick);
             // 
             // IdPlanPrueba
             // 
@@ -243,7 +244,7 @@
             this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPlan.Location = new System.Drawing.Point(96, 37);
-            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.ShortcutsEnabled = false;
             this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
@@ -278,7 +279,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(22, 446);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(138, 42);
             this.btnAdd.TabIndex = 8;
@@ -292,7 +293,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(555, 446);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(138, 42);
             this.btnSalir.TabIndex = 11;
@@ -304,10 +305,11 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(179, 446);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(138, 42);
             this.btnUpdate.TabIndex = 9;
@@ -319,10 +321,11 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(344, 446);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(138, 42);
             this.btnEliminar.TabIndex = 10;
@@ -343,7 +346,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "frmPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

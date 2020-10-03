@@ -66,6 +66,12 @@
     <Compile Include="Presentacion\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmProyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmProyectos.Designer.cs">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmUpdatePlanes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     <Compile Include="Presentacion\frmPlanes.Designer.cs">
       <DependentUpon>frmPlanes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmUpdateProyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmUpdateProyectos.Designer.cs">
+      <DependentUpon>frmUpdateProyectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
@@ -86,11 +98,17 @@
     <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmProyectos.resx">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmUpdatePlanes.resx">
       <DependentUpon>frmUpdatePlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmPlanes.resx">
       <DependentUpon>frmPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmUpdateProyectos.resx">
+      <DependentUpon>frmUpdateProyectos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

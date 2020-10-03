@@ -18,7 +18,7 @@ namespace ProductosYPlanes.Presentacion
         private FormMode formMode = FormMode.insert;
 
         private readonly PlanService oPlanService;
-        private  Plan oPlanSelected;
+        private Plan oPlanSelected;
 
         public frmUpdatePlanes()
         {
@@ -34,7 +34,7 @@ namespace ProductosYPlanes.Presentacion
         }
 
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
-        { 
+        {
             switch (formMode)
             {
                 case FormMode.insert:
@@ -55,13 +55,13 @@ namespace ProductosYPlanes.Presentacion
                         txtDescripcion.Enabled = true;
                         break;
                     }
-            
+
             }
         }
 
         private void MostrarDatos()
-        { 
-            if(oPlanSelected != null)
+        {
+            if (oPlanSelected != null)
             {
                 txtplanMod.Text = oPlanSelected.Id_Plan_Prueba.ToString();
                 txtProyecto.Text = oPlanSelected.Id_Proyecto.ToString();
@@ -85,7 +85,7 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-     
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (formMode)
@@ -102,7 +102,7 @@ namespace ProductosYPlanes.Presentacion
                                 Id_Responsable = Convert.ToInt32(txtResp.Text),
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
-                            };                            
+                            };
                             if (oPlanService.crearPlan(oPlan))
                             {
                                 //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
@@ -120,9 +120,9 @@ namespace ProductosYPlanes.Presentacion
                 case FormMode.update:
                     {
                         if (ValidarCampos())
-                        { 
-                            
-                            oPlanSelected.Id_Plan_Prueba  = Convert.ToInt32(txtplanMod.Text);
+                        {
+
+                            oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
                             oPlanSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
                             oPlanSelected.Nombre = TxtNombre.Text;
                             oPlanSelected.Id_Responsable = Convert.ToInt32(txtResp.Text);
@@ -153,7 +153,8 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-        private void txtplanMod_TextChanged(object sender, EventArgs e){
+        private void txtplanMod_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

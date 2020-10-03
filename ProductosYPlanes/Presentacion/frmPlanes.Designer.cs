@@ -75,95 +75,99 @@
             this.groupBox1.Controls.Add(this.lblProyecto);
             this.groupBox1.Controls.Add(this.lblIdPlan);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 22);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Location = new System.Drawing.Point(40, 41);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(671, 398);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.groupBox1.Size = new System.Drawing.Size(1230, 735);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros de busqueda";
+            this.groupBox1.Text = "Planes - Filtros de busqueda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(346, 88);
+            this.panel4.Location = new System.Drawing.Point(634, 162);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(135, 1);
+            this.panel4.Size = new System.Drawing.Size(248, 2);
             this.panel4.TabIndex = 16;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(347, 49);
+            this.panel3.Location = new System.Drawing.Point(636, 90);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(135, 1);
+            this.panel3.Size = new System.Drawing.Size(248, 2);
             this.panel3.TabIndex = 16;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(97, 88);
+            this.panel2.Location = new System.Drawing.Point(178, 162);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 1);
+            this.panel2.Size = new System.Drawing.Size(215, 2);
             this.panel2.TabIndex = 16;
             // 
             // txtResponsable
             // 
             this.txtResponsable.BackColor = System.Drawing.SystemColors.Control;
             this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResponsable.Location = new System.Drawing.Point(347, 75);
-            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
+            this.txtResponsable.Location = new System.Drawing.Point(636, 138);
+            this.txtResponsable.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(135, 14);
+            this.txtResponsable.Size = new System.Drawing.Size(248, 24);
             this.txtResponsable.TabIndex = 4;
             // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(241, 75);
-            this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblResponsable.Location = new System.Drawing.Point(442, 138);
+            this.lblResponsable.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(99, 15);
+            this.lblResponsable.Size = new System.Drawing.Size(173, 25);
             this.lblResponsable.TabIndex = 12;
             this.lblResponsable.Text = "Id Responsable :";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(97, 49);
+            this.panel1.Location = new System.Drawing.Point(178, 90);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 1);
+            this.panel1.Size = new System.Drawing.Size(215, 2);
             this.panel1.TabIndex = 15;
             // 
             // txtIdProyecto
             // 
             this.txtIdProyecto.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdProyecto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdProyecto.Location = new System.Drawing.Point(96, 75);
-            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(6);
+            this.txtIdProyecto.Location = new System.Drawing.Point(176, 138);
+            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.txtIdProyecto.Name = "txtIdProyecto";
-            this.txtIdProyecto.Size = new System.Drawing.Size(118, 14);
+            this.txtIdProyecto.Size = new System.Drawing.Size(216, 24);
             this.txtIdProyecto.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Location = new System.Drawing.Point(347, 36);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
+            this.txtNombre.Location = new System.Drawing.Point(636, 66);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(135, 14);
+            this.txtNombre.Size = new System.Drawing.Size(248, 24);
             this.txtNombre.TabIndex = 3;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(281, 37);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombre.Location = new System.Drawing.Point(515, 68);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 15);
+            this.lblNombre.Size = new System.Drawing.Size(99, 25);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre :";
             // 
@@ -172,10 +176,10 @@
             this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(519, 36);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnConsultar.Location = new System.Drawing.Point(952, 66);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(122, 61);
+            this.btnConsultar.Size = new System.Drawing.Size(224, 113);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -195,12 +199,12 @@
             this.Nombre,
             this.IdResposable,
             this.Descripcion});
-            this.dgvPlanes.Location = new System.Drawing.Point(20, 115);
-            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvPlanes.Location = new System.Drawing.Point(37, 212);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.RowHeadersWidth = 72;
-            this.dgvPlanes.Size = new System.Drawing.Size(634, 269);
+            this.dgvPlanes.Size = new System.Drawing.Size(1162, 497);
             this.dgvPlanes.TabIndex = 6;
             this.dgvPlanes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanes_CellClick);
             // 
@@ -243,21 +247,21 @@
             // 
             this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdPlan.Location = new System.Drawing.Point(96, 37);
-            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
+            this.txtIdPlan.Location = new System.Drawing.Point(176, 68);
+            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.ShortcutsEnabled = false;
-            this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
+            this.txtIdPlan.Size = new System.Drawing.Size(216, 24);
             this.txtIdPlan.TabIndex = 1;
             this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
             // 
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
-            this.lblProyecto.Location = new System.Drawing.Point(12, 75);
-            this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblProyecto.Location = new System.Drawing.Point(22, 138);
+            this.lblProyecto.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.lblProyecto.Name = "lblProyecto";
-            this.lblProyecto.Size = new System.Drawing.Size(73, 15);
+            this.lblProyecto.Size = new System.Drawing.Size(132, 25);
             this.lblProyecto.TabIndex = 3;
             this.lblProyecto.Text = "Id Proyecto :";
             this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
@@ -265,10 +269,10 @@
             // lblIdPlan
             // 
             this.lblIdPlan.AutoSize = true;
-            this.lblIdPlan.Location = new System.Drawing.Point(35, 36);
-            this.lblIdPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblIdPlan.Location = new System.Drawing.Point(64, 66);
+            this.lblIdPlan.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.lblIdPlan.Name = "lblIdPlan";
-            this.lblIdPlan.Size = new System.Drawing.Size(51, 15);
+            this.lblIdPlan.Size = new System.Drawing.Size(90, 25);
             this.lblIdPlan.TabIndex = 1;
             this.lblIdPlan.Text = "Id Plan :";
             this.lblIdPlan.Click += new System.EventHandler(this.label1_Click);
@@ -278,10 +282,10 @@
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(22, 446);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Location = new System.Drawing.Point(40, 823);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(138, 42);
+            this.btnAdd.Size = new System.Drawing.Size(253, 78);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -292,10 +296,10 @@
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(555, 446);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSalir.Location = new System.Drawing.Point(1018, 823);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(138, 42);
+            this.btnSalir.Size = new System.Drawing.Size(253, 78);
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -308,10 +312,10 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(179, 446);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdate.Location = new System.Drawing.Point(328, 823);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(138, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(253, 78);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -324,10 +328,10 @@
             this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(344, 446);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEliminar.Location = new System.Drawing.Point(631, 823);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(138, 42);
+            this.btnEliminar.Size = new System.Drawing.Size(253, 78);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -336,17 +340,17 @@
             // frmPlanes
             // 
             this.AcceptButton = this.btnConsultar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(721, 496);
+            this.ClientSize = new System.Drawing.Size(1322, 916);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
             this.MaximizeBox = false;
             this.Name = "frmPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -194,5 +194,10 @@ namespace ProductosYPlanes.Presentacion
             btnEliminar.Enabled = true;
             btnUpdate.Enabled = true;
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

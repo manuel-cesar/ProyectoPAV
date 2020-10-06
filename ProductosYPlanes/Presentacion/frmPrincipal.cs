@@ -44,5 +44,11 @@ namespace ProductosYPlanes.Presentacion
             frmProyectos form = new frmProyectos();
             form.ShowDialog();
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto form = new frmProducto();
+            form.ShowDialog();
+        }
     }
 }

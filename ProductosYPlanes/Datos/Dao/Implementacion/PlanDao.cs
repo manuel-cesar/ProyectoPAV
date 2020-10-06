@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
-using ProductosYPlanes.Datos.Conexion;
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 

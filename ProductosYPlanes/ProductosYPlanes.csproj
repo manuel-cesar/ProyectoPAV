@@ -47,12 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Conexion\DBHelper.cs" />
+    <Compile Include="Datos\Dao\Implementacion\ProductoDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\PlanDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\UsuarioDao.cs" />
     <Compile Include="Datos\Dao\Interfaz\IDao.cs" />
     <Compile Include="Negocio\Entidades\Plan.cs" />
+    <Compile Include="Negocio\Entidades\Producto.cs" />
     <Compile Include="Negocio\Entidades\Usuario.cs" />
     <Compile Include="Negocio\Servicios\PlanService.cs" />
+    <Compile Include="Negocio\Servicios\ProductoService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -84,11 +87,23 @@
     <Compile Include="Presentacion\frmPlanes.Designer.cs">
       <DependentUpon>frmPlanes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmUpdateProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmUpdateProducto.Designer.cs">
+      <DependentUpon>frmUpdateProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmUpdateProyectos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmUpdateProyectos.Designer.cs">
       <DependentUpon>frmUpdateProyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,8 +122,14 @@
     <EmbeddedResource Include="Presentacion\frmPlanes.resx">
       <DependentUpon>frmPlanes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmUpdateProducto.resx">
+      <DependentUpon>frmUpdateProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmUpdateProyectos.resx">
       <DependentUpon>frmUpdateProyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

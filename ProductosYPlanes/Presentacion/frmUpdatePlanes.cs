@@ -78,74 +78,9 @@ namespace ProductosYPlanes.Presentacion
             oPlanSelected = PlanSelected;
         }
 
-
-
         private void lblNombre_Click(object sender, EventArgs e)
         {
 
-        }
-
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            switch (formMode)
-            {
-                case FormMode.insert:
-                    {
-                        if (ValidarCampos())
-                        {
-                            var oPlan = new Plan
-                            {
-                                Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
-                                Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
-                                Nombre = TxtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(txtResp.Text),
-                                Descripcion = txtDescripcion.Text,
-                                Borrado = false
-                            };
-                            if (oPlanService.crearPlan(oPlan))
-                            {
-                                //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
-                                MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                        }
-
-                        else
-                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-
-                    }
-
-                case FormMode.update:
-                    {
-                        if (ValidarCampos())
-                        {
-
-                            oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
-                            oPlanSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
-                            oPlanSelected.Nombre = TxtNombre.Text;
-                            oPlanSelected.Id_Responsable = Convert.ToInt32(txtResp.Text);
-                            oPlanSelected.Descripcion = txtDescripcion.Text;
-
-                            if (oPlanService.ActualizarPlan(oPlanSelected))
-                            {
-                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Dispose();
-                            }
-                            else
-                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                        break;
-                    }
-
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void cboPlan_SelectedIndexChanged(object sender, EventArgs e)
@@ -212,6 +147,68 @@ namespace ProductosYPlanes.Presentacion
                 txtDescripcion.BackColor = Color.White;
 
             return true;
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        if (ValidarCampos())
+                        {
+                            var oPlan = new Plan
+                            {
+                                Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
+                                Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
+                                Nombre = TxtNombre.Text,
+                                Id_Responsable = Convert.ToInt32(txtResp.Text),
+                                Descripcion = txtDescripcion.Text,
+                                Borrado = false
+                            };
+                            if (oPlanService.crearPlan(oPlan))
+                            {
+                                //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
+                                MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                        }
+
+                        else
+                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+
+                    }
+
+                case FormMode.update:
+                    {
+                        if (ValidarCampos())
+                        {
+
+                            oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
+                            oPlanSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
+                            oPlanSelected.Nombre = TxtNombre.Text;
+                            oPlanSelected.Id_Responsable = Convert.ToInt32(txtResp.Text);
+                            oPlanSelected.Descripcion = txtDescripcion.Text;
+
+                            if (oPlanService.ActualizarPlan(oPlanSelected))
+                            {
+                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+                    }
+
+            }
         }
     }
 }

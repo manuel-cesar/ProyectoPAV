@@ -111,6 +111,7 @@
             this.btnCancelar.TabIndex = 44;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnAceptar
             // 
@@ -124,6 +125,7 @@
             this.btnAceptar.TabIndex = 41;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // lblDescripcion
             // 
@@ -144,7 +146,7 @@
             this.txtDescripcion.MaximumSize = new System.Drawing.Size(469, 60);
             this.txtDescripcion.MinimumSize = new System.Drawing.Size(469, 60);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(469, 60);
+            this.txtDescripcion.Size = new System.Drawing.Size(469, 22);
             this.txtDescripcion.TabIndex = 40;
             // 
             // txtResp
@@ -240,7 +242,7 @@
             this.Controls.Add(this.txtProyecto);
             this.Controls.Add(this.lblPlan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.Margin = new System.Windows.Forms.Padding(11);
             this.MaximizeBox = false;
             this.Name = "frmUpdatePlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

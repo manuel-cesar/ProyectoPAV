@@ -38,7 +38,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             List<CasoPrueba> listadoCasoPruebas = new List<CasoPrueba>();
 
             String strSql = string.Concat(" SELECT * ",
-                                          "   FROM Casos_De_Prueba",
+                                          "   FROM CasosDePrueba",
                                           "  WHERE borrado = 0 ");
 
             var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
@@ -56,8 +56,8 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
         public bool CrearCasoPrueba(CasoPrueba oCasoPrueba)
         {
-            string str_sql = "SET IDENTITY_INSERT Casos_De_Prueba ON INSERT INTO Casos_De_Prueba (id_caso_prueba, id_plan_prueba, titulo, descripcion, id_responsable, borrado)" +
-                            " VALUES (@id_caso_prueba, @id_plan_prueba, @titulo, @descripcion, @id_responsable 0) SET IDENTITY_INSERT Casos_De_Prueba OFF";
+            string str_sql = "SET IDENTITY_INSERT CasosDePrueba ON INSERT INTO CasosDePrueba (id_caso_prueba, id_plan_prueba, titulo, descripcion, id_responsable, borrado)" +
+                            " VALUES (@id_caso_prueba, @id_plan_prueba, @titulo, @descripcion, @id_responsable, 0) SET IDENTITY_INSERT Casos_De_Prueba OFF";
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_caso_prueba", oCasoPrueba.Id_Caso_Prueba);
@@ -82,7 +82,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         {
             List<CasoPrueba> lista = new List<CasoPrueba>();
             String strSql = string.Concat(" SELECT C.* ",
-                                          " FROM Casos_De_Prueba C ",
+                                          " FROM CasosDePrueba C ",
                                               "  WHERE C.borrado = 'False'");
 
             if (parametros.ContainsKey("id_caso_prueba"))
@@ -110,7 +110,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
         public bool Update(CasoPrueba oCasoPrueba)
         {
-            string str_sql = "UPDATE Casos_De_Prueba " +
+            string str_sql = "UPDATE CasosDePrueba " +
                              "SET id_plan_prueba = @id_plan_prueba" +
                              " titulo = @titulo, " +
                              "descripcion  = @descripcion " +
@@ -119,7 +119,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_caso_prueba", oCasoPrueba.Id_Caso_Prueba);
-            parametros.Add("id_plan_prueba", oCasoPrueba.Id_Plan);
+            parametros.Add("id_plan_prueba", oCasoPrueba.Id_Plan_Prueba);
             parametros.Add("titulo", oCasoPrueba.Titulo);
             parametros.Add("descripcion", oCasoPrueba.Descripcion);
             parametros.Add("id_responsable", oCasoPrueba.Id_Responsable);

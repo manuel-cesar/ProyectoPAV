@@ -1,4 +1,4 @@
-﻿namespace ActualizarUsuarios.Presentacion
+﻿namespace ProductosYPlanes.Presentacion
 {
     partial class frmCasosPrueba
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCasosPrueba));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -39,20 +40,30 @@
             this.lblResponsable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.dgvCasos = new System.Windows.Forms.DataGridView();
+            this.IdCaso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtIdCaso = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
             this.lblIdCaso = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCasos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel4);
@@ -62,10 +73,10 @@
             this.groupBox1.Controls.Add(this.lblResponsable);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtIdPlan);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.lblTitulo);
             this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Controls.Add(this.dgvPlanes);
+            this.groupBox1.Controls.Add(this.dgvCasos);
             this.groupBox1.Controls.Add(this.txtIdCaso);
             this.groupBox1.Controls.Add(this.lblPlan);
             this.groupBox1.Controls.Add(this.lblIdCaso);
@@ -78,12 +89,21 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de busqueda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(577, 72);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(135, 1);
+            this.panel5.TabIndex = 17;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(566, 60);
+            this.txtDescripcion.Location = new System.Drawing.Point(577, 58);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(135, 14);
@@ -92,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(483, 58);
+            this.label1.Location = new System.Drawing.Point(493, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 15);
@@ -127,11 +147,12 @@
             // 
             this.txtResponsable.BackColor = System.Drawing.SystemColors.Control;
             this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResponsable.Location = new System.Drawing.Point(347, 75);
+            this.txtResponsable.Location = new System.Drawing.Point(347, 71);
             this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.Size = new System.Drawing.Size(135, 14);
             this.txtResponsable.TabIndex = 4;
+            this.txtResponsable.TextChanged += new System.EventHandler(this.txtResponsable_TextChanged);
             // 
             // lblResponsable
             // 
@@ -161,15 +182,15 @@
             this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
             this.txtIdPlan.TabIndex = 2;
             // 
-            // txtNombre
+            // txtTitulo
             // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Location = new System.Drawing.Point(347, 36);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(135, 14);
-            this.txtNombre.TabIndex = 3;
+            this.txtTitulo.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitulo.Location = new System.Drawing.Point(347, 36);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(135, 14);
+            this.txtTitulo.TabIndex = 3;
             // 
             // lblTitulo
             // 
@@ -193,22 +214,61 @@
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // dgvPlanes
+            // dgvCasos
             // 
-            this.dgvPlanes.AllowUserToAddRows = false;
-            this.dgvPlanes.AllowUserToDeleteRows = false;
-            this.dgvPlanes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPlanes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvPlanes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanes.Location = new System.Drawing.Point(20, 115);
-            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
-            this.dgvPlanes.Name = "dgvPlanes";
-            this.dgvPlanes.ReadOnly = true;
-            this.dgvPlanes.RowHeadersWidth = 72;
-            this.dgvPlanes.Size = new System.Drawing.Size(841, 269);
-            this.dgvPlanes.TabIndex = 6;
+            this.dgvCasos.AllowUserToAddRows = false;
+            this.dgvCasos.AllowUserToDeleteRows = false;
+            this.dgvCasos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCasos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvCasos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCasos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCasos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCaso,
+            this.IdPlan,
+            this.Titulo,
+            this.IdResponsable,
+            this.Descripcion});
+            this.dgvCasos.Location = new System.Drawing.Point(20, 115);
+            this.dgvCasos.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvCasos.Name = "dgvCasos";
+            this.dgvCasos.ReadOnly = true;
+            this.dgvCasos.RowHeadersWidth = 72;
+            this.dgvCasos.Size = new System.Drawing.Size(841, 269);
+            this.dgvCasos.TabIndex = 6;
+            this.dgvCasos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCasos_CellClick);
+            this.dgvCasos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCasos_CellContentClick);
+            // 
+            // IdCaso
+            // 
+            this.IdCaso.HeaderText = "Id Caso";
+            this.IdCaso.Name = "IdCaso";
+            this.IdCaso.ReadOnly = true;
+            // 
+            // IdPlan
+            // 
+            this.IdPlan.HeaderText = "Id Plan";
+            this.IdPlan.Name = "IdPlan";
+            this.IdPlan.ReadOnly = true;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            // 
+            // IdResponsable
+            // 
+            this.IdResponsable.HeaderText = "Id Responsable";
+            this.IdResponsable.Name = "IdResponsable";
+            this.IdResponsable.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
             // txtIdCaso
             // 
@@ -241,17 +301,81 @@
             this.lblIdCaso.TabIndex = 1;
             this.lblIdCaso.Text = "Id Caso :";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(358, 439);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(139, 42);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(193, 439);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(139, 42);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Modificar";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(569, 439);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(139, 42);
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(37, 439);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(139, 42);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // frmCasosPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 450);
+            this.ClientSize = new System.Drawing.Size(932, 510);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCasosPrueba";
             this.Text = "frmCasosPrueba";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCasos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,12 +392,22 @@
         private System.Windows.Forms.Label lblResponsable;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtIdPlan;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dgvPlanes;
+        private System.Windows.Forms.DataGridView dgvCasos;
         private System.Windows.Forms.TextBox txtIdCaso;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Label lblIdCaso;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCaso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdResponsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

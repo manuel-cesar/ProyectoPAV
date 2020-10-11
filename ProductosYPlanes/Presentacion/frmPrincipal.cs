@@ -37,5 +37,11 @@ namespace ProductosYPlanes.Presentacion
             login.ShowDialog();
             toolStripStatusLabelUsuario.Text = login.UsuarioLogueado;
         }
+
+        private void casosDePruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCasosPrueba form = new frmCasosPrueba();
+            form.ShowDialog();
+        }
     }
 }

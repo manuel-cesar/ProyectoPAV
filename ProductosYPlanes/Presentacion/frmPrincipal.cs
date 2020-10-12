@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ActualizarUsuarios.Presentacion;
 using ProductosYPlanes.Presentacion;
 
 
@@ -38,9 +39,20 @@ namespace ProductosYPlanes.Presentacion
             toolStripStatusLabelUsuario.Text = login.UsuarioLogueado;
         }
 
+
         private void casosDePruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCasosPrueba form = new frmCasosPrueba();
+        }
+        private void proyectosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProyectos form = new frmProyectos();
+            form.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducto form = new frmProducto();
             form.ShowDialog();
         }
     }

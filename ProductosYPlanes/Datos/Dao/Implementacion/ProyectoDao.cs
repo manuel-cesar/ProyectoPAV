@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ActualizarUsuarios.Negocio.Entidades;
+using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Conexion;
 using System.Data;
 
 
-namespace ActualizarUsuarios.Datos.Dao.Implementacion
+namespace ProductosYPlanes.Datos.Dao.Implementacion
 {
     public class ProyectoDao
     {

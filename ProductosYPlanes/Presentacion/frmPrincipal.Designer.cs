@@ -41,7 +41,11 @@
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+
+            this.casosDePruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,8 +88,12 @@
             // 
             this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.planesToolStripMenuItem,
+
+            this.casosDePruebaToolStripMenuItem});
+
             this.proyectosToolStripMenuItem,
             this.productosToolStripMenuItem});
+
             this.soporteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
             this.soporteToolStripMenuItem.Size = new System.Drawing.Size(112, 71);
@@ -94,7 +102,11 @@
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
+
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+
             this.planesToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+
             this.planesToolStripMenuItem.Text = "Planes";
             this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 
@@ -147,12 +159,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Bug Tracker";
             // 
+
+            // casosDePruebaToolStripMenuItem
+            // 
+            this.casosDePruebaToolStripMenuItem.Name = "casosDePruebaToolStripMenuItem";
+            this.casosDePruebaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casosDePruebaToolStripMenuItem.Text = "Casos de Prueba";
+            this.casosDePruebaToolStripMenuItem.Click += new System.EventHandler(this.casosDePruebaToolStripMenuItem_Click);
+
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+
             // 
             // frmPrincipal
             // 
@@ -190,7 +211,11 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUsuario;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.ToolStripMenuItem casosDePruebaToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem proyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+
     }
 }

@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanes));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtResponsable = new System.Windows.Forms.TextBox();
-            this.lblResponsable = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdProyecto = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.dgvPlanes = new System.Windows.Forms.DataGridView();
-            this.IdPlanPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdResposable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.lblProyecto = new System.Windows.Forms.Label();
-            this.lblIdPlan = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.lblIdPlan = new System.Windows.Forms.Label();
+            this.lblProyecto = new System.Windows.Forms.Label();
+            this.txtIdPlan = new System.Windows.Forms.TextBox();
+            this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtIdProyecto = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblResponsable = new System.Windows.Forms.Label();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.IdPlanPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -292,6 +293,7 @@
             this.lblIdPlan.Text = "Id Plan :";
             this.lblIdPlan.Click += new System.EventHandler(this.label1_Click);
             // 
+
             // btnAdd
             // 
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
@@ -360,6 +362,219 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // lblIdPlan
+            // 
+            this.lblIdPlan.AutoSize = true;
+            this.lblIdPlan.Location = new System.Drawing.Point(35, 36);
+            this.lblIdPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblIdPlan.Name = "lblIdPlan";
+            this.lblIdPlan.Size = new System.Drawing.Size(51, 15);
+            this.lblIdPlan.TabIndex = 1;
+            this.lblIdPlan.Text = "Id Plan :";
+            
+            // 
+            // lblProyecto
+            // 
+            this.lblProyecto.AutoSize = true;
+            this.lblProyecto.Location = new System.Drawing.Point(17, 75);
+            this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblProyecto.Name = "lblProyecto";
+            this.lblProyecto.Size = new System.Drawing.Size(73, 15);
+            this.lblProyecto.TabIndex = 3;
+            this.lblProyecto.Text = "Id Proyecto :";
+            this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
+            // 
+            // txtIdPlan
+            // 
+            this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdPlan.Location = new System.Drawing.Point(96, 37);
+            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.ShortcutsEnabled = false;
+            this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
+            this.txtIdPlan.TabIndex = 1;
+            this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
+            // 
+            // dgvPlanes
+            // 
+            this.dgvPlanes.AllowUserToAddRows = false;
+            this.dgvPlanes.AllowUserToDeleteRows = false;
+            this.dgvPlanes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPlanes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvPlanes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdPlanPrueba,
+            this.IdProyecto,
+            this.Nombre,
+            this.IdResponsable,
+            this.Descripcion});
+            this.dgvPlanes.Location = new System.Drawing.Point(20, 115);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvPlanes.Name = "dgvPlanes";
+            this.dgvPlanes.ReadOnly = true;
+            this.dgvPlanes.RowHeadersWidth = 72;
+            this.dgvPlanes.Size = new System.Drawing.Size(651, 269);
+            this.dgvPlanes.TabIndex = 6;
+            this.dgvPlanes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanes_CellClick);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Location = new System.Drawing.Point(549, 36);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(122, 61);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(280, 37);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(58, 15);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre :";
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Location = new System.Drawing.Point(347, 35);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(135, 14);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // txtIdProyecto
+            // 
+            this.txtIdProyecto.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdProyecto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdProyecto.Location = new System.Drawing.Point(96, 75);
+            this.txtIdProyecto.Margin = new System.Windows.Forms.Padding(6);
+            this.txtIdProyecto.Name = "txtIdProyecto";
+            this.txtIdProyecto.Size = new System.Drawing.Size(118, 14);
+            this.txtIdProyecto.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(97, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(117, 1);
+            this.panel1.TabIndex = 15;
+            // 
+            // lblResponsable
+            // 
+            this.lblResponsable.AutoSize = true;
+            this.lblResponsable.Location = new System.Drawing.Point(241, 75);
+            this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblResponsable.Name = "lblResponsable";
+            this.lblResponsable.Size = new System.Drawing.Size(99, 15);
+            this.lblResponsable.TabIndex = 12;
+            this.lblResponsable.Text = "Id Responsable :";
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.BackColor = System.Drawing.SystemColors.Control;
+            this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResponsable.Location = new System.Drawing.Point(347, 75);
+            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(135, 14);
+            this.txtResponsable.TabIndex = 4;
+            this.txtResponsable.TextChanged += new System.EventHandler(this.txtResponsable_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(97, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(117, 1);
+            this.panel2.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(347, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(135, 1);
+            this.panel3.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(346, 88);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(135, 1);
+            this.panel4.TabIndex = 16;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.txtResponsable);
+            this.groupBox1.Controls.Add(this.lblResponsable);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.txtIdProyecto);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Controls.Add(this.dgvPlanes);
+            this.groupBox1.Controls.Add(this.txtIdPlan);
+            this.groupBox1.Controls.Add(this.lblProyecto);
+            this.groupBox1.Controls.Add(this.lblIdPlan);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(22, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(691, 404);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros de busqueda";
+            
+            // 
+            // IdPlanPrueba
+            // 
+            this.IdPlanPrueba.HeaderText = "Id Plan";
+            this.IdPlanPrueba.Name = "IdPlanPrueba";
+            this.IdPlanPrueba.ReadOnly = true;
+            // 
+            // IdProyecto
+            // 
+            this.IdProyecto.HeaderText = "Id Proyecto";
+            this.IdProyecto.Name = "IdProyecto";
+            this.IdProyecto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // IdResponsable
+            // 
+            this.IdResponsable.HeaderText = "Id Responsable";
+            this.IdResponsable.Name = "IdResponsable";
+            this.IdResponsable.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // frmPlanes
             // 
             this.AcceptButton = this.btnConsultar;
@@ -383,38 +598,37 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.frmPlanes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblProyecto;
-        private System.Windows.Forms.Label lblIdPlan;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dgvPlanes;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblIdPlan;
+        private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.TextBox txtIdPlan;
-        private System.Windows.Forms.TextBox txtResponsable;
-        private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DataGridView dgvPlanes;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIdProyecto;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblResponsable;
+        private System.Windows.Forms.TextBox txtResponsable;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlanPrueba;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdResposable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdResponsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
     }
 }

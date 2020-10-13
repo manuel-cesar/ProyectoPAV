@@ -27,15 +27,6 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lblProyecto_Click(object sender, EventArgs e)
         {
@@ -66,9 +57,9 @@ namespace ProductosYPlanes.Presentacion
         {
             // Dictionary: Representa una colección de claves y valores.
             Dictionary<string, object> parametros = new Dictionary<string, object>();
-            if (!string.IsNullOrEmpty(txtIdPlan.Text))
+            if (!string.IsNullOrEmpty(txtIdProyecto.Text))
             {
-                var idPlan = txtIdPlan.Text;
+                var idPlan = txtIdProyecto.Text;
                 parametros.Add("id_plan_prueba", idPlan);
             }
 
@@ -163,7 +154,7 @@ namespace ProductosYPlanes.Presentacion
             modificarVentana.ShowDialog();
             btnConsultar_Click(sender, e);
         }
-            private void btnEliminar_Click(object sender, EventArgs e)
+         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvPlanes.Rows.Count > 0)
             {
@@ -192,6 +183,16 @@ namespace ProductosYPlanes.Presentacion
         {
             btnEliminar.Enabled = true;
             btnUpdate.Enabled = true;
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtResponsable_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

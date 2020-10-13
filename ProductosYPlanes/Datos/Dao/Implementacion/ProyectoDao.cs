@@ -48,7 +48,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             oProyecto.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());
             oProyecto.Id_Producto = Convert.ToInt32(PlanRow["id_producto"].ToString());
             oProyecto.Version = Convert.ToInt32(PlanRow["version"].ToString());
-            oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString());
+            //oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString());
             oProyecto.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
             oProyecto.Descripcion = PlanRow["descripcion"].ToString();
 

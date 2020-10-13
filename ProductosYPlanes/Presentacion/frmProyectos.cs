@@ -193,5 +193,10 @@ namespace ProductosYPlanes.Presentacion
             else
                 btnEliminar.Enabled = false;
         }
+
+        private void dgvProyectos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -117,12 +117,13 @@
             this.IdProducto,
             this.NombreProducto});
             this.dgvProducto.Location = new System.Drawing.Point(13, 111);
-            this.dgvProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvProducto.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.RowHeadersWidth = 72;
             this.dgvProducto.Size = new System.Drawing.Size(455, 261);
             this.dgvProducto.TabIndex = 6;
+            this.dgvProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellClick);
             // 
             // IdProducto
             // 
@@ -145,7 +146,7 @@
             this.txtIdProducto.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdProducto.Location = new System.Drawing.Point(109, 30);
-            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.ShortcutsEnabled = false;
             this.txtIdProducto.Size = new System.Drawing.Size(118, 14);
@@ -174,10 +175,11 @@
             // btnModificar
             // 
             this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
+            this.btnModificar.Enabled = false;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Location = new System.Drawing.Point(132, 428);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(6);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(105, 46);
             this.btnModificar.TabIndex = 17;
@@ -188,10 +190,11 @@
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(249, 428);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(105, 46);
             this.btnEliminar.TabIndex = 18;
@@ -205,7 +208,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(388, 428);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(122, 46);
             this.btnSalir.TabIndex = 19;
@@ -219,7 +222,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(17, 428);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(105, 46);
             this.btnAgregar.TabIndex = 20;
@@ -238,7 +241,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";

@@ -119,7 +119,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             parametros.Add("id_producto", oProducto.Id_Producto);
             parametros.Add("nombre", oProducto.Nombre);
 
-            
 
             if ((DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros)) == 1)
 

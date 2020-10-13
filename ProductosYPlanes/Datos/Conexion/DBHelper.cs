@@ -18,7 +18,9 @@ namespace ProductosYPlanes.Datos.Conexion
         {
             dbConnection = new SqlConnection();
 
-            var string_conexion = "Data Source=DESKTOP-UVCDA9M\\SQLEXPRESS;Initial Catalog=bugs-extend;Integrated Security=True";
+
+            var string_conexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=bugs_extends;Integrated Security=True";
+
             dbConnection.ConnectionString = string_conexion;
         }
 

@@ -135,8 +135,8 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 strSql += " AND (P.version = @version) ";
 
 
-            if (parametros.ContainsKey("Alcance"))
-                strSql += " AND (P.Alcance = @Alcance) ";
+            if (parametros.ContainsKey("alcance"))
+                strSql += " AND (P.alcance = @alcance) ";
 
             if (parametros.ContainsKey("id_responsable"))
                 strSql += " AND (P.id_responsable = @id_responsable) ";

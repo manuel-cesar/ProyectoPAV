@@ -11,6 +11,7 @@ using ProductosYPlanes.Negocio.Servicios;
 using ProductosYPlanes.Negocio.Entidades;
 
 
+
 namespace ProductosYPlanes.Presentacion
 {
     public partial class frmUpdatePlanes : Form
@@ -173,7 +174,7 @@ namespace ProductosYPlanes.Presentacion
                             };
                             if (oPlanService.crearPlan(oPlan))
                             {
-                                //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
+                                //btnConsultar_Click(sender, e); //Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }

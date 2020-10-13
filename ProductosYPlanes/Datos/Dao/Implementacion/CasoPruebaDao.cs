@@ -57,7 +57,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         public bool CrearCasoPrueba(CasoPrueba oCasoPrueba)
         {
             string str_sql = "SET IDENTITY_INSERT CasosDePrueba ON INSERT INTO CasosDePrueba (id_caso_prueba, id_plan_prueba, titulo, descripcion, id_responsable, borrado)" +
-                            " VALUES (@id_caso_prueba, @id_plan_prueba, @titulo, @descripcion, @id_responsable, 0) SET IDENTITY_INSERT Casos_De_Prueba OFF";
+                            " VALUES (@id_caso_prueba, @id_plan_prueba, @titulo, @descripcion, @id_responsable, 0) SET IDENTITY_INSERT CasosDePrueba OFF";
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_caso_prueba", oCasoPrueba.Id_Caso_Prueba);

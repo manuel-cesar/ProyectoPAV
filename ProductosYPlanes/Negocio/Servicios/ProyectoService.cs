@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ActualizarUsuarios.Datos.Dao.Implementacion;
-using ActualizarUsuarios.Negocio.Entidades;
+using ProductosYPlanes.Datos.Dao.Implementacion;
+using ProductosYPlanes.Negocio.Entidades;
 
-namespace ActualizarUsuarios.Negocio.Servicios
+namespace ProductosYPlanes.Negocio.Servicios
 {
     public class ProyectoService
     {

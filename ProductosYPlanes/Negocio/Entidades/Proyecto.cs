@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActualizarUsuarios.Negocio.Entidades
+namespace ProductosYPlanes.Negocio.Entidades
 {
     public class Proyecto
     {

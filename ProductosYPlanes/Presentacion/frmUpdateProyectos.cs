@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ActualizarUsuarios.Negocio.Servicios;
-using ActualizarUsuarios.Negocio.Entidades;
 
-namespace ActualizarUsuarios.Presentacion
+using ProductosYPlanes.Negocio.Servicios;
+using ProductosYPlanes.Negocio.Entidades;
+
+
+namespace ProductosYPlanes.Presentacion
 {
     public partial class frmUpdateProyectos : Form
     {
@@ -77,6 +79,7 @@ namespace ActualizarUsuarios.Presentacion
         {
             formMode = op;
             oProyectoSelected = ProyectoSelected;
+
         }
 
         private void txtProyecto_TextChanged(object sender, EventArgs e)
@@ -88,6 +91,7 @@ namespace ActualizarUsuarios.Presentacion
         {
             this.Close();
         }
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -211,4 +215,5 @@ namespace ActualizarUsuarios.Presentacion
         }
     }
 }
+
 

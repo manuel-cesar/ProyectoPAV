@@ -129,6 +129,7 @@
             this.Name = "frmUpdateProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdateProducto";
+            this.Load += new System.EventHandler(this.frmUpdateProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

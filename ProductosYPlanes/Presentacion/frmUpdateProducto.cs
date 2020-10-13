@@ -112,13 +112,13 @@ namespace ProductosYPlanes.Presentacion
                             if (oProductoService.crearProducto(oProducto))
                             {
                                 //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
-                                MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Producto insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                         }
 
                         else
-                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Producto encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
 
                     }
@@ -133,11 +133,11 @@ namespace ProductosYPlanes.Presentacion
 
                             if (oProductoService.ActualizarProducto(oProductoSelected))
                             {
-                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Producto actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al actualizar el producto!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         break;

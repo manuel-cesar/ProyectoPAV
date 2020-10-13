@@ -186,7 +186,6 @@ namespace ProductosYPlanes.Presentacion
 
         private void dgvPlanes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-  
         }
 
         private void dgvPlanes_CellClick(object sender, DataGridViewCellEventArgs e)

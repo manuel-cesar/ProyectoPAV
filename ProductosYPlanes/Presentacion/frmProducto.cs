@@ -125,5 +125,10 @@ namespace ProductosYPlanes.Presentacion
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

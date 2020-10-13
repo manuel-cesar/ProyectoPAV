@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdatePlanes));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtplanMod = new System.Windows.Forms.TextBox();
@@ -41,23 +42,11 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtResp = new System.Windows.Forms.TextBox();
             this.lblResponsable = new System.Windows.Forms.Label();
-
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtplanMod = new System.Windows.Forms.TextBox();
-
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProyecto = new System.Windows.Forms.Label();
             this.txtProyecto = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
-
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -220,7 +209,6 @@
             this.txtProyecto.Size = new System.Drawing.Size(469, 22);
             this.txtProyecto.TabIndex = 36;
             // 
-
             // lblPlan
             // 
             this.lblPlan.AutoSize = true;
@@ -231,7 +219,6 @@
             this.lblPlan.TabIndex = 34;
             this.lblPlan.Text = "Id Plan :";
             // 
-
             // frmUpdatePlanes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -279,23 +266,10 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtResp;
         private System.Windows.Forms.Label lblResponsable;
-
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtplanMod;
-
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.TextBox txtProyecto;
         private System.Windows.Forms.Label lblPlan;
-
     }
 }

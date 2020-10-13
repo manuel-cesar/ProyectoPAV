@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ActualizarUsuarios.Presentacion;
-using ProductosYPlanes.Presentacion;
 
 
 namespace ProductosYPlanes.Presentacion
@@ -53,6 +51,17 @@ namespace ProductosYPlanes.Presentacion
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProducto form = new frmProducto();
+            form.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void casosDePruebaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmCasosPrueba form = new frmCasosPrueba();
             form.ShowDialog();
         }
     }

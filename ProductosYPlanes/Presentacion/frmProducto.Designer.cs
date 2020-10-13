@@ -60,49 +60,37 @@
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblIdProducto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.groupBox1.Location = new System.Drawing.Point(17, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox1.Size = new System.Drawing.Size(494, 398);
-
+            this.groupBox1.Size = new System.Drawing.Size(553, 409);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto - Filtros de busqueda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-
-            this.panel2.Location = new System.Drawing.Point(172, 162);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Location = new System.Drawing.Point(94, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(215, 2);
-
+            this.panel2.Size = new System.Drawing.Size(117, 1);
             this.panel2.TabIndex = 16;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-
-            this.panel1.Location = new System.Drawing.Point(172, 90);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Location = new System.Drawing.Point(106, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 2);
-
+            this.panel1.Size = new System.Drawing.Size(117, 1);
             this.panel1.TabIndex = 15;
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-            this.txtNombre.Location = new System.Drawing.Point(93, 74);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre.Location = new System.Drawing.Point(106, 72);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(118, 14);
-
+            this.txtNombre.Size = new System.Drawing.Size(64, 14);
             this.txtNombre.TabIndex = 2;
             // 
             // btnConsultar
@@ -110,12 +98,9 @@
             this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.btnConsultar.Location = new System.Drawing.Point(359, 25);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnConsultar.Location = new System.Drawing.Point(302, 49);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(122, 61);
-
+            this.btnConsultar.Size = new System.Drawing.Size(67, 33);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -131,14 +116,12 @@
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.NombreProducto});
-
-            this.dgvProducto.Location = new System.Drawing.Point(22, 212);
-            this.dgvProducto.Margin = new System.Windows.Forms.Padding(11);
+            this.dgvProducto.Location = new System.Drawing.Point(13, 111);
+            this.dgvProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.RowHeadersWidth = 72;
-            this.dgvProducto.Size = new System.Drawing.Size(861, 497);
-
+            this.dgvProducto.Size = new System.Drawing.Size(455, 261);
             this.dgvProducto.TabIndex = 6;
             // 
             // IdProducto
@@ -161,50 +144,42 @@
             // 
             this.txtIdProducto.BackColor = System.Drawing.SystemColors.Control;
             this.txtIdProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-            this.txtIdProducto.Location = new System.Drawing.Point(170, 65);
-            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(11);
+            this.txtIdProducto.Location = new System.Drawing.Point(109, 30);
+            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.ShortcutsEnabled = false;
-            this.txtIdProducto.Size = new System.Drawing.Size(216, 24);
-
+            this.txtIdProducto.Size = new System.Drawing.Size(118, 14);
             this.txtIdProducto.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-
-            this.lblNombre.Location = new System.Drawing.Point(39, 139);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.lblNombre.Location = new System.Drawing.Point(21, 75);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(99, 25);
-
+            this.lblNombre.Size = new System.Drawing.Size(58, 15);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre :";
             // 
             // lblIdProducto
             // 
             this.lblIdProducto.AutoSize = true;
-
-            this.lblIdProducto.Location = new System.Drawing.Point(40, 68);
-            this.lblIdProducto.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.lblIdProducto.Location = new System.Drawing.Point(22, 35);
+            this.lblIdProducto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIdProducto.Name = "lblIdProducto";
-            this.lblIdProducto.Size = new System.Drawing.Size(133, 25);
-
+            this.lblIdProducto.Size = new System.Drawing.Size(75, 15);
             this.lblIdProducto.TabIndex = 1;
             this.lblIdProducto.Text = "Id Producto :";
             // 
             // btnModificar
             // 
             this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
-
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(242, 791);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(11);
+            this.btnModificar.Location = new System.Drawing.Point(132, 428);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(192, 84);
-
+            this.btnModificar.Size = new System.Drawing.Size(105, 46);
             this.btnModificar.TabIndex = 17;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -213,14 +188,12 @@
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
-
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(456, 791);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(11);
+            this.btnEliminar.Location = new System.Drawing.Point(249, 428);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(192, 84);
-
+            this.btnEliminar.Size = new System.Drawing.Size(105, 46);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -231,12 +204,10 @@
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.btnSalir.Location = new System.Drawing.Point(712, 791);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(11);
+            this.btnSalir.Location = new System.Drawing.Point(388, 428);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(224, 84);
-
+            this.btnSalir.Size = new System.Drawing.Size(122, 46);
             this.btnSalir.TabIndex = 19;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -247,12 +218,10 @@
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.btnAgregar.Location = new System.Drawing.Point(31, 791);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(11);
+            this.btnAgregar.Location = new System.Drawing.Point(17, 428);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(192, 84);
-
+            this.btnAgregar.Size = new System.Drawing.Size(105, 46);
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -260,20 +229,16 @@
             // 
             // frmProducto
             // 
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 919);
-
+            this.ClientSize = new System.Drawing.Size(574, 502);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";

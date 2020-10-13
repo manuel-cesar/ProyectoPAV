@@ -1,4 +1,4 @@
-﻿namespace ActualizarUsuarios.Presentacion
+﻿namespace ProductosYPlanes.Presentacion
 {
     partial class frmUpdateProyectos
     {

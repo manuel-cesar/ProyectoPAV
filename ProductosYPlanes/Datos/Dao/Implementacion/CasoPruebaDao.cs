@@ -111,9 +111,9 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         public bool Update(CasoPrueba oCasoPrueba)
         {
             string str_sql = "UPDATE CasosDePrueba " +
-                             "SET id_plan_prueba = @id_plan_prueba" +
+                             "SET id_plan_prueba = @id_plan_prueba," +
                              " titulo = @titulo, " +
-                             "descripcion  = @descripcion " +
+                             "descripcion  = @descripcion," +
                              "id_responsable = @id_responsable" +
                              " WHERE id_caso_prueba = @id_caso_prueba";
 

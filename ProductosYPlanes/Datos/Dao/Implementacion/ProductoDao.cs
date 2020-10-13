@@ -112,13 +112,13 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         public bool Update(Producto oProducto)
         {
             string str_sql = "UPDATE Productos " +
-                             " SET id_producto = @id_producto, " +
-                             "     nombre = @nombre ," +
+                             " SET nombre =  @nombre " +
                              " WHERE id_producto = @id_producto";
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_producto", oProducto.Id_Producto);
             parametros.Add("nombre", oProducto.Nombre);
+
 
             if ((DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros)) == 1)
 

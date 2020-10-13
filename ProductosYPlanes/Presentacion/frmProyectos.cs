@@ -1,11 +1,16 @@
-﻿using ActualizarUsuarios.Negocio.Entidades;
-using ActualizarUsuarios.Negocio.Servicios;
-using System;
+
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
-namespace ActualizarUsuarios.Presentacion
+namespace ProductosYPlanes.Presentacion
 {
     public partial class frmProyectos : Form
     {
@@ -15,6 +20,7 @@ namespace ActualizarUsuarios.Presentacion
             InitializeComponent();
             InitializeDataGridView();
             proyectoService = new ProyectoService();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -28,6 +34,7 @@ namespace ActualizarUsuarios.Presentacion
             agregarVentana.Text = "Agregar Proyecto";
             agregarVentana.Show();
         }
+
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {

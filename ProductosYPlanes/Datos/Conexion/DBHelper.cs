@@ -159,6 +159,11 @@ namespace ProductosYPlanes.Datos.Conexion
             }
         }
 
+        public DataTable ConsultarTabla(string tabla)
+        {
+            return this.ConsultaSQL("Select * FROM " + tabla);
+        }
+
         public void Dispose()
         {
             this.Close();

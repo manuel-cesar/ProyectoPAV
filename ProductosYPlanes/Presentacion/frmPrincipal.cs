@@ -64,5 +64,11 @@ namespace ProductosYPlanes.Presentacion
             frmCasosPrueba form = new frmCasosPrueba();
             form.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmCicloPrueba form = new frmCicloPrueba();
+            form.ShowDialog();
+        }
     }
 }

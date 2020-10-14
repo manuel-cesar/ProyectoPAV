@@ -37,12 +37,13 @@
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.casosDePruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.casosDePruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,23 +96,30 @@
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
-            this.planesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.planesToolStripMenuItem.Text = "Planes";
             this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 
             // proyectosToolStripMenuItem
             // 
             this.proyectosToolStripMenuItem.Name = "proyectosToolStripMenuItem";
-            this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.proyectosToolStripMenuItem.Text = "Proyectos";
             this.proyectosToolStripMenuItem.Click += new System.EventHandler(this.proyectosToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // casosDePruebaToolStripMenuItem
+            // 
+            this.casosDePruebaToolStripMenuItem.Name = "casosDePruebaToolStripMenuItem";
+            this.casosDePruebaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.casosDePruebaToolStripMenuItem.Text = "Casos de Prueba";
+            this.casosDePruebaToolStripMenuItem.Click += new System.EventHandler(this.casosDePruebaToolStripMenuItem_Click_1);
             // 
             // contextMenuStrip1
             // 
@@ -154,12 +162,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Bug Tracker";
             // 
-            // casosDePruebaToolStripMenuItem
+            // button1
             // 
-            this.casosDePruebaToolStripMenuItem.Name = "casosDePruebaToolStripMenuItem";
-            this.casosDePruebaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.casosDePruebaToolStripMenuItem.Text = "Casos de Prueba";
-            this.casosDePruebaToolStripMenuItem.Click += new System.EventHandler(this.casosDePruebaToolStripMenuItem_Click_1);
+            this.button1.Location = new System.Drawing.Point(188, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(205, 66);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Ciclos de Prueba";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPrincipal
             // 
@@ -167,6 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(596, 427);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -199,5 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem proyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem casosDePruebaToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

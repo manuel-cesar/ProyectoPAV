@@ -1,4 +1,5 @@
 ﻿using ProductosYPlanes.Datos.Conexion;
+using ProductosYPlanes.Negocio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace ProductosYPlanes.Presentacion
             LlenarCombo(cboPlan, "PlanesDePrueba", "nombre", "id_plan_prueba");
             LlenarCombo(cboResponsable, "Usuarios", "usuario", "id_usuario");
             LlenarCombo(cboTester, "Usuarios", "usuario", "id_usuario");
+            LlenarCombo(cboCaso, "CasosDePrueba", "titulo", "id_caso_prueba");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -53,5 +55,31 @@ namespace ProductosYPlanes.Presentacion
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            InicializarFormulario();
+        }
+
+        private void InicializarFormulario()
+        {
+            btnCrear.Enabled = false;
+
+            InicializarDetalle();
+            dgvCiclo.DataSource = null;            
+        }
+
+        private void InicializarDetalle()
+        {
+            cboTester.SelectedIndex = -1;
+        }
+
+
+        }
     }
-}
+

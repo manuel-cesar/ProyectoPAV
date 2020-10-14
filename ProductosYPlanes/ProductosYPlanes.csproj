@@ -63,6 +63,7 @@
     <Compile Include="Negocio\Entidades\Proyecto.cs" />
     <Compile Include="Negocio\Entidades\Usuario.cs" />
     <Compile Include="Negocio\Servicios\CasoPruebaService.cs" />
+    <Compile Include="Negocio\Servicios\CicloPruebaService.cs" />
     <Compile Include="Negocio\Servicios\PlanService.cs" />
     <Compile Include="Negocio\Servicios\ProductoService.cs" />
     <Compile Include="Negocio\Servicios\ProyectoService.cs" />

@@ -36,17 +36,17 @@
             this.lblResponsable = new System.Windows.Forms.Label();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboResponsable = new System.Windows.Forms.ComboBox();
-            this.cboTester = new System.Windows.Forms.ComboBox();
-            this.lblTeste = new System.Windows.Forms.Label();
-            this.lblHoras = new System.Windows.Forms.Label();
-            this.txtHoras = new System.Windows.Forms.TextBox();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.lblFin = new System.Windows.Forms.Label();
+            this.dtpFin = new System.Windows.Forms.DateTimePicker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblHoras = new System.Windows.Forms.Label();
+            this.cboTester = new System.Windows.Forms.ComboBox();
+            this.txtHoras = new System.Windows.Forms.TextBox();
+            this.lblTeste = new System.Windows.Forms.Label();
+            this.dgvCiclo = new System.Windows.Forms.DataGridView();
             this.Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ciclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +58,14 @@
             this.Horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.lblActual = new System.Windows.Forms.Label();
+            this.cboCaso = new System.Windows.Forms.ComboBox();
+            this.lblCaso = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiclo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlan
@@ -143,21 +148,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ciclo de Prueba";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblFecha);
-            this.groupBox2.Controls.Add(this.dtpFecha);
-            this.groupBox2.Controls.Add(this.lblHoras);
-            this.groupBox2.Controls.Add(this.cboTester);
-            this.groupBox2.Controls.Add(this.txtHoras);
-            this.groupBox2.Controls.Add(this.lblTeste);
-            this.groupBox2.Location = new System.Drawing.Point(647, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(278, 87);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalle";
-            // 
             // cboResponsable
             // 
             this.cboResponsable.FormattingEnabled = true;
@@ -166,40 +156,14 @@
             this.cboResponsable.Size = new System.Drawing.Size(121, 21);
             this.cboResponsable.TabIndex = 9;
             // 
-            // cboTester
+            // lblFin
             // 
-            this.cboTester.FormattingEnabled = true;
-            this.cboTester.Location = new System.Drawing.Point(52, 19);
-            this.cboTester.Name = "cboTester";
-            this.cboTester.Size = new System.Drawing.Size(95, 21);
-            this.cboTester.TabIndex = 11;
-            // 
-            // lblTeste
-            // 
-            this.lblTeste.AutoSize = true;
-            this.lblTeste.Location = new System.Drawing.Point(6, 27);
-            this.lblTeste.Name = "lblTeste";
-            this.lblTeste.Size = new System.Drawing.Size(40, 13);
-            this.lblTeste.TabIndex = 10;
-            this.lblTeste.Text = "Tester:";
-            // 
-            // lblHoras
-            // 
-            this.lblHoras.AutoSize = true;
-            this.lblHoras.Location = new System.Drawing.Point(164, 37);
-            this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(41, 13);
-            this.lblHoras.TabIndex = 11;
-            this.lblHoras.Text = "Horas: ";
-            this.lblHoras.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // txtHoras
-            // 
-            this.txtHoras.Location = new System.Drawing.Point(211, 34);
-            this.txtHoras.Name = "txtHoras";
-            this.txtHoras.Size = new System.Drawing.Size(50, 20);
-            this.txtHoras.TabIndex = 10;
-            this.txtHoras.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lblFin.AutoSize = true;
+            this.lblFin.Location = new System.Drawing.Point(202, 50);
+            this.lblFin.Name = "lblFin";
+            this.lblFin.Size = new System.Drawing.Size(75, 13);
+            this.lblFin.TabIndex = 5;
+            this.lblFin.Text = "Fecha de Fin: ";
             // 
             // dtpFin
             // 
@@ -210,14 +174,24 @@
             this.dtpFin.Size = new System.Drawing.Size(95, 20);
             this.dtpFin.TabIndex = 8;
             // 
-            // lblFin
+            // groupBox2
             // 
-            this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(202, 50);
-            this.lblFin.Name = "lblFin";
-            this.lblFin.Size = new System.Drawing.Size(75, 13);
-            this.lblFin.TabIndex = 5;
-            this.lblFin.Text = "Fecha de Fin: ";
+            this.groupBox2.Controls.Add(this.cboCaso);
+            this.groupBox2.Controls.Add(this.lblCaso);
+            this.groupBox2.Controls.Add(this.btnQuitar);
+            this.groupBox2.Controls.Add(this.btnAgregar);
+            this.groupBox2.Controls.Add(this.lblFecha);
+            this.groupBox2.Controls.Add(this.dtpFecha);
+            this.groupBox2.Controls.Add(this.lblHoras);
+            this.groupBox2.Controls.Add(this.cboTester);
+            this.groupBox2.Controls.Add(this.txtHoras);
+            this.groupBox2.Controls.Add(this.lblTeste);
+            this.groupBox2.Location = new System.Drawing.Point(647, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(300, 116);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalle";
             // 
             // lblFecha
             // 
@@ -237,12 +211,48 @@
             this.dtpFecha.Size = new System.Drawing.Size(95, 20);
             this.dtpFecha.TabIndex = 13;
             // 
-            // dataGridView1
+            // lblHoras
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lblHoras.AutoSize = true;
+            this.lblHoras.Location = new System.Drawing.Point(164, 19);
+            this.lblHoras.Name = "lblHoras";
+            this.lblHoras.Size = new System.Drawing.Size(41, 13);
+            this.lblHoras.TabIndex = 11;
+            this.lblHoras.Text = "Horas: ";
+            this.lblHoras.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // cboTester
+            // 
+            this.cboTester.FormattingEnabled = true;
+            this.cboTester.Location = new System.Drawing.Point(52, 19);
+            this.cboTester.Name = "cboTester";
+            this.cboTester.Size = new System.Drawing.Size(95, 21);
+            this.cboTester.TabIndex = 11;
+            
+            // 
+            // txtHoras
+            // 
+            this.txtHoras.Location = new System.Drawing.Point(211, 16);
+            this.txtHoras.Name = "txtHoras";
+            this.txtHoras.Size = new System.Drawing.Size(50, 20);
+            this.txtHoras.TabIndex = 10;
+            this.txtHoras.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblTeste
+            // 
+            this.lblTeste.AutoSize = true;
+            this.lblTeste.Location = new System.Drawing.Point(6, 27);
+            this.lblTeste.Name = "lblTeste";
+            this.lblTeste.Size = new System.Drawing.Size(40, 13);
+            this.lblTeste.TabIndex = 10;
+            this.lblTeste.Text = "Tester:";
+            // 
+            // dgvCiclo
+            // 
+            this.dgvCiclo.AllowUserToAddRows = false;
+            this.dgvCiclo.AllowUserToDeleteRows = false;
+            this.dgvCiclo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCiclo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Plan,
             this.Ciclo,
             this.FechaInicio,
@@ -252,11 +262,11 @@
             this.Tester,
             this.Fecha,
             this.Horas});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 213);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvCiclo.Location = new System.Drawing.Point(12, 136);
+            this.dgvCiclo.Name = "dgvCiclo";
+            this.dgvCiclo.ReadOnly = true;
+            this.dgvCiclo.Size = new System.Drawing.Size(935, 213);
+            this.dgvCiclo.TabIndex = 12;
             // 
             // Plan
             // 
@@ -314,31 +324,80 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(732, 347);
+            this.btnCrear.Location = new System.Drawing.Point(12, 370);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.Size = new System.Drawing.Size(86, 53);
             this.btnCrear.TabIndex = 13;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(833, 347);
+            this.btnSalir.Location = new System.Drawing.Point(843, 370);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(91, 53);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.Location = new System.Drawing.Point(167, 49);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(57, 31);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Enabled = false;
+            this.btnQuitar.Location = new System.Drawing.Point(230, 49);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(57, 31);
+            this.btnQuitar.TabIndex = 15;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            // 
+            // lblActual
+            // 
+            this.lblActual.AutoSize = true;
+            this.lblActual.Location = new System.Drawing.Point(392, 115);
+            this.lblActual.Name = "lblActual";
+            this.lblActual.Size = new System.Drawing.Size(218, 13);
+            this.lblActual.TabIndex = 15;
+            this.lblActual.Text = "Texto para mostrar que ciclo esta agregando";
+            // 
+            // cboCaso
+            // 
+            this.cboCaso.FormattingEnabled = true;
+            this.cboCaso.Location = new System.Drawing.Point(103, 89);
+            this.cboCaso.Name = "cboCaso";
+            this.cboCaso.Size = new System.Drawing.Size(95, 21);
+            this.cboCaso.TabIndex = 17;
+            // 
+            // lblCaso
+            // 
+            this.lblCaso.AutoSize = true;
+            this.lblCaso.Location = new System.Drawing.Point(6, 97);
+            this.lblCaso.Name = "lblCaso";
+            this.lblCaso.Size = new System.Drawing.Size(91, 13);
+            this.lblCaso.TabIndex = 16;
+            this.lblCaso.Text = "Caso De Prueba: ";
+            // 
             // frmCicloPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 382);
+            this.ClientSize = new System.Drawing.Size(959, 435);
+            this.Controls.Add(this.lblActual);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCiclo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCicloPrueba";
@@ -348,8 +407,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiclo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -373,7 +433,7 @@
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCiclo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciclo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
@@ -385,5 +445,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Horas;
         public System.Windows.Forms.Button btnCrear;
         public System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnQuitar;
+        private System.Windows.Forms.ComboBox cboCaso;
+        private System.Windows.Forms.Label lblCaso;
+        private System.Windows.Forms.Label lblActual;
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
@@ -13,7 +10,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 {
     public class PlanDao
     {
-        //Vamos a reutilizar este método para crear cada objeto Per:
         public Plan findById(int id)
         {
             string sql = "SELECT * FROM PlanesDePrueba plan WHERE borrado = '0' AND plan.id_plan_prueba = " + id.ToString();
@@ -29,26 +25,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                     return mapper(PlanProyectoDT.Rows[0]); //, PlanProyectoDT
             }
             return null;
-        } //Creo que funciona 
-
-        /*public List<OpcionMenu> getOpcionesMenuAll()
-        {
-            List<OpcionMenu> lst = new List<OpcionMenu>();
-
-            string query = "SELECT OM.* FROM  OpcionMenu OM";
-            DataTable t = DBHelper.getDBHelper().ConsultaSQL(query);
-
-            foreach (DataRow row in t.Rows)
-            {
-                int id = int.Parse(row["id_opcion_menu"].ToString());
-                OpcionMenu op = new OpcionMenu(id, row["n_opcion"].ToString());
-                lst.Add(op);
-            }
-            return lst;
-
-        }*/
-
-   
+        }   
 
         public bool delete(int id)
         {
@@ -56,7 +33,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             String sql = "UPDATE PlanesDePrueba SET borrado = 1 WHERE id_plan_prueba=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
-        } //LISTO 
+        }
 
         private Plan mapper(DataRow PlanRow)
         {
@@ -71,7 +48,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             oPlan.Borrado = PlanRow["borrado"].ToString().Equals("S"); 
             
             return oPlan;
-        } // LISTO 
+        } 
 
         public IList<Plan> getAll()
         {
@@ -92,7 +69,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
                 return null;
-        } //LISTO 
+        } 
 
         public bool CrearPlan(Plan oPlan) 
         {
@@ -107,7 +84,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             parametros.Add("id_responsable", oPlan.Id_Responsable);
             parametros.Add("descripcion", oPlan.Descripcion);
             
-
             if ((DBHelper.getDBHelper().ejecutarSQL(str_sql, parametros)) == 1)
 
             {
@@ -115,9 +91,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return false;
-
-
-
         }
 
         public IList<Plan> GetByFilters(Dictionary<string, object> parametros)
@@ -142,17 +115,13 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             if (parametros.ContainsKey("id_responsable"))
                 strSql += " AND (P.id_responsable = @id_responsable) ";
 
-
-            //var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
-
             var resultado = (DataRowCollection)DBHelper.getDBHelper().ConsultaSQL(strSql, parametros).Rows;
-
 
             foreach (DataRow row in resultado)
                 lista.Add(mapper(row));
 
             return lista;
-        } //PUEDE QUE FUNCIONE
+        }
 
         public bool Update(Plan oPlan)
         {

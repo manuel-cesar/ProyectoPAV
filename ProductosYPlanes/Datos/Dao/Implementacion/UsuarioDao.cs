@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Conexion;
 
@@ -12,7 +10,6 @@ using System.Data;
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 {
-    //class UsuarioDao
     public class UsuarioDao { 
         public IList<Usuario> GetAll()
         {
@@ -45,8 +42,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                           "   FROM Usuarios ",
                                           "   WHERE usuario = @usuario",
                                           "   AND borrado = 0");
-           
-            //DataTable resultado = DBHelper.getDBHelper().ConsultaSQL(strSql);
+          
             var parametros = new Dictionary<string, object>();
             parametros.Add("usuario", nombreUsuario);
             var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros);
@@ -57,19 +53,14 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
             return null;
         }
-        //public IList<Usuario> GetByFilters(Dictionary<string, object> parametros)
-        //internal bool Create(Usuario oUsuario)
-        //internal bool Update(Usuario oUsuario)
-        
+
         private Usuario ObjectMapping(DataRow row)
         {
             Usuario oUsuario = new Usuario();
 
             oUsuario.IdUsuario = Convert.ToInt32(row["id_usuario"].ToString());
             oUsuario.NombreUsuario = row["usuario"].ToString();
-            //oUsuario.Email = row["email"].ToString();
             oUsuario.Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null;
-              
 
             return oUsuario;
         }

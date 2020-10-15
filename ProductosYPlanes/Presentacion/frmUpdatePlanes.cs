@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using ProductosYPlanes.Negocio.Servicios;
 using ProductosYPlanes.Negocio.Entidades;
 
@@ -25,7 +20,6 @@ namespace ProductosYPlanes.Presentacion
         {
             InitializeComponent();
             oPlanService = new PlanService();
-
         }
 
         public enum FormMode
@@ -56,7 +50,6 @@ namespace ProductosYPlanes.Presentacion
                         txtDescripcion.Enabled = true;
                         break;
                     }
-
             }
         }
 
@@ -69,34 +62,12 @@ namespace ProductosYPlanes.Presentacion
                 TxtNombre.Text = oPlanSelected.Nombre.ToString();
                 txtResp.Text = oPlanSelected.Id_Responsable.ToString();
                 txtDescripcion.Text = oPlanSelected.Descripcion.ToString();
-
-
             }
         }
         public void InicializarFormulario(FormMode op, Plan PlanSelected)
         {
             formMode = op;
             oPlanSelected = PlanSelected;
-        }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtplanMod_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPlan_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private bool ValidarCampos()
@@ -175,13 +146,13 @@ namespace ProductosYPlanes.Presentacion
                             if (oPlanService.crearPlan(oPlan))
                             {
                                 //btnConsultar_Click(sender, e); //Esto lo use en el otro cuando elimina para q actualice
-                                MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Plan insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                         }
 
                         else
-                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Plan encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
 
                     }
@@ -199,11 +170,11 @@ namespace ProductosYPlanes.Presentacion
 
                             if (oPlanService.ActualizarPlan(oPlanSelected))
                             {
-                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Plan actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al actualizar el Plan!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         break;

@@ -2,12 +2,7 @@
 using ProductosYPlanes.Negocio.Servicios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProductosYPlanes.Presentacion
@@ -21,16 +16,6 @@ namespace ProductosYPlanes.Presentacion
             // Inicializamos la grilla de Casos
             InitializeDataGridView();
             casoPruebaService = new CasoPruebaService();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtResponsable_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -90,7 +75,6 @@ namespace ProductosYPlanes.Presentacion
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
             dgvCasos.Columns[0].Name = "IdCaso";
             dgvCasos.Columns[0].DataPropertyName = "id_caso_prueba";
-
 
             dgvCasos.Columns[1].Name = "ID Plan";
             dgvCasos.Columns[1].DataPropertyName = "id_plan_prueba";
@@ -159,11 +143,6 @@ namespace ProductosYPlanes.Presentacion
         {
             btnEliminar.Enabled = true;
             btnUpdate.Enabled = true;
-        }
-
-        private void dgvCasos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

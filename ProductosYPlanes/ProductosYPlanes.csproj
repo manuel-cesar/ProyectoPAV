@@ -49,7 +49,6 @@
     <Compile Include="Datos\Conexion\DBHelper.cs" />
     <Compile Include="Datos\Dao\Implementacion\CasoPruebaDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\CicloPruebaDao.cs" />
-    <Compile Include="Datos\Dao\Implementacion\CicloPruebaDetalleDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\ProductoDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\PlanDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\ProyectoDao.cs" />

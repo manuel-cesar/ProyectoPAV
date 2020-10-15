@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Negocio.Entidades
 {
@@ -11,7 +7,6 @@ namespace ProductosYPlanes.Negocio.Entidades
         public int Id_Producto { get; set; }
         public String Nombre { get; set; }
         public bool Borrado { get; set; }
-
 
         public Producto() { }
 

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Negocio.Entidades
 {
@@ -10,7 +6,7 @@ namespace ProductosYPlanes.Negocio.Entidades
     {
 
         public int Id_Ciclo_Detalle { get; set; }
-        //public CicloPrueba CicloPrueba { get; set; }
+        public CicloPrueba CicloPrueba { get; set; }
         public CasoPrueba CasoPrueba { get; set; }
         public Usuario Tester { get; set; }
         public int Horas { get; set; }
@@ -18,27 +14,26 @@ namespace ProductosYPlanes.Negocio.Entidades
         public bool Aceptado { get; set; }
         public bool Borrado { get; set; }
 
-
-        //public int IdCicloPrueba
-        //{
-        //    get
-        //    {
-        //        return CicloPrueba.Id_Ciclo_Prueba;
-        //    }
-        //}
-        public int IdCasoPrueba
+        public int IdCicloPrueba
         {
             get
             {
-                return CasoPrueba.Id_Caso_Prueba;
+                return CicloPrueba.Id_Ciclo_Prueba;
+            }
+        }
+        public string TituloCasoPrueba
+        {
+            get
+            {
+                return CasoPrueba.Titulo;
             }
         }
 
-        public int IdTester
+        public string NombreTester
         {
             get
             {
-                return Tester.IdUsuario;
+                return Tester.NombreUsuario;
             }
         }
     }

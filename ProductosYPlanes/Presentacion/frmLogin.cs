@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ProductosYPlanes.Negocio.Servicios;
@@ -23,16 +17,6 @@ namespace ProductosYPlanes
         {
             InitializeComponent();
             usuarioService = new UsuarioService();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -115,17 +99,6 @@ namespace ProductosYPlanes
 
             // Retornamos el valor de usuarioValido. 
             return usuarioValido;
-        }
-
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

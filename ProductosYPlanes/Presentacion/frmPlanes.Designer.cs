@@ -83,7 +83,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Planes - Filtros de busqueda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+
             // 
             // panel4
             // 
@@ -203,7 +203,6 @@
             this.dgvPlanes.Size = new System.Drawing.Size(634, 269);
             this.dgvPlanes.TabIndex = 6;
             this.dgvPlanes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanes_CellClick);
-            this.dgvPlanes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanes_CellContentClick_1);
             // 
             // IdPlanPrueba
             // 
@@ -250,7 +249,7 @@
             this.txtIdPlan.ShortcutsEnabled = false;
             this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
             this.txtIdPlan.TabIndex = 1;
-            this.txtIdPlan.TextChanged += new System.EventHandler(this.txtProyecto_TextChanged);
+
             // 
             // lblProyecto
             // 
@@ -261,7 +260,6 @@
             this.lblProyecto.Size = new System.Drawing.Size(73, 15);
             this.lblProyecto.TabIndex = 3;
             this.lblProyecto.Text = "Id Proyecto :";
-            this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
             // 
             // lblIdPlan
             // 
@@ -272,7 +270,6 @@
             this.lblIdPlan.Size = new System.Drawing.Size(51, 15);
             this.lblIdPlan.TabIndex = 1;
             this.lblIdPlan.Text = "Id Plan :";
-            this.lblIdPlan.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAdd
             // 
@@ -352,7 +349,6 @@
             this.Name = "frmPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planes";
-            this.Load += new System.EventHandler(this.frmPlanes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();

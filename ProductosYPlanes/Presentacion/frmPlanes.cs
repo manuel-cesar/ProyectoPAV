@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ProductosYPlanes.Negocio.Servicios;
@@ -24,42 +19,6 @@ namespace ProductosYPlanes.Presentacion
             // Inicializamos la grilla de Planes
             InitializeDataGridView();
             planService = new PlanService();
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProyecto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProyecto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmPlanes_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -98,8 +57,6 @@ namespace ProductosYPlanes.Presentacion
             {
                 MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void InitializeDataGridView()
@@ -194,9 +151,5 @@ namespace ProductosYPlanes.Presentacion
             btnUpdate.Enabled = true;
         }
 
-        private void dgvPlanes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

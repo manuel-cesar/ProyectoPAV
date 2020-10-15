@@ -1,11 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ProductosYPlanes.Negocio.Servicios;
@@ -21,7 +16,6 @@ namespace ProductosYPlanes.Presentacion
             InitializeComponent();
             InitializeDataGridView();
             proyectoService = new ProyectoService();
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -112,9 +106,6 @@ namespace ProductosYPlanes.Presentacion
             dgvProyectos.Columns[5].Name = "Responsable";
             dgvProyectos.Columns[5].DataPropertyName = "id_Responsable";
 
-
-
-
             // Cambia el tamaño de la altura de los encabezados de columna.
             dgvProyectos.AutoResizeColumnHeadersHeight();
 
@@ -153,11 +144,6 @@ namespace ProductosYPlanes.Presentacion
                 btnEliminar.Enabled = false;
         }
 
-        private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvProyectos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEliminar.Enabled = true;
@@ -194,9 +180,5 @@ namespace ProductosYPlanes.Presentacion
                 btnEliminar.Enabled = false;
         }
 
-        private void dgvProyectos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

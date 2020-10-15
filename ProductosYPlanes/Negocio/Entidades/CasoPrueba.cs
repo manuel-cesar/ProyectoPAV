@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Negocio.Entidades
 {
     public class CasoPrueba
     {
-
         public int Id_Caso_Prueba { get; set; }
         public int Id_Plan_Prueba { get; set; }
         public String Titulo { get; set; }
         public String Descripcion { get; set; }
         public int Id_Responsable{ get; set; }
         public bool Borrado { get; set; }
-
-
 
         public CasoPrueba() { }
 

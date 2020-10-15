@@ -1,14 +1,8 @@
-﻿using ProductosYPlanes.Datos.Conexion;
-using ProductosYPlanes.Negocio.Entidades;
+﻿using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Negocio.Servicios;
+
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProductosYPlanes.Presentacion
@@ -41,25 +35,10 @@ namespace ProductosYPlanes.Presentacion
             LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
             LlenarCombo(cboTester, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
             LlenarCombo(cboCaso, casoPruebaService.ConsultarTodos(), "titulo", "id_caso_prueba");
+            
 
             dgvCiclo.DataSource = listaCicloDetalle;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -74,7 +53,6 @@ namespace ProductosYPlanes.Presentacion
             this.Close();
         }
 
-
         private void btnCrear_Click(object sender, EventArgs e)
         {
             InicializarFormulario();
@@ -82,9 +60,8 @@ namespace ProductosYPlanes.Presentacion
 
         private void InicializarFormulario()
         {
-            //btnAgregar.Enabled = false;
+            btnAgregar.Enabled = false;
             cboPlan.SelectedIndex = -1;
-            txtCiclo.Text = (0).ToString();
             cboResponsable.SelectedIndex = -1;
 
             InicializarDetalle();
@@ -113,6 +90,8 @@ namespace ProductosYPlanes.Presentacion
                 Tester = tester,
                 CasoPrueba = caso,
                 Fecha = fecha,
+                Aceptado = true,
+                Borrado = false,
             });
 
             InicializarDetalle();
@@ -120,11 +99,12 @@ namespace ProductosYPlanes.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 var ciclo = new CicloPrueba
                 {
-                    Plan = (Plan)cboPlan.SelectedItem,
+                    Id_Plan_Prueba = cboPlan.SelectedIndex,
                     Fecha_Inicio = dtpInicio.Value,
                     Fecha_Fin = dtpFin.Value,
                     Id_Responsable = cboResponsable.SelectedIndex,
@@ -147,6 +127,32 @@ namespace ProductosYPlanes.Presentacion
 
         private void dgvCiclo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void cboCaso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCaso.SelectedItem != null)
+            {
+                var caso = (CasoPrueba)cboCaso.SelectedItem;
+                if(cboTester.SelectedItem != null)
+                    btnAgregar.Enabled = true;
+            }
+            else
+                btnAgregar.Enabled = false;
+
+        }
+
+        private void cboTester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTester.SelectedItem != null)
+            {
+                var tester = (Usuario)cboTester.SelectedItem;
+                if (cboCaso.SelectedItem != null)
+                    btnAgregar.Enabled = true;
+            }
+            else
+                btnAgregar.Enabled = false;
 
         }
     }

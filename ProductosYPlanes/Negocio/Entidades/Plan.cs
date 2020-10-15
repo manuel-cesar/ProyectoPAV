@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Negocio.Entidades
 {
     public class Plan
     {
-    
         public int Id_Plan_Prueba { get; set; }
         public int Id_Proyecto { get; set; }
         public String Nombre { get; set; }
@@ -16,7 +11,6 @@ namespace ProductosYPlanes.Negocio.Entidades
         public String Descripcion { get; set; }
         public bool Borrado { get; set; }
         
-
 
         public Plan() { }
 

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Datos.Conexion;
 
@@ -18,6 +15,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             {
                 dm.Open();
                 dm.BeginTransaction();
+  
 
                 string sql = string.Concat("INSERT INTO [dbo].[CiclosPrueba] ",
                                             "           ([id_ciclo_prueba]   ",
@@ -42,10 +40,10 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 parametros.Add("fecha_inicio_ejecucion", cicloPrueba.Fecha_Inicio);
                 parametros.Add("fecha_fin_ejecucion", cicloPrueba.Fecha_Fin);
                 parametros.Add("id_responsable", cicloPrueba.Id_Responsable);
-                parametros.Add("id_plan_prueba", cicloPrueba.Plan);
+                parametros.Add("id_plan_prueba", cicloPrueba.Id_Plan_Prueba);
                 parametros.Add("aceptado", cicloPrueba.Aceptado);
                 parametros.Add("borrado", 0);
-                dm.ejecutarSQL(sql, parametros);
+                dm.ejecutarSQL(sql, parametros);//PRUEBA
 
                 var newId = dm.ConsultaSQLScalar(" SELECT @@IDENTITY");
                 cicloPrueba.Id_Ciclo_Prueba = Convert.ToInt32(newId);
@@ -82,10 +80,8 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                     paramDetalle.Add("aceptado", 1);
                     paramDetalle.Add("borrado", 0);
 
-                    dm.ejecutarSQL(sqlDetalle, paramDetalle);
+                    dm.ejecutarSQL(sqlDetalle, paramDetalle); //PRUEBA
                 }
-
-
 
                 dm.Commit();
 
@@ -96,28 +92,47 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 throw ex;
             }
             finally
-            {
-                // Cierra la conexión 
+            { 
                 dm.Close();
             }
             return true;
         }
 
+        public IList<CicloPrueba> getAll()
+        {
+            List<CicloPrueba> listadoCiclos = new List<CicloPrueba>();
+
+            String strSql = string.Concat(" SELECT C.* ",
+                                          "   FROM CiclosPrueba  C",
+                                          "  WHERE C.borrado = 0 ");
+
+            var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
+            if (resultadoConsulta.Rows.Count > 0)
+            {
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listadoCiclos.Add(mapper(row));
+                }
+                return listadoCiclos;
+            }
+
+            return null;
+        }
 
 
         private CicloPrueba mapper(DataRow CicloPruebaRow)
         {
             CicloPrueba oCicloPrueba = new CicloPrueba();
 
-            oCicloPrueba.Id_Ciclo_Prueba = Convert.ToInt32(CicloPruebaRow["id_CicloPrueba_prueba"].ToString());
-            oCicloPrueba.Fecha_Inicio = Convert.ToDateTime(CicloPruebaRow["fecha_inicio"].ToString());
-            oCicloPrueba.Fecha_Fin = Convert.ToDateTime(CicloPruebaRow["fecha_fin"].ToString());
+            oCicloPrueba.Id_Ciclo_Prueba = Convert.ToInt32(CicloPruebaRow["id_ciclo_prueba"].ToString());
+            oCicloPrueba.Fecha_Inicio = Convert.ToDateTime(CicloPruebaRow["fecha_inicio_ejecucion"].ToString());
+            oCicloPrueba.Fecha_Fin = Convert.ToDateTime(CicloPruebaRow["fecha_fin_ejecucion"].ToString());
             oCicloPrueba.Id_Responsable = Convert.ToInt32(CicloPruebaRow["id_responsable"].ToString());
             oCicloPrueba.Aceptado = Convert.ToBoolean(CicloPruebaRow["aceptado"].ToString());
             //agregamos este atributo tanto en la tabla como en la entidad para trabajar solo con  registros activos, no borrados.
             oCicloPrueba.Borrado = CicloPruebaRow["borrado"].ToString().Equals("S");
 
             return oCicloPrueba;
-        } // LISTO
+        }
     }
 }

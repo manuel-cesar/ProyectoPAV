@@ -11,6 +11,7 @@ namespace ProductosYPlanes.Datos.Conexion
     public class DBHelper : IDisposable
     {
         private SqlConnection dbConnection;
+        private SqlTransaction dbTransaction;
 
 
         private static DBHelper instance;
@@ -18,7 +19,7 @@ namespace ProductosYPlanes.Datos.Conexion
         {
             dbConnection = new SqlConnection();
 
-            var string_conexion = "Data Source=MANUEL;Initial Catalog=BugTrackerExt;Integrated Security=True";
+            var string_conexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=bugs_extends;Integrated Security=True";
 
             dbConnection.ConnectionString = string_conexion;
         }
@@ -159,7 +160,32 @@ namespace ProductosYPlanes.Datos.Conexion
             }
         }
 
-        public DataTable ConsultarTabla(string tabla)
+        public void BeginTransaction()
+        {
+            if (dbConnection.State == ConnectionState.Open)
+                dbTransaction = dbConnection.BeginTransaction();
+        }
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+
+        public void Dispose()
+        {
+            this.Close();
+        }
+    
+
+
+
+    public DataTable ConsultarTabla(string tabla)
         {
             return this.ConsultaSQL("Select * FROM " + tabla);
         }

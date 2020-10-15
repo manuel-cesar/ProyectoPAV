@@ -13,6 +13,7 @@ namespace ProductosYPlanes.Negocio.Entidades
         public DateTime Fecha_Inicio { get; set; }
         public DateTime Fecha_Fin { get; set; }
         public int Id_Responsable { get; set; }
+        public IList<CicloPruebaDetalle> CicloDePruebasDetalle { get; set; }
         public int Id_Plan { get; set;}
         public bool Aceptado { get; set; }
         public bool Borrado { get; set; }

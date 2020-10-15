@@ -1,5 +1,6 @@
 ﻿using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
+using ProductosYPlanes.Negocio.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,31 @@ namespace ProductosYPlanes.Presentacion
 {
     public partial class frmCicloPrueba : Form
     {
+        private readonly CicloPruebaService cicloService;
+        private readonly BindingList<CicloPruebaDetalle> listacicloPruebaDetalle;
+        private readonly UsuarioService usuarioService;
         public frmCicloPrueba()
         {
             InitializeComponent();
+            cicloService = new CicloPruebaService();
+      
+
+           
+        }
+
+        private void frmFactura_Load(object sender, EventArgs e)
+        {
+            InicializarFormulario();
+
             LlenarCombo(cboPlan, "PlanesDePrueba", "nombre", "id_plan_prueba");
             LlenarCombo(cboResponsable, "Usuarios", "usuario", "id_usuario");
             LlenarCombo(cboTester, "Usuarios", "usuario", "id_usuario");
             LlenarCombo(cboCaso, "CasosDePrueba", "titulo", "id_caso_prueba");
+
+            dgvCiclo.DataSource = listacicloPruebaDetalle;
+
+            this..SelectedIndexChanged += new System.EventHandler(this.CboCliente_SelectedIndexChanged);
+            this._cboArticulo.SelectedIndexChanged += new System.EventHandler(this._cboArticulo_SelectedIndexChanged);
         }
 
         private void label1_Click(object sender, EventArgs e)

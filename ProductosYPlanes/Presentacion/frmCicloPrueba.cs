@@ -15,31 +15,34 @@ namespace ProductosYPlanes.Presentacion
 {
     public partial class frmCicloPrueba : Form
     {
-        private readonly CicloPruebaService cicloService;
-        private readonly BindingList<CicloPruebaDetalle> listacicloPruebaDetalle;
+        private readonly CicloPruebaService cicloPruebaService;
+        private readonly BindingList<CicloPruebaDetalle> listaCicloDetalle;
         private readonly UsuarioService usuarioService;
+        private readonly PlanService planService;
+        private readonly CasoPruebaService casoPruebaService;
         public frmCicloPrueba()
         {
             InitializeComponent();
-            cicloService = new CicloPruebaService();
-      
+            dgvCiclo.AutoGenerateColumns = false;
 
-           
+            cicloPruebaService = new CicloPruebaService();
+            usuarioService = new UsuarioService();
+            planService = new PlanService();
+            casoPruebaService = new CasoPruebaService();
+
+            listaCicloDetalle = new BindingList<CicloPruebaDetalle>();
         }
 
-        private void frmFactura_Load(object sender, EventArgs e)
+        private void frmCicloPrueba_Load(object sender, EventArgs e)
         {
             InicializarFormulario();
 
-            LlenarCombo(cboPlan, "PlanesDePrueba", "nombre", "id_plan_prueba");
-            LlenarCombo(cboResponsable, "Usuarios", "usuario", "id_usuario");
-            LlenarCombo(cboTester, "Usuarios", "usuario", "id_usuario");
-            LlenarCombo(cboCaso, "CasosDePrueba", "titulo", "id_caso_prueba");
+            LlenarCombo(cboPlan, planService.ConsultarTodos(), "nombre", "id_plan_prueba");
+            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboTester, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboCaso, casoPruebaService.ConsultarTodos(), "titulo", "id_caso_prueba");
 
-            dgvCiclo.DataSource = listacicloPruebaDetalle;
-
-            this..SelectedIndexChanged += new System.EventHandler(this.CboCliente_SelectedIndexChanged);
-            this._cboArticulo.SelectedIndexChanged += new System.EventHandler(this._cboArticulo_SelectedIndexChanged);
+            dgvCiclo.DataSource = listaCicloDetalle;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,16 +60,12 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-        private void frmCicloPrueba_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void LlenarCombo(ComboBox cbo, string tabla, string display, string value)
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
-            cbo.DataSource = DBHelper.getDBHelper().ConsultarTabla(tabla);
             cbo.ValueMember = value;
             cbo.DisplayMember = display;
+            cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
 
@@ -75,10 +74,6 @@ namespace ProductosYPlanes.Presentacion
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
@@ -87,18 +82,74 @@ namespace ProductosYPlanes.Presentacion
 
         private void InicializarFormulario()
         {
-            btnCrear.Enabled = false;
+            //btnAgregar.Enabled = false;
+            cboPlan.SelectedIndex = -1;
+            txtCiclo.Text = (0).ToString();
+            cboResponsable.SelectedIndex = -1;
 
             InicializarDetalle();
-            dgvCiclo.DataSource = null;            
+
+            dgvCiclo.DataSource = null;
         }
 
         private void InicializarDetalle()
         {
+            txtHoras.Text = (0).ToString();
+            cboCaso.SelectedIndex = -1;
             cboTester.SelectedIndex = -1;
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int horas = 0;
+            int.TryParse(txtHoras.Text, out horas);
+
+            var tester = (Usuario) cboTester.SelectedItem;
+            var caso = (CasoPrueba)cboCaso.SelectedItem;
+            var fecha = dtpFecha.Value;
+            listaCicloDetalle.Add(new CicloPruebaDetalle()
+            {
+                Horas = horas,
+                Tester = tester,
+                CasoPrueba = caso,
+                Fecha = fecha,
+            });
+
+            InicializarDetalle();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ciclo = new CicloPrueba
+                {
+                    Plan = (Plan)cboPlan.SelectedItem,
+                    Fecha_Inicio = dtpInicio.Value,
+                    Fecha_Fin = dtpFin.Value,
+                    Id_Responsable = cboResponsable.SelectedIndex,
+                    CicloPruebaDetalle = listaCicloDetalle,
+                };
+
+                if (cicloPruebaService.ValidarDatos(ciclo))
+                {
+                    cicloPruebaService.Crear(ciclo);
+                    MessageBox.Show(string.Concat("El ciclo de Prueba:", ciclo.Id_Ciclo_Prueba, " Se guardo correctamente."), "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    InicializarFormulario();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el Ciclo De Prueba! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvCiclo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
+}
+    
 

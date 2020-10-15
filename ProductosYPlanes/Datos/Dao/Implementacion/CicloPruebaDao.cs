@@ -42,7 +42,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 parametros.Add("fecha_inicio_ejecucion", cicloPrueba.Fecha_Inicio);
                 parametros.Add("fecha_fin_ejecucion", cicloPrueba.Fecha_Fin);
                 parametros.Add("id_responsable", cicloPrueba.Id_Responsable);
-                parametros.Add("id_plan_prueba", cicloPrueba.Id_Plan);
+                parametros.Add("id_plan_prueba", cicloPrueba.Plan);
                 parametros.Add("aceptado", cicloPrueba.Aceptado);
                 parametros.Add("borrado", 0);
                 dm.ejecutarSQL(sql, parametros);
@@ -51,7 +51,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 cicloPrueba.Id_Ciclo_Prueba = Convert.ToInt32(newId);
 
 
-                foreach (var itemCicloDePrueba in cicloPrueba.CicloDePruebasDetalle)
+                foreach (var itemCicloDePrueba in cicloPrueba.CicloPruebaDetalle)
                 {
                     string sqlDetalle = string.Concat(" INSERT INTO [dbo].[CiclosPruebaDetalle] ",
                                                         "           ([id_ciclo_prueba_detalle]           ",
@@ -74,12 +74,12 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
                     var paramDetalle = new Dictionary<string, object>();
                     paramDetalle.Add("id_ciclo_prueba_detalle", itemCicloDePrueba.Id_Ciclo_Detalle);
-                    paramDetalle.Add("id_producto", itemCicloDePrueba.Id_Ciclo_Prueba);
-                    paramDetalle.Add("precio_unitario", itemCicloDePrueba.Id_Caso_Prueba);
-                    paramDetalle.Add("cantidad", itemCicloDePrueba.Id_Tester);
-                    paramDetalle.Add("cantidad", itemCicloDePrueba.cantidad_horas);
-                    paramDetalle.Add("cantidad", itemCicloDePrueba.Fecha);
-                    paramDetalle.Add("cantidad", itemCicloDePrueba.Aceptado);
+                    paramDetalle.Add("id_ciclo_prueba", itemCicloDePrueba.Id_Ciclo_Detalle);
+                    paramDetalle.Add("id_caso_prueba", itemCicloDePrueba.CasoPrueba.Id_Caso_Prueba);
+                    paramDetalle.Add("id_usuario_tester", itemCicloDePrueba.Tester.IdUsuario);
+                    paramDetalle.Add("cantidad_horas", itemCicloDePrueba.Horas);
+                    paramDetalle.Add("fecha_ejecucion", itemCicloDePrueba.Fecha);
+                    paramDetalle.Add("aceptado", 1);
                     paramDetalle.Add("borrado", 0);
 
                     dm.ejecutarSQL(sqlDetalle, paramDetalle);
@@ -102,15 +102,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
             return true;
         }
-
-
-
-
-
-
-
-
-
 
 
 

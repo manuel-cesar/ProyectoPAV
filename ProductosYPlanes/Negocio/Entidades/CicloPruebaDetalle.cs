@@ -10,27 +10,36 @@ namespace ProductosYPlanes.Negocio.Entidades
     {
 
         public int Id_Ciclo_Detalle { get; set; }
-        public int Id_Ciclo_Prueba { get; set; }
-        public int Id_Caso_Prueba { get; set; }
-        public int Id_Tester { get; set; }
+        //public CicloPrueba CicloPrueba { get; set; }
+        public CasoPrueba CasoPrueba { get; set; }
+        public Usuario Tester { get; set; }
+        public int Horas { get; set; }
         public DateTime Fecha { get; set; }
-
-        public int cantidad_horas { get; set; }
         public bool Aceptado { get; set; }
         public bool Borrado { get; set; }
 
 
-        public CicloPruebaDetalle() { }
-
-        public CicloPruebaDetalle(int id_detalle, int id_ciclo, int id_caso_prueba, int id_tester, DateTime fecha, int cantidad_horas, bool aceptado)
+        //public int IdCicloPrueba
+        //{
+        //    get
+        //    {
+        //        return CicloPrueba.Id_Ciclo_Prueba;
+        //    }
+        //}
+        public int IdCasoPrueba
         {
-            this.Id_Ciclo_Detalle = id_detalle;
-            this.Id_Ciclo_Prueba = id_ciclo;
-            this.Id_Caso_Prueba = id_caso_prueba;
-            this.Id_Tester = id_tester;
-            this.Fecha = fecha;
-            this.cantidad_horas = cantidad_horas;
-            this.Aceptado = aceptado;
+            get
+            {
+                return CasoPrueba.Id_Caso_Prueba;
+            }
+        }
+
+        public int IdTester
+        {
+            get
+            {
+                return Tester.IdUsuario;
+            }
         }
     }
 }

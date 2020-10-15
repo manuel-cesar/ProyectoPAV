@@ -15,6 +15,21 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             oCicloPruebaDao = new CicloPruebaDao();
         }
+
+        internal bool ValidarDatos(CicloPrueba cicloPrueba)
+        {
+            if (cicloPrueba.CicloPruebaDetalle.Count == 0)
+            {
+                throw new Exception("Debe ingresar al menos un ciclo de Prueba.");
+            }
+            return true;
+        }
+
+        internal bool Crear(CicloPrueba ciclo)
+        {
+            return oCicloPruebaDao.Create(ciclo);
+        }
+
         //public IList<CicloPrueba> ConsultarCicloPruebaConFiltros(Dictionary<string, object> parametros)
         //{
         //    return oCicloPruebaDao.GetByFilters(parametros);

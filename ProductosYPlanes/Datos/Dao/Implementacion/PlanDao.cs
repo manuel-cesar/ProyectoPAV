@@ -79,7 +79,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
             String strSql = string.Concat(" SELECT P.* ",
                                           "   FROM PlanesDePrueba  P",
-                                          "  WHERE u.borrado = 0 ");
+                                          "  WHERE P.borrado = 0 ");
 
             var resultadoConsulta = DBHelper.getDBHelper().ConsultaSQL(strSql);
             if (resultadoConsulta.Rows.Count > 0)

@@ -28,7 +28,7 @@ namespace ProductosYPlanes.Presentacion
         {
             switch (formMode)
             {
-               case FormMode.insert:
+                case FormMode.insert:
                     {
                         this.Text = "Nuevo caso de prueba";
                         break;
@@ -75,9 +75,12 @@ namespace ProductosYPlanes.Presentacion
                     {
                         if (ValidarCampos())
                         {
+                            int newId = Convert.ToInt32(oCasoPruebaService.consultarMaxId());
+                            newId++;
+
                             var oCasoPrueba = new CasoPrueba
                             {
-                                Id_Caso_Prueba = Convert.ToInt32(txtCasoPrueba.Text),
+                                Id_Caso_Prueba = newId,
                                 Id_Plan_Prueba = Convert.ToInt32(txtPlan.Text),
                                 Titulo = TxtTitulo.Text,
                                 Id_Responsable = Convert.ToInt32(txtResponsable.Text),
@@ -126,15 +129,6 @@ namespace ProductosYPlanes.Presentacion
         private bool ValidarCampos()
         {
             // campos obligatorios
-            if (txtCasoPrueba.Text == string.Empty)
-            {
-                txtCasoPrueba.BackColor = Color.Red;
-                txtCasoPrueba.Focus();
-                return false;
-            }
-            else
-                txtCasoPrueba.BackColor = Color.White;
-
             if (txtPlan.Text == string.Empty)
             {
                 txtPlan.BackColor = Color.Red;

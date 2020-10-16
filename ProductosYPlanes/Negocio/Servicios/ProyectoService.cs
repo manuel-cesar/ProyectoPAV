@@ -33,5 +33,10 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             return oProyectoDao.delete(idProyecto);
         }
+
+        public int consultarMaxId()
+        {
+            return oProyectoDao.consultarMaxId();
+        }
     }
 }

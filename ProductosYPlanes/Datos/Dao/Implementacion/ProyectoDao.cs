@@ -59,8 +59,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         public bool Update(Proyecto oProyecto)
         {
             string str_sql = "UPDATE Proyectos " +
-                             " SET  id_proyecto = @id_proyecto, " +
-                             "     id_producto = @id_producto, " +
+                             " SET id_producto = @id_producto, " +
                              "     version = @version ," +
                              "     alcance = @alcance," +
                              "     id_responsable = @id_responsable, " +
@@ -150,7 +149,16 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             String sql = "UPDATE Proyectos SET borrado = 1 WHERE id_proyecto=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
-        } 
+        }
+        public int consultarMaxId()
+        {
+            var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_proyecto) as MAX FROM Proyectos");
+            int res = Convert.ToInt32(max.Rows[0]["MAX"]);//.ToString();
+            if (res == 0)
+                return 0;
+            else
+                return res;
+        }
     }
 }
 

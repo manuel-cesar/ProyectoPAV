@@ -13,12 +13,22 @@ namespace ProductosYPlanes.Presentacion
     public partial class frmPlanes : Form
     {
         private readonly PlanService planService;
+        private readonly UsuarioService usuarioService;
         public frmPlanes()
         {
             InitializeComponent();
             // Inicializamos la grilla de Planes
             InitializeDataGridView();
             planService = new PlanService();
+            usuarioService = new UsuarioService();
+        }
+
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -151,5 +161,14 @@ namespace ProductosYPlanes.Presentacion
             btnUpdate.Enabled = true;
         }
 
+        private void frmPlanes_Load(object sender, EventArgs e)
+        {
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

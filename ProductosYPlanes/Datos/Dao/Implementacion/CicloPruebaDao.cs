@@ -68,9 +68,9 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                                         "           ,@fecha_ejecucion              ",
                                                          "           ,@aceptado               ",
                                                         "           ,@borrado)               ");
-                    var maxDetalle = 11;// A esta Hay que hacerla como transaction dm.ConsultaSQL("SELECT MAX id_ciclo_prueba_detalle as MAX FROM CiclosPruebaDetalle");
+                    var maxDetalle = dm.ConsultaSQL("SELECT MAX(id_ciclo_prueba_detalle) as MAX FROM CiclosPruebaDetalle");
                     int max = Convert.ToInt32(maxDetalle.Rows[0]["MAX"]);
-                    itemCicloDePrueba.Id_Ciclo_Detalle = max;
+                    itemCicloDePrueba.Id_Ciclo_Detalle = max+1;
                     var paramDetalle = new Dictionary<string, object>();
                     paramDetalle.Add("id_ciclo_prueba_detalle", itemCicloDePrueba.Id_Ciclo_Detalle);
                     paramDetalle.Add("id_ciclo_prueba", cicloPrueba.Id_Ciclo_Prueba);

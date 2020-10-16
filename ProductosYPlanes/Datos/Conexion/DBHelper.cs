@@ -63,7 +63,7 @@ namespace ProductosYPlanes.Datos.Conexion
                         cmd.Parameters.AddWithValue(item.Key, item.Value);
                     }
                 }
-
+                cmd.Transaction = dbTransaction;
                 tabla.Load(cmd.ExecuteReader());
                 return tabla;
             }

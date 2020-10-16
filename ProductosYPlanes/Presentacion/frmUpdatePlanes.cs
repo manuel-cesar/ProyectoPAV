@@ -46,7 +46,7 @@ namespace ProductosYPlanes.Presentacion
         
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
-            LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
+            LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "descripcion", "id_proyecto");
             LlenarCombo(cboRESP, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
 
             switch (formMode)
@@ -106,7 +106,7 @@ namespace ProductosYPlanes.Presentacion
             else
                 txtplanMod.BackColor = Color.White;
 
-            if (cboProy.Text == string.Empty)
+            if (cboProy.SelectedIndex == -1)
             {
                 cboProy.BackColor = Color.Red;
                 cboProy.Focus();
@@ -163,13 +163,14 @@ namespace ProductosYPlanes.Presentacion
                         {
                             int newId = Convert.ToInt32(oPlanService.consultarMaxId());
                             newId++;
+                            txtplanMod.Text = newId.ToString();
                             var oPlan = new Plan
                             {
 
                                 Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
-                                Id_Proyecto = Convert.ToInt32(cboProy.Text),
+                                Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue),
                                 Nombre = TxtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(cboRESP.Text),
+                                Id_Responsable = Convert.ToInt32(cboRESP.SelectedValue),
 
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
@@ -194,10 +195,10 @@ namespace ProductosYPlanes.Presentacion
                         {
 
                             oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
-                            oPlanSelected.Id_Proyecto = Convert.ToInt32(cboProy.Text);
+                            oPlanSelected.Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue);
                             oPlanSelected.Nombre = TxtNombre.Text;
 
-                            oPlanSelected.Id_Responsable = Convert.ToInt32(cboRESP.SelectedIndex);
+                            oPlanSelected.Id_Responsable = Convert.ToInt32(cboRESP.SelectedValue);
 
                             oPlanSelected.Descripcion = txtDescripcion.Text;
 

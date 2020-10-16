@@ -148,6 +148,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO 
             String sql = "UPDATE Proyectos SET borrado = 1 WHERE id_proyecto=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
+        }
 
 
         public int consultarMaxId()

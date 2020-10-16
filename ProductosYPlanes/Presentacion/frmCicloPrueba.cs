@@ -65,11 +65,9 @@ namespace ProductosYPlanes.Presentacion
             cboResponsable.SelectedIndex = -1;
 
             InicializarDetalle();
-
             listaCicloDetalle.Clear();
             dgvCiclo.Refresh();
             //dgvCiclo.DataSource = null;
-
         }
 
         private void InicializarDetalle()

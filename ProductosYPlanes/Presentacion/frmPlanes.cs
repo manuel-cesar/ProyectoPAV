@@ -41,9 +41,9 @@ namespace ProductosYPlanes.Presentacion
         {
             // Dictionary: Representa una colección de claves y valores.
             Dictionary<string, object> parametros = new Dictionary<string, object>();
-            if (!string.IsNullOrEmpty(txtIdPlan.Text))
+            if (!string.IsNullOrEmpty(txtPlan.Text))
             {
-                var idPlan = txtIdPlan.Text;
+                var idPlan = txtPlan.Text;
                 parametros.Add("id_plan_prueba", idPlan);
             }
 
@@ -172,6 +172,11 @@ namespace ProductosYPlanes.Presentacion
 
             LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
             LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

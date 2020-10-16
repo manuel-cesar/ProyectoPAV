@@ -94,24 +94,6 @@
             this.panel6.TabIndex = 50;
             // 
 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(114, 74);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(245, 1);
-            this.panel7.TabIndex = 49;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(100, 181);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(255, 1);
-            this.panel8.TabIndex = 48;
-            // 
-
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Black;
@@ -215,18 +197,6 @@
             this.lblProducto.TabIndex = 36;
             this.lblProducto.Text = "Id Producto :";
             // 
-
-            // txtProducto
-            // 
-            this.txtProducto.BackColor = System.Drawing.SystemColors.Control;
-            this.txtProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProducto.Location = new System.Drawing.Point(108, 56);
-            this.txtProducto.Margin = new System.Windows.Forms.Padding(6);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(256, 13);
-            this.txtProducto.TabIndex = 37;
-            // 
-
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;

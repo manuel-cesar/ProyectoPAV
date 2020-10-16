@@ -25,7 +25,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             oCasoPrueba.Titulo = PlanRow["titulo"].ToString();
             oCasoPrueba.Descripcion = PlanRow["descripcion"].ToString();
             oCasoPrueba.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
-             // para trabajar solo con  registros activos, no borrados.
+            // para trabajar solo con  registros activos, no borrados.
             oCasoPrueba.Borrado = PlanRow["borrado"].ToString().Equals("S");
 
             return oCasoPrueba;
@@ -101,7 +101,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 lista.Add(mapper(row));
 
             return lista;
-        } 
+        }
 
         public bool Update(CasoPrueba oCasoPrueba)
         {
@@ -128,7 +128,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return false;
 
         }
-
         public int consultarMaxId()
         {
             var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_caso_prueba) as MAX FROM CasosDePrueba");

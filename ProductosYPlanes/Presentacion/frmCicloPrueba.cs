@@ -102,8 +102,12 @@ namespace ProductosYPlanes.Presentacion
 
             try
             {
+                int newId = Convert.ToInt32(cicloPruebaService.consultarMaxId());
+                newId++;
+
                 var ciclo = new CicloPrueba
                 {
+                    Id_Ciclo_Prueba = newId,
                     Id_Plan_Prueba = cboPlan.SelectedIndex,
                     Fecha_Inicio = dtpInicio.Value,
                     Fecha_Fin = dtpFin.Value,

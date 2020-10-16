@@ -33,5 +33,10 @@ namespace ProductosYPlanes.Negocio.Servicios
         {
             return oCicloPruebaDao.getAll();
         }
+
+        public int consultarMaxId()
+        {
+            return oCicloPruebaDao.consultarMaxId();
+        }
     }
 }

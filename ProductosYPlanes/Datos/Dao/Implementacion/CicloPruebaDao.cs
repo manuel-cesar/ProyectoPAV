@@ -43,10 +43,9 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                 parametros.Add("id_plan_prueba", cicloPrueba.Id_Plan_Prueba);
                 parametros.Add("aceptado", cicloPrueba.Aceptado);
                 parametros.Add("borrado", 0);
-                dm.ejecutarSQL(sql, parametros);//PRUEBA
+                dm.ejecutarSQL(sql, parametros);
 
-                var newId = dm.ConsultaSQLScalar(" SELECT @@IDENTITY");
-                cicloPrueba.Id_Ciclo_Prueba = Convert.ToInt32(newId);
+
 
 
                 foreach (var itemCicloDePrueba in cicloPrueba.CicloPruebaDetalle)
@@ -69,10 +68,12 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
                                                         "           ,@fecha_ejecucion              ",
                                                          "           ,@aceptado               ",
                                                         "           ,@borrado)               ");
-
+                    var maxDetalle = 11;// A esta Hay que hacerla como transaction dm.ConsultaSQL("SELECT MAX id_ciclo_prueba_detalle as MAX FROM CiclosPruebaDetalle");
+                    int max = Convert.ToInt32(maxDetalle.Rows[0]["MAX"]);
+                    itemCicloDePrueba.Id_Ciclo_Detalle = max;
                     var paramDetalle = new Dictionary<string, object>();
                     paramDetalle.Add("id_ciclo_prueba_detalle", itemCicloDePrueba.Id_Ciclo_Detalle);
-                    paramDetalle.Add("id_ciclo_prueba", itemCicloDePrueba.Id_Ciclo_Detalle);
+                    paramDetalle.Add("id_ciclo_prueba", cicloPrueba.Id_Ciclo_Prueba);
                     paramDetalle.Add("id_caso_prueba", itemCicloDePrueba.CasoPrueba.Id_Caso_Prueba);
                     paramDetalle.Add("id_usuario_tester", itemCicloDePrueba.Tester.IdUsuario);
                     paramDetalle.Add("cantidad_horas", itemCicloDePrueba.Horas);
@@ -119,6 +120,15 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return null;
         }
 
+        public int consultarMaxId()
+        {
+            var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_ciclo_prueba) as MAX FROM CiclosPrueba");
+            int res = Convert.ToInt32(max.Rows[0]["MAX"]);//.ToString();
+            if (res == 0)
+                return 0;
+            else
+                return res;
+        }
 
         private CicloPrueba mapper(DataRow CicloPruebaRow)
         {

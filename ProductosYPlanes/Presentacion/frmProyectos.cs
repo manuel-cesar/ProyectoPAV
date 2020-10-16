@@ -11,11 +11,17 @@ namespace ProductosYPlanes.Presentacion
     public partial class frmProyectos : Form
     {
         private readonly ProyectoService proyectoService;
+        private ProductoService productoService;
+        private UsuarioService usuarioService;
         public frmProyectos()
         {
             InitializeComponent();
             InitializeDataGridView();
             proyectoService = new ProyectoService();
+
+            productoService = new ProductoService();
+            usuarioService = new UsuarioService();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -30,6 +36,18 @@ namespace ProductosYPlanes.Presentacion
             agregarVentana.Show();
         }
 
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
+        }
+        private void frmProyectos_Load(object sender, EventArgs e)
+        {
+            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+        }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -41,9 +59,9 @@ namespace ProductosYPlanes.Presentacion
                 parametros.Add("id_proyecto", idProyecto);
             }
 
-            if (!string.IsNullOrEmpty(txtIdProducto.Text))
+            if (!string.IsNullOrEmpty(cboProd.Text))
             {
-                var idProducto = txtIdProducto.Text;
+                var idProducto = cboProd.Text;
                 parametros.Add("id_producto", idProducto);
             }
             if (!string.IsNullOrEmpty(txtVersion.Text))
@@ -58,9 +76,9 @@ namespace ProductosYPlanes.Presentacion
                 parametros.Add("Alcance", Alcance);
             }
 
-            if (!string.IsNullOrEmpty(txtIdResponsable.Text))
+            if (!string.IsNullOrEmpty(cboResp.Text))
             {
-                var idResponsable = txtIdResponsable.Text;
+                var idResponsable = cboResp.Text;
                 parametros.Add("id_Responsable", idResponsable);
             }
 

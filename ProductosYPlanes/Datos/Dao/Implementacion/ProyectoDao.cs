@@ -149,7 +149,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             String sql = "UPDATE Proyectos SET borrado = 1 WHERE id_proyecto=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
-        }
+
         public int consultarMaxId()
         {
             var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_proyecto) as MAX FROM Proyectos");
@@ -159,6 +159,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             else
                 return res;
         }
+
     }
 }
 

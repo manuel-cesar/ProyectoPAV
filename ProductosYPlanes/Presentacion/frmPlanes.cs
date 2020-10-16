@@ -13,14 +13,20 @@ namespace ProductosYPlanes.Presentacion
     public partial class frmPlanes : Form
     {
         private readonly PlanService planService;
-        private readonly UsuarioService usuarioService;
+
+        private UsuarioService usuarioSerive;
+        private ProyectoService proyectoService;
+
         public frmPlanes()
         {
             InitializeComponent();
             // Inicializamos la grilla de Planes
             InitializeDataGridView();
             planService = new PlanService();
-            usuarioService = new UsuarioService();
+
+            usuarioSerive = new UsuarioService();
+            proyectoService = new ProyectoService();
+
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -41,9 +47,9 @@ namespace ProductosYPlanes.Presentacion
                 parametros.Add("id_plan_prueba", idPlan);
             }
 
-            if (!string.IsNullOrEmpty(txtIdProyecto.Text))
+            if (!string.IsNullOrEmpty(cboProyecto.Text))
             {
-                var idProyecto = txtIdProyecto.Text;
+                var idProyecto = cboProyecto.Text;
                 parametros.Add("id_proyecto", idProyecto);
             }
 
@@ -55,7 +61,7 @@ namespace ProductosYPlanes.Presentacion
 
             if (!string.IsNullOrEmpty(txtNombre.Text))
             {
-                var idResponsable = txtResponsable.Text;
+                var idResponsable = cboResp.Text;
                 parametros.Add("id_Responsable", idResponsable);
             }
 
@@ -163,11 +169,9 @@ namespace ProductosYPlanes.Presentacion
 
         private void frmPlanes_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
+            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
 
         }
     }

@@ -14,6 +14,11 @@ namespace ProductosYPlanes.Negocio.Servicios
             oProyectoDao = new ProyectoDao();
         }
 
+        public IList<Proyecto> ConsultarTodos()
+        {
+            return oProyectoDao.getAll();
+        }
+
         public bool ActualizarProyecto(Proyecto OProyectoSelected)
         {
             return oProyectoDao.Update(OProyectoSelected);

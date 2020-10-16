@@ -128,6 +128,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return false;
 
         }
+
         public int consultarMaxId()
         {
             var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_caso_prueba) as MAX FROM CasosDePrueba");

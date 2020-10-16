@@ -15,13 +15,19 @@ namespace ProductosYPlanes.Presentacion
 
         private readonly PlanService oPlanService;
         private Plan oPlanSelected;
-        private UsuarioService usuarioService;
+
+        private  UsuarioService usuarioSerive;
+        private  ProyectoService proyectoService;
+
 
         public frmUpdatePlanes()
         {
             InitializeComponent();
             oPlanService = new PlanService();
-            usuarioService = new UsuarioService();
+
+            usuarioSerive = new UsuarioService();
+            proyectoService = new ProyectoService();
+
         }
 
         public enum FormMode
@@ -37,9 +43,12 @@ namespace ProductosYPlanes.Presentacion
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
+        
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
-            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
+            LlenarCombo(cboRESP, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+
             switch (formMode)
             {
                 case FormMode.insert:
@@ -53,9 +62,12 @@ namespace ProductosYPlanes.Presentacion
                         this.Text = "Actualizar Plan";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        txtplanMod.Enabled = true;
-                        txtProyecto.Enabled = true;
+                        txtplanMod.Enabled = false;
+                        cboProy.Enabled = true;
                         TxtNombre.Enabled = true;
+
+                        cboRESP.Enabled = true;
+
                         txtDescripcion.Enabled = true;
                         break;
                     }
@@ -67,9 +79,11 @@ namespace ProductosYPlanes.Presentacion
             if (oPlanSelected != null)
             {
                 txtplanMod.Text = oPlanSelected.Id_Plan_Prueba.ToString();
-                txtProyecto.Text = oPlanSelected.Id_Proyecto.ToString();
+                cboProy.Text = oPlanSelected.Id_Proyecto.ToString();
                 TxtNombre.Text = oPlanSelected.Nombre.ToString();
-                //txtResp.Text = oPlanSelected.Id_Responsable.ToString();
+
+                cboRESP.Text = oPlanSelected.Id_Responsable.ToString();
+
                 txtDescripcion.Text = oPlanSelected.Descripcion.ToString();
             }
         }
@@ -81,14 +95,25 @@ namespace ProductosYPlanes.Presentacion
 
         private bool ValidarCampos()
         {
-            if (txtProyecto.Text == string.Empty)
+
+            // campos obligatorios
+            if (txtplanMod.Text == string.Empty)
             {
-                txtProyecto.BackColor = Color.Red;
-                txtProyecto.Focus();
+                txtplanMod.BackColor = Color.Red;
+                txtplanMod.Focus();
                 return false;
             }
             else
-                txtProyecto.BackColor = Color.White;
+                txtplanMod.BackColor = Color.White;
+
+            if (cboProy.Text == string.Empty)
+            {
+                cboProy.BackColor = Color.Red;
+                cboProy.Focus();
+                return false;
+            }
+            else
+                cboProy.BackColor = Color.White;
 
             if (TxtNombre.Text == string.Empty)
             {
@@ -99,14 +124,16 @@ namespace ProductosYPlanes.Presentacion
             else
                 TxtNombre.BackColor = Color.White;
 
-            if (cboResponsable.SelectedIndex == -1)
+
+            if (cboRESP.SelectedIndex == -1)
             {
-                cboResponsable.BackColor = Color.Red;
-                cboResponsable.Focus();
+                cboRESP.BackColor = Color.Red;
+                cboRESP.Focus();
                 return false;
             }
             else
-                cboResponsable.BackColor = Color.White;
+                cboRESP.BackColor = Color.White;
+
 
             if (txtDescripcion.Text == string.Empty)
             {
@@ -124,6 +151,7 @@ namespace ProductosYPlanes.Presentacion
         {
             this.Close();
         }
+       
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
@@ -137,10 +165,12 @@ namespace ProductosYPlanes.Presentacion
                             newId++;
                             var oPlan = new Plan
                             {
-                                Id_Plan_Prueba = newId,
-                                Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
+
+                                Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
+                                Id_Proyecto = Convert.ToInt32(cboProy.Text),
                                 Nombre = TxtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex),
+                                Id_Responsable = Convert.ToInt32(cboRESP.Text),
+
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
                             };
@@ -164,9 +194,11 @@ namespace ProductosYPlanes.Presentacion
                         {
 
                             oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
-                            oPlanSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
+                            oPlanSelected.Id_Proyecto = Convert.ToInt32(cboProy.Text);
                             oPlanSelected.Nombre = TxtNombre.Text;
-                            oPlanSelected.Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex);
+
+                            oPlanSelected.Id_Responsable = Convert.ToInt32(cboRESP.SelectedIndex);
+
                             oPlanSelected.Descripcion = txtDescripcion.Text;
 
                             if (oPlanService.ActualizarPlan(oPlanSelected))

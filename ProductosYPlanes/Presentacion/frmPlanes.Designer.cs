@@ -30,13 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtResponsable = new System.Windows.Forms.TextBox();
             this.lblResponsable = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdProyecto = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -53,7 +49,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cboResp = new System.Windows.Forms.ComboBox();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
+            this.cboProyecto = new System.Windows.Forms.ComboBox();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).BeginInit();
             this.SuspendLayout();
@@ -61,15 +58,13 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.txtIdPlan);
+
+            this.groupBox1.Controls.Add(this.cboProyecto);
             this.groupBox1.Controls.Add(this.cboResp);
-            this.groupBox1.Controls.Add(this.panel4);
+
             this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.txtResponsable);
             this.groupBox1.Controls.Add(this.lblResponsable);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.txtIdProyecto);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.btnConsultar);
@@ -85,6 +80,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Planes - Filtros de busqueda";
+
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel4
@@ -94,6 +90,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(135, 1);
             this.panel4.TabIndex = 16;
+
             // 
             // panel3
             // 
@@ -103,6 +100,7 @@
             this.panel3.Size = new System.Drawing.Size(135, 1);
             this.panel3.TabIndex = 16;
             // 
+
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
@@ -121,6 +119,7 @@
             this.txtResponsable.Size = new System.Drawing.Size(135, 14);
             this.txtResponsable.TabIndex = 4;
             // 
+
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
@@ -139,6 +138,7 @@
             this.panel1.Size = new System.Drawing.Size(117, 1);
             this.panel1.TabIndex = 15;
             // 
+
             // txtIdProyecto
             // 
             this.txtIdProyecto.BackColor = System.Drawing.SystemColors.Control;
@@ -149,6 +149,7 @@
             this.txtIdProyecto.Size = new System.Drawing.Size(118, 14);
             this.txtIdProyecto.TabIndex = 2;
             // 
+
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
@@ -241,6 +242,19 @@
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             // 
+
+            // txtIdPlan
+            // 
+            this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdPlan.Location = new System.Drawing.Point(96, 37);
+            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.ShortcutsEnabled = false;
+            this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
+            this.txtIdPlan.TabIndex = 1;
+            // 
+
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
@@ -323,17 +337,21 @@
             // 
             // cboResp
             // 
-            this.cboResp.Location = new System.Drawing.Point(481, 4);
+
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(349, 72);
             this.cboResp.Name = "cboResp";
             this.cboResp.Size = new System.Drawing.Size(121, 23);
-            this.cboResp.TabIndex = 18;
+            this.cboResp.TabIndex = 17;
             // 
-            // txtIdPlan
+            // cboProyecto
             // 
-            this.txtIdPlan.Location = new System.Drawing.Point(97, 26);
-            this.txtIdPlan.Name = "txtIdPlan";
-            this.txtIdPlan.Size = new System.Drawing.Size(100, 21);
-            this.txtIdPlan.TabIndex = 19;
+            this.cboProyecto.FormattingEnabled = true;
+            this.cboProyecto.Location = new System.Drawing.Point(93, 75);
+            this.cboProyecto.Name = "cboProyecto";
+            this.cboProyecto.Size = new System.Drawing.Size(121, 23);
+            this.cboProyecto.TabIndex = 18;
+
             // 
             // frmPlanes
             // 
@@ -353,7 +371,6 @@
             this.Name = "frmPlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planes";
-            this.Load += new System.EventHandler(this.frmPlanes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanes)).EndInit();
@@ -372,21 +389,23 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txtResponsable;
+
+        private System.Windows.Forms.TextBox txtIdPlan;
+
+
         private System.Windows.Forms.Label lblResponsable;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtIdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlanPrueba;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResposable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboResp;
-        private System.Windows.Forms.TextBox txtIdPlan;
+
+        private System.Windows.Forms.ComboBox cboProyecto;
+
     }
 }

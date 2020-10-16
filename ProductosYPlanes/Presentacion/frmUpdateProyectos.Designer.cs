@@ -34,20 +34,18 @@
             this.lblAlcance = new System.Windows.Forms.Label();
             this.txtProyecto = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtIdResponsable = new System.Windows.Forms.TextBox();
             this.lblIdResponsable = new System.Windows.Forms.Label();
             this.txtVersion = new System.Windows.Forms.TextBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
-            this.txtProducto = new System.Windows.Forms.TextBox();
             this.lblProyecto = new System.Windows.Forms.Label();
+            this.cboResponsable = new System.Windows.Forms.ComboBox();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // panel5
@@ -80,8 +78,9 @@
             // 
             // txtProyecto
             // 
-            this.txtProyecto.Enabled = false;
-            this.txtProyecto.Location = new System.Drawing.Point(119, 24);
+
+            this.txtProyecto.Location = new System.Drawing.Point(106, 31);
+
             this.txtProyecto.Name = "txtProyecto";
             this.txtProyecto.Size = new System.Drawing.Size(259, 20);
             this.txtProyecto.TabIndex = 35;
@@ -94,6 +93,7 @@
             this.panel6.Size = new System.Drawing.Size(255, 1);
             this.panel6.TabIndex = 50;
             // 
+
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Black;
@@ -111,6 +111,7 @@
             this.panel8.Size = new System.Drawing.Size(255, 1);
             this.panel8.TabIndex = 48;
             // 
+
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Black;
@@ -124,7 +125,9 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(187, 280);
+
+            this.btnCancelar.Location = new System.Drawing.Point(286, 280);
+
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(68, 25);
             this.btnCancelar.TabIndex = 45;
@@ -137,7 +140,9 @@
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(49, 280);
+
+            this.btnAceptar.Location = new System.Drawing.Point(80, 280);
+
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(68, 25);
             this.btnAceptar.TabIndex = 44;
@@ -148,7 +153,9 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(12, 211);
+
+            this.lblDescripcion.Location = new System.Drawing.Point(24, 217);
+
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
             this.lblDescripcion.TabIndex = 46;
@@ -158,28 +165,20 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(100, 204);
+
+            this.txtDescripcion.Location = new System.Drawing.Point(99, 198);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
             this.txtDescripcion.MaximumSize = new System.Drawing.Size(256, 60);
-            this.txtDescripcion.MinimumSize = new System.Drawing.Size(256, 20);
+            this.txtDescripcion.MinimumSize = new System.Drawing.Size(256, 60);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(256, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(256, 13);
             this.txtDescripcion.TabIndex = 43;
-            // 
-            // txtIdResponsable
-            // 
-            this.txtIdResponsable.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdResponsable.Location = new System.Drawing.Point(99, 168);
-            this.txtIdResponsable.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdResponsable.Name = "txtIdResponsable";
-            this.txtIdResponsable.Size = new System.Drawing.Size(256, 13);
-            this.txtIdResponsable.TabIndex = 41;
             // 
             // lblIdResponsable
             // 
             this.lblIdResponsable.AutoSize = true;
-            this.lblIdResponsable.Location = new System.Drawing.Point(9, 168);
+            this.lblIdResponsable.Location = new System.Drawing.Point(6, 179);
+
             this.lblIdResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIdResponsable.Name = "lblIdResponsable";
             this.lblIdResponsable.Size = new System.Drawing.Size(87, 13);
@@ -216,6 +215,7 @@
             this.lblProducto.TabIndex = 36;
             this.lblProducto.Text = "Id Producto :";
             // 
+
             // txtProducto
             // 
             this.txtProducto.BackColor = System.Drawing.SystemColors.Control;
@@ -226,6 +226,7 @@
             this.txtProducto.Size = new System.Drawing.Size(256, 13);
             this.txtProducto.TabIndex = 37;
             // 
+
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
@@ -236,29 +237,45 @@
             this.lblProyecto.TabIndex = 34;
             this.lblProyecto.Text = "Id Proyecto :";
             // 
+            // cboResponsable
+            // 
+            this.cboResponsable.FormattingEnabled = true;
+            this.cboResponsable.Location = new System.Drawing.Point(99, 176);
+            this.cboResponsable.Name = "cboResponsable";
+            this.cboResponsable.Size = new System.Drawing.Size(256, 21);
+            this.cboResponsable.TabIndex = 53;
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(106, 65);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(256, 21);
+            this.cboProducto.TabIndex = 54;
+            // 
             // frmUpdateProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 352);
+
+            this.Controls.Add(this.cboProducto);
+            this.Controls.Add(this.cboResponsable);
+
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtAlcance);
             this.Controls.Add(this.lblAlcance);
             this.Controls.Add(this.txtProyecto);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtIdResponsable);
             this.Controls.Add(this.lblIdResponsable);
             this.Controls.Add(this.txtVersion);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblProducto);
-            this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.lblProyecto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(1);
@@ -277,19 +294,17 @@
         private System.Windows.Forms.Label lblAlcance;
         private System.Windows.Forms.TextBox txtProyecto;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtIdResponsable;
         private System.Windows.Forms.Label lblIdResponsable;
         private System.Windows.Forms.TextBox txtVersion;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label lblProyecto;
+        private System.Windows.Forms.ComboBox cboResponsable;
+        private System.Windows.Forms.ComboBox cboProducto;
     }
 }

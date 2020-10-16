@@ -148,6 +148,15 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return false;
 
         }
+        public int consultarMaxId()
+        {
+            var max = DBHelper.getDBHelper().ConsultaSQL("SELECT MAX(id_plan_prueba) as MAX FROM PlanesDePrueba");
+            int res = Convert.ToInt32(max.Rows[0]["MAX"]);//.ToString();
+            if (res == 0)
+                return 0;
+            else
+                return res;
+        }
 
     }
 }

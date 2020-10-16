@@ -15,15 +15,19 @@ namespace ProductosYPlanes.Presentacion
 
         private readonly PlanService oPlanService;
         private Plan oPlanSelected;
+
         private  UsuarioService usuarioSerive;
         private  ProyectoService proyectoService;
+
 
         public frmUpdatePlanes()
         {
             InitializeComponent();
             oPlanService = new PlanService();
+
             usuarioSerive = new UsuarioService();
             proyectoService = new ProyectoService();
+
         }
 
         public enum FormMode
@@ -32,8 +36,6 @@ namespace ProductosYPlanes.Presentacion
             update
         }
 
-
-
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.ValueMember = value;
@@ -41,12 +43,12 @@ namespace ProductosYPlanes.Presentacion
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
-
-
+        
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
             LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
             LlenarCombo(cboRESP, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+
             switch (formMode)
             {
                 case FormMode.insert:
@@ -63,7 +65,9 @@ namespace ProductosYPlanes.Presentacion
                         txtplanMod.Enabled = false;
                         cboProy.Enabled = true;
                         TxtNombre.Enabled = true;
+
                         cboRESP.Enabled = true;
+
                         txtDescripcion.Enabled = true;
                         break;
                     }
@@ -77,7 +81,9 @@ namespace ProductosYPlanes.Presentacion
                 txtplanMod.Text = oPlanSelected.Id_Plan_Prueba.ToString();
                 cboProy.Text = oPlanSelected.Id_Proyecto.ToString();
                 TxtNombre.Text = oPlanSelected.Nombre.ToString();
+
                 cboRESP.Text = oPlanSelected.Id_Responsable.ToString();
+
                 txtDescripcion.Text = oPlanSelected.Descripcion.ToString();
             }
         }
@@ -89,6 +95,7 @@ namespace ProductosYPlanes.Presentacion
 
         private bool ValidarCampos()
         {
+
             // campos obligatorios
             if (txtplanMod.Text == string.Empty)
             {
@@ -117,7 +124,8 @@ namespace ProductosYPlanes.Presentacion
             else
                 TxtNombre.BackColor = Color.White;
 
-            if (cboRESP.Text == string.Empty)
+
+            if (cboRESP.SelectedIndex == -1)
             {
                 cboRESP.BackColor = Color.Red;
                 cboRESP.Focus();
@@ -125,6 +133,7 @@ namespace ProductosYPlanes.Presentacion
             }
             else
                 cboRESP.BackColor = Color.White;
+
 
             if (txtDescripcion.Text == string.Empty)
             {
@@ -152,12 +161,16 @@ namespace ProductosYPlanes.Presentacion
                     {
                         if (ValidarCampos())
                         {
+                            int newId = Convert.ToInt32(oPlanService.consultarMaxId());
+                            newId++;
                             var oPlan = new Plan
                             {
+
                                 Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text),
                                 Id_Proyecto = Convert.ToInt32(cboProy.Text),
                                 Nombre = TxtNombre.Text,
                                 Id_Responsable = Convert.ToInt32(cboRESP.Text),
+
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
                             };
@@ -183,7 +196,9 @@ namespace ProductosYPlanes.Presentacion
                             oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplanMod.Text);
                             oPlanSelected.Id_Proyecto = Convert.ToInt32(cboProy.Text);
                             oPlanSelected.Nombre = TxtNombre.Text;
+
                             oPlanSelected.Id_Responsable = Convert.ToInt32(cboRESP.SelectedIndex);
+
                             oPlanSelected.Descripcion = txtDescripcion.Text;
 
                             if (oPlanService.ActualizarPlan(oPlanSelected))
@@ -199,6 +214,11 @@ namespace ProductosYPlanes.Presentacion
                     }
 
             }
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

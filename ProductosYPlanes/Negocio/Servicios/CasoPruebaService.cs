@@ -37,6 +37,11 @@ namespace ProductosYPlanes.Negocio.Servicios
             return oCasoPruebaDao.delete(idCasoPrueba);
         }
 
+        public int consultarMaxId()
+        {
+            return oCasoPruebaDao.consultarMaxId();
+        }
+
 
     }
 }

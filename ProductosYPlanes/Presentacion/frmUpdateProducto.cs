@@ -62,15 +62,6 @@ namespace ProductosYPlanes.Presentacion
         private bool ValidarCampos()
         {
             // campos obligatorios
-            if (txtProducto.Text == string.Empty)
-            {
-                txtProducto.BackColor = Color.Red;
-                txtProducto.Focus();
-                return false;
-            }
-            else
-                txtProducto.BackColor = Color.White;
-
             if (txtNombre.Text == string.Empty)
             {
                 txtNombre.BackColor = Color.Red;
@@ -97,9 +88,11 @@ namespace ProductosYPlanes.Presentacion
                     {
                         if (ValidarCampos())
                         {
+                            int newId = Convert.ToInt32(oProductoService.consultarMaxId());
+                            newId++;
                             var oProducto = new Producto
                             {
-                                Id_Producto = Convert.ToInt32(txtProducto.Text),
+                                Id_Producto = newId,
                                 Nombre = txtNombre.Text,
                                 Borrado = false
                             };

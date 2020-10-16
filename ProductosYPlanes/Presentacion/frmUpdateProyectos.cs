@@ -115,10 +115,14 @@ namespace ProductosYPlanes.Presentacion
                     {
                         if (ValidarCampos())
                         {
+                            int newId = Convert.ToInt32(oProyectoService.consultarMaxId());
+                            newId++;
                             var oProyecto = new Proyecto
                             {
+
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
                                 Id_Producto = Convert.ToInt32(cboProducto.SelectedIndex),
+
                                 Descripcion = txtDescripcion.Text,
                                 Alcance = Convert.ToInt32(txtAlcance.Text),
                                 Version = Convert.ToInt32(txtVersion.Text),
@@ -169,6 +173,7 @@ namespace ProductosYPlanes.Presentacion
         private bool ValidarCampos()
         {
             // campos obligatorios
+
             if (txtProyecto.Text == string.Empty)
             {
                 txtProyecto.BackColor = Color.Red;

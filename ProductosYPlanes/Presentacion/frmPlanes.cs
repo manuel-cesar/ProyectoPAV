@@ -13,16 +13,20 @@ namespace ProductosYPlanes.Presentacion
     public partial class frmPlanes : Form
     {
         private readonly PlanService planService;
+
         private UsuarioService usuarioSerive;
         private ProyectoService proyectoService;
+
         public frmPlanes()
         {
             InitializeComponent();
             // Inicializamos la grilla de Planes
             InitializeDataGridView();
             planService = new PlanService();
+
             usuarioSerive = new UsuarioService();
             proyectoService = new ProyectoService();
+
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -165,8 +169,10 @@ namespace ProductosYPlanes.Presentacion
 
         private void frmPlanes_Load(object sender, EventArgs e)
         {
+
             LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
             LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+
         }
     }
 }

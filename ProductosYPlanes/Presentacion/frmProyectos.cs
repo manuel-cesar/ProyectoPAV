@@ -18,8 +18,10 @@ namespace ProductosYPlanes.Presentacion
             InitializeComponent();
             InitializeDataGridView();
             proyectoService = new ProyectoService();
+
             productoService = new ProductoService();
             usuarioService = new UsuarioService();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

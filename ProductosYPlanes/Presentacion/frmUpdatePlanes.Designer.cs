@@ -43,8 +43,10 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProyecto = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
+
             this.cboProy = new System.Windows.Forms.ComboBox();
             this.cboRESP = new System.Windows.Forms.ComboBox();
+
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -55,6 +57,7 @@
             // 
             // txtplanMod
             // 
+
             this.txtplanMod.Location = new System.Drawing.Point(97, 29);
             this.txtplanMod.Name = "txtplanMod";
             this.txtplanMod.Size = new System.Drawing.Size(259, 20);
@@ -68,6 +71,24 @@
             this.panel4.Size = new System.Drawing.Size(255, 1);
             this.panel4.TabIndex = 48;
             // 
+
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(98, 76);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(255, 1);
+            this.panel3.TabIndex = 47;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(98, 143);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(255, 1);
+            this.panel2.TabIndex = 46;
+            // 
+
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
@@ -82,7 +103,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(244, 265);
+
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 46);
             this.btnCancelar.TabIndex = 44;
@@ -96,7 +119,9 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(40, 265);
+
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(125, 46);
             this.btnAceptar.TabIndex = 41;
@@ -118,13 +143,16 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+
             this.txtDescripcion.Location = new System.Drawing.Point(97, 160);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
             this.txtDescripcion.MaximumSize = new System.Drawing.Size(256, 60);
             this.txtDescripcion.MinimumSize = new System.Drawing.Size(256, 60);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(256, 13);
             this.txtDescripcion.TabIndex = 40;
+
             // 
             // lblResponsable
             // 
@@ -132,16 +160,20 @@
             this.lblResponsable.Location = new System.Drawing.Point(8, 128);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
+
             this.lblResponsable.Size = new System.Drawing.Size(87, 13);
+
             this.lblResponsable.TabIndex = 42;
-            this.lblResponsable.Text = "Id Responsable :";
+            this.lblResponsable.Text = "Responsable :";
             // 
             // TxtNombre
             // 
             this.TxtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+
             this.TxtNombre.Location = new System.Drawing.Point(91, 97);
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(256, 13);
             this.TxtNombre.TabIndex = 37;
@@ -166,7 +198,7 @@
             this.lblProyecto.TabIndex = 35;
             this.lblProyecto.Text = "Id Proyecto :";
             // 
-            // lblPlan
+          // lblPlan
             // 
             this.lblPlan.AutoSize = true;
             this.lblPlan.Location = new System.Drawing.Point(42, 29);
@@ -176,6 +208,7 @@
             this.lblPlan.TabIndex = 34;
             this.lblPlan.Text = "Id Plan :";
             // 
+
             // cboProy
             // 
             this.cboProy.FormattingEnabled = true;
@@ -191,6 +224,7 @@
             this.cboRESP.Name = "cboRESP";
             this.cboRESP.Size = new System.Drawing.Size(238, 21);
             this.cboRESP.TabIndex = 51;
+
             // 
             // frmUpdatePlanes
             // 
@@ -198,8 +232,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(425, 341);
+
             this.Controls.Add(this.cboRESP);
             this.Controls.Add(this.cboProy);
+
             this.Controls.Add(this.txtplanMod);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -213,7 +249,9 @@
             this.Controls.Add(this.lblProyecto);
             this.Controls.Add(this.lblPlan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
             this.MaximizeBox = false;
             this.Name = "frmUpdatePlanes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -238,7 +276,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.Label lblPlan;
+
         private System.Windows.Forms.ComboBox cboProy;
         private System.Windows.Forms.ComboBox cboRESP;
+
     }
 }

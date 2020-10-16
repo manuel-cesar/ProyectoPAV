@@ -43,6 +43,10 @@ namespace ProductosYPlanes.Negocio.Servicios
             return oPlanDao.delete(idPlan);
         }
 
+        public int consultarMaxId()
+        {
+            return oPlanDao.consultarMaxId();
+        }
 
     }
 }

@@ -78,7 +78,9 @@
             // 
             // txtProyecto
             // 
+
             this.txtProyecto.Location = new System.Drawing.Point(106, 31);
+
             this.txtProyecto.Name = "txtProyecto";
             this.txtProyecto.Size = new System.Drawing.Size(259, 20);
             this.txtProyecto.TabIndex = 35;
@@ -91,6 +93,25 @@
             this.panel6.Size = new System.Drawing.Size(255, 1);
             this.panel6.TabIndex = 50;
             // 
+
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Location = new System.Drawing.Point(114, 74);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(245, 1);
+            this.panel7.TabIndex = 49;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Location = new System.Drawing.Point(100, 181);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(255, 1);
+            this.panel8.TabIndex = 48;
+            // 
+
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Black;
@@ -104,7 +125,9 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.btnCancelar.Location = new System.Drawing.Point(286, 280);
+
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(68, 25);
             this.btnCancelar.TabIndex = 45;
@@ -117,7 +140,9 @@
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.btnAceptar.Location = new System.Drawing.Point(80, 280);
+
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(68, 25);
             this.btnAceptar.TabIndex = 44;
@@ -128,7 +153,9 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+
             this.lblDescripcion.Location = new System.Drawing.Point(24, 217);
+
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
             this.lblDescripcion.TabIndex = 46;
@@ -138,6 +165,7 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+
             this.txtDescripcion.Location = new System.Drawing.Point(99, 198);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
             this.txtDescripcion.MaximumSize = new System.Drawing.Size(256, 60);
@@ -150,6 +178,7 @@
             // 
             this.lblIdResponsable.AutoSize = true;
             this.lblIdResponsable.Location = new System.Drawing.Point(6, 179);
+
             this.lblIdResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIdResponsable.Name = "lblIdResponsable";
             this.lblIdResponsable.Size = new System.Drawing.Size(87, 13);
@@ -186,6 +215,18 @@
             this.lblProducto.TabIndex = 36;
             this.lblProducto.Text = "Id Producto :";
             // 
+
+            // txtProducto
+            // 
+            this.txtProducto.BackColor = System.Drawing.SystemColors.Control;
+            this.txtProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProducto.Location = new System.Drawing.Point(108, 56);
+            this.txtProducto.Margin = new System.Windows.Forms.Padding(6);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(256, 13);
+            this.txtProducto.TabIndex = 37;
+            // 
+
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
@@ -217,8 +258,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 352);
+
             this.Controls.Add(this.cboProducto);
             this.Controls.Add(this.cboResponsable);
+
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtAlcance);
             this.Controls.Add(this.lblAlcance);

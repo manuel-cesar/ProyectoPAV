@@ -198,6 +198,7 @@
             this.dgvProyectos.Size = new System.Drawing.Size(791, 269);
             this.dgvProyectos.TabIndex = 6;
             this.dgvProyectos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellClick);
+
             // 
             // IdProyecto
             // 

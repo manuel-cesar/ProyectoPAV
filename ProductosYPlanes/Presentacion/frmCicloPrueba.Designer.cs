@@ -41,23 +41,33 @@
             this.cboCaso = new System.Windows.Forms.ComboBox();
             this.lblCaso = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnAgregar = new System.Windows.Forms.Button();
+
             this.lblHoras = new System.Windows.Forms.Label();
             this.cboTester = new System.Windows.Forms.ComboBox();
             this.txtHoras = new System.Windows.Forms.TextBox();
             this.lblTeste = new System.Windows.Forms.Label();
             this.dgvCiclo = new System.Windows.Forms.DataGridView();
+
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblActual = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+
             this.TituloCasoPrueba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTester = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aceptado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblActual = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCiclo)).BeginInit();
@@ -197,6 +207,7 @@
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
             // 
+
             // btnAgregar
             // 
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -208,6 +219,7 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
@@ -226,6 +238,19 @@
             this.dtpFecha.Size = new System.Drawing.Size(95, 20);
             this.dtpFecha.TabIndex = 13;
             // 
+
+            // btnAgregar
+            // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Location = new System.Drawing.Point(156, 79);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(57, 31);
+            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+
             // lblHoras
             // 
             this.lblHoras.AutoSize = true;
@@ -279,6 +304,43 @@
             this.dgvCiclo.TabIndex = 12;
             this.dgvCiclo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCiclo_CellContentClick);
             // 
+
+            // TituloCasoPrueba
+            // 
+            this.TituloCasoPrueba.DataPropertyName = "TituloCasoPrueba";
+            this.TituloCasoPrueba.HeaderText = "Caso de Prueba";
+            this.TituloCasoPrueba.Name = "TituloCasoPrueba";
+            this.TituloCasoPrueba.ReadOnly = true;
+            // 
+            // NombreTester
+            // 
+            this.NombreTester.DataPropertyName = "NombreTester";
+            this.NombreTester.HeaderText = "Tester";
+            this.NombreTester.Name = "NombreTester";
+            this.NombreTester.ReadOnly = true;
+            // 
+            // Horas
+            // 
+            this.Horas.DataPropertyName = "Horas";
+            this.Horas.HeaderText = "Horas";
+            this.Horas.Name = "Horas";
+            this.Horas.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Aceptado
+            // 
+            this.Aceptado.DataPropertyName = "Aceptado";
+            this.Aceptado.HeaderText = "Aceptado";
+            this.Aceptado.Name = "Aceptado";
+            this.Aceptado.ReadOnly = true;
+            // 
+
             // btnCrear
             // 
             this.btnCrear.Location = new System.Drawing.Point(12, 370);
@@ -318,6 +380,7 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+
             // TituloCasoPrueba
             // 
             this.TituloCasoPrueba.DataPropertyName = "TituloCasoPrueba";
@@ -353,6 +416,7 @@
             this.Aceptado.Name = "Aceptado";
             this.Aceptado.ReadOnly = true;
             // 
+
             // frmCicloPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

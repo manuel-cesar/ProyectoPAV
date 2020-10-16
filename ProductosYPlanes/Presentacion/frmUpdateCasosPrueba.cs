@@ -36,7 +36,7 @@ namespace ProductosYPlanes.Presentacion
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Caso de Prueba";
-                        // Recuperar usuario seleccionado en la grilla 
+                        // Recuperar Caso de Prueba seleccionado en la grilla 
                         MostrarDatos();
                         txtCasoPrueba.Enabled = true;
                         txtPlan.Enabled = true;
@@ -86,7 +86,6 @@ namespace ProductosYPlanes.Presentacion
                             };
                             if (oCasoPruebaService.crearCasoPrueba(oCasoPrueba))
                             {
-                                //btnConsultar_Click(sender, e); /Esto lo use en el otro cuando elimina para q actualice
                                 MessageBox.Show("Caso de Prueba!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
@@ -154,23 +153,6 @@ namespace ProductosYPlanes.Presentacion
             else
                 TxtTitulo.BackColor = Color.White;
 
-           /* if (txtResponsable.Text == string.Empty)
-            {
-                txtResp.BackColor = Color.Red;
-                txtResp.Focus();
-                return false;
-            }
-            else
-                txtResponsable.BackColor = Color.White;*/
-
-            /*if (txtDescripcion.Text == string.Empty)
-            {
-                txtDescripcion.BackColor = Color.Red;
-                txtDescripcion.Focus();
-                return false;
-            }
-            else
-                txtDescripcion.BackColor = Color.White;*/
 
             return true;
         }

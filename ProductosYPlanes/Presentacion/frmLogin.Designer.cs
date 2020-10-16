@@ -58,7 +58,7 @@
             this.lblBugTracker.TabIndex = 0;
             this.lblBugTracker.Text = "BugTracker";
             this.lblBugTracker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblBugTracker.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // btnIngresar
             // 
@@ -180,7 +180,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso al sistema";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

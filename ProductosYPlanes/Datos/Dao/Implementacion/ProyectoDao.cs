@@ -16,8 +16,8 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
         {
             string sql = "SELCT * FROM Proyectos WHERE borrado = '0' AND id_proyecto = " + id.ToString();
             DataTable PlanProyectoDT = DBHelper.getDBHelper().ConsultaSQL(sql);
+            
             return mapper(PlanProyectoDT.Rows[0]);
-
         }
 
         public IList<Proyecto> getAll()
@@ -39,7 +39,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return null;
-        } //LISTO 
+        } 
 
         private Proyecto mapper(DataRow PlanRow)
         {
@@ -48,11 +48,9 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             oProyecto.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());
             oProyecto.Id_Producto = Convert.ToInt32(PlanRow["id_producto"].ToString());
             oProyecto.Version = Convert.ToInt32(PlanRow["version"].ToString());
-            //oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString());
+            //oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString()); //Arregar linea 
             oProyecto.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
             oProyecto.Descripcion = PlanRow["descripcion"].ToString();
-
-
             oProyecto.Borrado = PlanRow["borrado"].ToString().Equals("S");
 
             return oProyecto;
@@ -84,7 +82,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return false;
-
         }
 
         public bool CrearProyecto(Proyecto oProyecto)
@@ -109,9 +106,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return false;
-
-
-
         }
 
         public IList<Proyecto> GetByFilters(Dictionary<string, object> parametros)
@@ -141,8 +135,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             if (parametros.ContainsKey("id_responsable"))
                 strSql += " AND (P.id_responsable = @id_responsable) ";
 
-            //var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
-
             var resultado = (DataRowCollection)DBHelper.getDBHelper().ConsultaSQL(strSql, parametros).Rows;
 
 
@@ -158,10 +150,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             String sql = "UPDATE Proyectos SET borrado = 1 WHERE id_proyecto=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
-        } //LISTO 
-
-
-
+        } 
     }
 }
 

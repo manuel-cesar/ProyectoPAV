@@ -34,13 +34,9 @@
             this.txtVersion = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtAlcance = new System.Windows.Forms.TextBox();
             this.lblAlcance = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
-            this.txtIdResponsable = new System.Windows.Forms.TextBox();
             this.lblIdResponsable = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvProyectos = new System.Windows.Forms.DataGridView();
@@ -57,6 +53,8 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.cboResp = new System.Windows.Forms.ComboBox();
+            this.cboProd = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
@@ -64,17 +62,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.cboProd);
+            this.groupBox1.Controls.Add(this.cboResp);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.txtVersion);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.lblVersion);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.txtAlcance);
             this.groupBox1.Controls.Add(this.lblAlcance);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.txtIdProducto);
-            this.groupBox1.Controls.Add(this.txtIdResponsable);
             this.groupBox1.Controls.Add(this.lblIdResponsable);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.dgvProyectos);
@@ -127,22 +123,6 @@
             this.lblVersion.TabIndex = 18;
             this.lblVersion.Text = "Version :";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(322, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(135, 1);
-            this.panel3.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(94, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 1);
-            this.panel2.TabIndex = 16;
-            // 
             // txtAlcance
             // 
             this.txtAlcance.BackColor = System.Drawing.SystemColors.Control;
@@ -170,26 +150,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(117, 1);
             this.panel1.TabIndex = 15;
-            // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdProducto.Location = new System.Drawing.Point(93, 75);
-            this.txtIdProducto.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(118, 14);
-            this.txtIdProducto.TabIndex = 2;
-            // 
-            // txtIdResponsable
-            // 
-            this.txtIdResponsable.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdResponsable.Location = new System.Drawing.Point(322, 36);
-            this.txtIdResponsable.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdResponsable.Name = "txtIdResponsable";
-            this.txtIdResponsable.Size = new System.Drawing.Size(135, 14);
-            this.txtIdResponsable.TabIndex = 3;
             // 
             // lblIdResponsable
             // 
@@ -238,7 +198,6 @@
             this.dgvProyectos.Size = new System.Drawing.Size(791, 269);
             this.dgvProyectos.TabIndex = 6;
             this.dgvProyectos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellClick);
-            this.dgvProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellContentClick_1);
             // 
             // IdProyecto
             // 
@@ -371,6 +330,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // cboResp
+            // 
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(335, 36);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(121, 23);
+            this.cboResp.TabIndex = 20;
+            // 
+            // cboProd
+            // 
+            this.cboProd.FormattingEnabled = true;
+            this.cboProd.Location = new System.Drawing.Point(105, 72);
+            this.cboProd.Name = "cboProd";
+            this.cboProd.Size = new System.Drawing.Size(121, 23);
+            this.cboProd.TabIndex = 21;
+            // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,13 +373,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtAlcance;
         private System.Windows.Forms.Label lblAlcance;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtIdProducto;
-        private System.Windows.Forms.TextBox txtIdResponsable;
         private System.Windows.Forms.Label lblIdResponsable;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvProyectos;
@@ -424,5 +395,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cboProd;
+        private System.Windows.Forms.ComboBox cboResp;
     }
 }

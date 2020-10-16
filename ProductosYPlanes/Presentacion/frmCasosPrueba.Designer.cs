@@ -89,7 +89,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de busqueda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel5
             // 
@@ -152,7 +151,6 @@
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.Size = new System.Drawing.Size(135, 14);
             this.txtResponsable.TabIndex = 4;
-            this.txtResponsable.TextChanged += new System.EventHandler(this.txtResponsable_TextChanged);
             // 
             // lblResponsable
             // 
@@ -238,7 +236,6 @@
             this.dgvCasos.Size = new System.Drawing.Size(841, 269);
             this.dgvCasos.TabIndex = 6;
             this.dgvCasos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCasos_CellClick);
-            this.dgvCasos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCasos_CellContentClick);
             // 
             // IdCaso
             // 

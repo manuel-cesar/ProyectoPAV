@@ -1,13 +1,8 @@
 ﻿using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Negocio.Servicios;
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProductosYPlanes.Presentacion
@@ -49,7 +44,6 @@ namespace ProductosYPlanes.Presentacion
                         txtNombre.Enabled = true;
                         break;
                     }
-
             }
         }
         private void MostrarDatos()
@@ -123,7 +117,6 @@ namespace ProductosYPlanes.Presentacion
                             MessageBox.Show("Producto encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         break;
-
                     }
 
                 case FormMode.update:

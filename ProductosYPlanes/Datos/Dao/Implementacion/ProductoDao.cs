@@ -1,11 +1,10 @@
 ﻿using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
 {
@@ -33,7 +32,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO 
             String sql = "UPDATE Productos SET borrado = 1 WHERE id_producto =" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
-
         } 
 
         private Producto mapper(DataRow ProductoRow)
@@ -98,10 +96,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             if (parametros.ContainsKey("nombre"))
                 strSql += " AND (P.nombre LIKE '%' + @nombre + '%') ";
 
-            //var resultado = DBHelper.getDBHelper().ConsultaSQL(strSql, parametros );
-
             var resultado = (DataRowCollection)DBHelper.getDBHelper().ConsultaSQL(strSql, parametros).Rows;
-
 
             foreach (DataRow row in resultado)
                 lista.Add(mapper(row));

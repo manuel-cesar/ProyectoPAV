@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-
 using ProductosYPlanes.Datos.Conexion;
 using ProductosYPlanes.Negocio.Entidades;
 
 namespace ProductosYPlanes.Datos.Dao.Implementacion
-
 {
     public class CasoPruebaDao
     {
@@ -52,7 +50,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return null;
-        } //LISTO 
+        }
 
         public bool CrearCasoPrueba(CasoPrueba oCasoPrueba)
         {
@@ -73,9 +71,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             }
 
             return false;
-
-
-
         }
 
         public IList<CasoPrueba> GetByFilters(Dictionary<string, object> parametros)
@@ -133,6 +128,5 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             return false;
 
         }
-
     }
 }

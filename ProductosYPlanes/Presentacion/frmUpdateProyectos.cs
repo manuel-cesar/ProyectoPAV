@@ -19,11 +19,15 @@ namespace ProductosYPlanes.Presentacion
         private FormMode formMode = FormMode.insert;
         private readonly ProyectoService oProyectoService;
         private Proyecto oProyectoSelected;
+        private ProductoService productoService;
+        private UsuarioService usuarioService;
 
         public frmUpdateProyectos()
         {
             InitializeComponent();
             oProyectoService = new ProyectoService();
+            productoService = new ProductoService();
+            usuarioService = new UsuarioService();
 
         }
 
@@ -33,8 +37,18 @@ namespace ProductosYPlanes.Presentacion
             update
         }
 
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
+        }
         private void frmUpdateProyectos_Load(System.Object sender, System.EventArgs e)
         {
+            LlenarCombo(cboProducto, productoService.ConsultarTodos(), "id producto", "id_producto");
+            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+          
             switch (formMode)
             {
                 case FormMode.insert:
@@ -49,11 +63,11 @@ namespace ProductosYPlanes.Presentacion
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
                         txtProyecto.Enabled = true;
-                        txtProducto.Enabled = true;
+                        cboProducto.Enabled = true;
                         txtDescripcion.Enabled = true;
                         txtAlcance.Enabled = true;
                         txtVersion.Enabled = true;
-                        txtIdResponsable.Enabled = true;
+                        cboResponsable.Enabled = true;
                         break;
                     }
 
@@ -65,11 +79,11 @@ namespace ProductosYPlanes.Presentacion
             if (oProyectoSelected != null)
             {
                 txtProyecto.Text = oProyectoSelected.Id_Proyecto.ToString();
-                txtProducto.Text = oProyectoSelected.Id_Producto.ToString();
+                cboProducto.Text = oProyectoSelected.Id_Producto.ToString();
                 txtDescripcion.Text = oProyectoSelected.Descripcion.ToString();
                 txtAlcance.Text = oProyectoSelected.Alcance.ToString();
                 txtVersion.Text = oProyectoSelected.Version.ToString();
-                txtIdResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
+                cboResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
 
 
             }
@@ -104,11 +118,11 @@ namespace ProductosYPlanes.Presentacion
                             var oProyecto = new Proyecto
                             {
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
-                                Id_Producto = Convert.ToInt32(txtProducto.Text),
+                                Id_Producto = Convert.ToInt32(cboProducto.SelectedIndex),
                                 Descripcion = txtDescripcion.Text,
                                 Alcance = Convert.ToInt32(txtAlcance.Text),
                                 Version = Convert.ToInt32(txtVersion.Text),
-                                Id_Responsable = Convert.ToInt32(txtIdResponsable.Text),
+                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex),
 
                                 Borrado = false
                             };
@@ -131,11 +145,11 @@ namespace ProductosYPlanes.Presentacion
                         if (ValidarCampos())
                         {
                             oProyectoSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
-                            oProyectoSelected.Id_Producto = Convert.ToInt32(txtProducto.Text);
+                            oProyectoSelected.Id_Producto = Convert.ToInt32(cboProducto.Text);
                             oProyectoSelected.Descripcion = txtDescripcion.Text;
                             oProyectoSelected.Alcance = Convert.ToInt32(txtAlcance.Text);
                             oProyectoSelected.Version = Convert.ToInt32(txtVersion.Text);
-                            oProyectoSelected.Id_Responsable = Convert.ToInt32(txtIdResponsable.Text);
+                            oProyectoSelected.Id_Responsable = Convert.ToInt32(cboResponsable.Text);
 
 
                             if (oProyectoService.ActualizarProyecto(oProyectoSelected))
@@ -164,14 +178,14 @@ namespace ProductosYPlanes.Presentacion
             else
                 txtProyecto.BackColor = Color.White;
 
-            if (txtProducto.Text == string.Empty)
+            if (cboProducto.Text == string.Empty)
             {
-                txtProducto.BackColor = Color.Red;
-                txtProducto.Focus();
+                cboProducto.BackColor = Color.Red;
+                cboProducto.Focus();
                 return false;
             }
             else
-                txtProducto.BackColor = Color.White;
+                cboProducto.BackColor = Color.White;
             if (txtDescripcion.Text == string.Empty)
             {
                 txtDescripcion.BackColor = Color.Red;
@@ -199,20 +213,22 @@ namespace ProductosYPlanes.Presentacion
             else
                 txtVersion.BackColor = Color.White;
 
-            if (txtIdResponsable.Text == string.Empty)
+            if (cboResponsable.Text == string.Empty)
             {
-                txtIdResponsable.BackColor = Color.Red;
-                txtIdResponsable.Focus();
+                cboResponsable.BackColor = Color.Red;
+                cboResponsable.Focus();
                 return false;
             }
             else
-                txtIdResponsable.BackColor = Color.White;
+                cboResponsable.BackColor = Color.White;
 
 
 
 
             return true;
         }
+
+
     }
 }
 

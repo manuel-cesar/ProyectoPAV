@@ -1,14 +1,9 @@
-﻿using ProductosYPlanes.Presentacion;
-using ProductosYPlanes.Negocio.Entidades;
+﻿using ProductosYPlanes.Negocio.Entidades;
 using ProductosYPlanes.Negocio.Servicios;
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -22,7 +17,6 @@ namespace ProductosYPlanes.Presentacion
             InitializeComponent();
             InitializeDataGridView();
             productoService = new ProductoService();
-
         }
 
         private void InitializeDataGridView()
@@ -124,11 +118,6 @@ namespace ProductosYPlanes.Presentacion
         {
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace ProductosYPlanes.Negocio.Entidades
 
@@ -18,7 +13,6 @@ namespace ProductosYPlanes.Negocio.Entidades
         public string Password { get; set; }
 
         public int id_Perfil { get; set; }
-
 
         public override string ToString()
         {

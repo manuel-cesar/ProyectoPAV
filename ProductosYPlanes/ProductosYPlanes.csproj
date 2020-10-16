@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B65A499E-DAD4-4BA4-86A9-60D45F259630}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ActualizarUsuarios</RootNamespace>
-    <AssemblyName>ActualizarUsuarios</AssemblyName>
+    <RootNamespace>ProductosYPlanes</RootNamespace>
+    <AssemblyName>ProductosYPlanes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,17 +48,21 @@
   <ItemGroup>
     <Compile Include="Datos\Conexion\DBHelper.cs" />
     <Compile Include="Datos\Dao\Implementacion\CasoPruebaDao.cs" />
+    <Compile Include="Datos\Dao\Implementacion\CicloPruebaDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\ProductoDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\PlanDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\ProyectoDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\UsuarioDao.cs" />
     <Compile Include="Datos\Dao\Interfaz\IDao.cs" />
     <Compile Include="Negocio\Entidades\CasoPrueba.cs" />
+    <Compile Include="Negocio\Entidades\CicloPrueba.cs" />
+    <Compile Include="Negocio\Entidades\CicloPruebaDetalle.cs" />
     <Compile Include="Negocio\Entidades\Plan.cs" />
     <Compile Include="Negocio\Entidades\Producto.cs" />
     <Compile Include="Negocio\Entidades\Proyecto.cs" />
     <Compile Include="Negocio\Entidades\Usuario.cs" />
     <Compile Include="Negocio\Servicios\CasoPruebaService.cs" />
+    <Compile Include="Negocio\Servicios\CicloPruebaService.cs" />
     <Compile Include="Negocio\Servicios\PlanService.cs" />
     <Compile Include="Negocio\Servicios\ProductoService.cs" />
     <Compile Include="Negocio\Servicios\ProyectoService.cs" />
@@ -66,6 +70,12 @@
     <Compile Include="Presentacion\frmCasosPrueba.cs" />
     <Compile Include="Presentacion\frmCasosPrueba.Designer.cs">
       <DependentUpon>frmCasosPrueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmCicloPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmCicloPrueba.Designer.cs">
+      <DependentUpon>frmCicloPrueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -124,6 +134,9 @@
     <EmbeddedResource Include="Presentacion\frmCasosPrueba.resx">
       <DependentUpon>frmCasosPrueba.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmCicloPrueba.resx">
+      <DependentUpon>frmCicloPrueba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +173,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

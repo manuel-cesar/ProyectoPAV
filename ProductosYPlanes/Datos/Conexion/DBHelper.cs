@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductosYPlanes.Datos.Conexion
 {
     public class DBHelper : IDisposable
     {
         private SqlConnection dbConnection;
+        private SqlTransaction dbTransaction;
 
 
         private static DBHelper instance;
@@ -18,7 +16,7 @@ namespace ProductosYPlanes.Datos.Conexion
         {
             dbConnection = new SqlConnection();
 
-            var string_conexion = "Data Source=MANUEL;Initial Catalog=BugTrackerExt;Integrated Security=True";
+            var string_conexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=bugs_extends;Integrated Security=True";
 
             dbConnection.ConnectionString = string_conexion;
         }
@@ -46,16 +44,7 @@ namespace ProductosYPlanes.Datos.Conexion
         }
 
 
-        /// Resumen:
         ///      Se utiliza para sentencias SQL del tipo “Select” con parámetros recibidos desde la interfaz
-        ///      La función recibe por valor una sentencia sql como string y un diccionario de objetos como parámetros
-        /// Devuelve:
-        ///      un objeto de tipo DataTable con el resultado de la consulta
-        /// Excepciones:
-        ///      System.Data.SqlClient.SqlException:
-        ///          El error de conexión se produce:
-        ///              a) durante la apertura de la conexión
-        ///              b) durante la ejecución del comando.
         public DataTable ConsultaSQL(string strSql, Dictionary<string, object> prs = null)
         {
             SqlCommand cmd = new SqlCommand();
@@ -84,27 +73,14 @@ namespace ProductosYPlanes.Datos.Conexion
             }
         }
 
-        /// Resumen:
-        ///     Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”. Recibe por valor una sentencia sql como string
-        /// Devuelve:
-        ///      un valor entero con el número de filas afectadas por la sentencia ejecutada
-        /// Excepciones:
-        ///      System.Data.SqlClient.SqlException:
-        ///          El error de conexión se produce:
-        ///              a) durante la apertura de la conexión
-        ///              b) durante la ejecución del comando.
+
+        //Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”. Recibe por valor una sentencia sql como string
         public int ejecutarSQL(string strSql, Dictionary<string, object> prs = null)
         {
-            // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
-
             SqlCommand cmd = new SqlCommand();
 
             int rtdo;
 
-            // Try Catch Finally
-            // Trata de ejecutar el código contenido dentro del bloque Try - Catch
-            // Si hay error lo capta a través de una excepción
-            // Si no hubo error
             try
             {
                 cmd.Connection = dbConnection;
@@ -122,6 +98,8 @@ namespace ProductosYPlanes.Datos.Conexion
                 }
 
                 // Retorna el resultado de ejecutar el comando
+                cmd.Transaction = dbTransaction;
+
                 rtdo = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -133,15 +111,8 @@ namespace ProductosYPlanes.Datos.Conexion
         }
 
 
-        /// Resumen:
+
         ///     Se utiliza para sentencias SQL del tipo “Select”. Recibe por valor una sentencia sql como string
-        /// Devuelve:
-        ///      un valor entero
-        /// Excepciones:
-        ///      System.Data.SqlClient.SqlException:
-        ///          El error de conexión se produce:
-        ///              a) durante la apertura de la conexión
-        ///              b) durante la ejecución del comando.
         public object ConsultaSQLScalar(string strSql)
         {
             SqlCommand cmd = new SqlCommand();
@@ -159,9 +130,33 @@ namespace ProductosYPlanes.Datos.Conexion
             }
         }
 
+        public void BeginTransaction()
+        {
+            if (dbConnection.State == ConnectionState.Open)
+                dbTransaction = dbConnection.BeginTransaction();
+        }
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+
         public void Dispose()
         {
             this.Close();
         }
+
+        public DataTable ConsultarTabla(string tabla)
+        {
+            return this.ConsultaSQL("Select * FROM " + tabla);
+        }
+
+
     }
 }

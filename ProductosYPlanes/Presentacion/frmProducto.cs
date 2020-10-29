@@ -119,5 +119,10 @@ namespace ProductosYPlanes.Presentacion
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
         }
+
+        private void frmProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

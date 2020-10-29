@@ -45,8 +45,7 @@ namespace ProductosYPlanes.Presentacion
         }
         private void frmProyectos_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
-            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -198,5 +197,15 @@ namespace ProductosYPlanes.Presentacion
                 btnEliminar.Enabled = false;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmProyectos_Load_1(object sender, EventArgs e)
+        {
+            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+        }
     }
 }

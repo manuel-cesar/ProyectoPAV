@@ -170,14 +170,21 @@ namespace ProductosYPlanes.Presentacion
         private void frmPlanes_Load(object sender, EventArgs e)
         {
 
-            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
-            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
-
         }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboProyecto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPlanes_Load_1(object sender, EventArgs e)
+        {
+            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
+            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
         }
     }
 }

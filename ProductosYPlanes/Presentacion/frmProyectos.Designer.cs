@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyectos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboProd = new System.Windows.Forms.ComboBox();
+            this.cboResp = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtVersion = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,8 +55,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.cboResp = new System.Windows.Forms.ComboBox();
-            this.cboProd = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,23 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proyectos - Filtros de busqueda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboProd
+            // 
+            this.cboProd.FormattingEnabled = true;
+            this.cboProd.Location = new System.Drawing.Point(105, 72);
+            this.cboProd.Name = "cboProd";
+            this.cboProd.Size = new System.Drawing.Size(121, 23);
+            this.cboProd.TabIndex = 21;
+            // 
+            // cboResp
+            // 
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(335, 36);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(121, 23);
+            this.cboResp.TabIndex = 20;
             // 
             // panel5
             // 
@@ -198,7 +215,6 @@
             this.dgvProyectos.Size = new System.Drawing.Size(791, 269);
             this.dgvProyectos.TabIndex = 6;
             this.dgvProyectos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellClick);
-
             // 
             // IdProyecto
             // 
@@ -331,22 +347,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // cboResp
-            // 
-            this.cboResp.FormattingEnabled = true;
-            this.cboResp.Location = new System.Drawing.Point(335, 36);
-            this.cboResp.Name = "cboResp";
-            this.cboResp.Size = new System.Drawing.Size(121, 23);
-            this.cboResp.TabIndex = 20;
-            // 
-            // cboProd
-            // 
-            this.cboProd.FormattingEnabled = true;
-            this.cboProd.Location = new System.Drawing.Point(105, 72);
-            this.cboProd.Name = "cboProd";
-            this.cboProd.Size = new System.Drawing.Size(121, 23);
-            this.cboProd.TabIndex = 21;
-            // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +363,7 @@
             this.Name = "frmProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProyectos";
+            this.Load += new System.EventHandler(this.frmProyectos_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).EndInit();

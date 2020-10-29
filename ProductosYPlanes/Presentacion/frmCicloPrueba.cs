@@ -160,6 +160,11 @@ namespace ProductosYPlanes.Presentacion
                 btnAgregar.Enabled = false;
 
         }
+
+        private void cboResponsable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

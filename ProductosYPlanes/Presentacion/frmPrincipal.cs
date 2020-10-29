@@ -53,7 +53,7 @@ namespace ProductosYPlanes.Presentacion
             form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ciclosDePruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCicloPrueba form = new frmCicloPrueba();
             form.ShowDialog();

@@ -46,8 +46,8 @@ namespace ProductosYPlanes.Presentacion
         
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
-            LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "id_proyecto", "id_proyecto");
-            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
+            LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "descripcion", "id_proyecto");
+            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
 
             switch (formMode)
             {
@@ -166,7 +166,7 @@ namespace ProductosYPlanes.Presentacion
                                 Id_Plan_Prueba = Convert.ToInt32(txtplan.Text),
                                 Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue),
                                 Nombre = txtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(cboResp.SelectedIndex),
+                                Id_Responsable = Convert.ToInt32(cboResp.SelectedValue),
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
                             };
@@ -192,7 +192,7 @@ namespace ProductosYPlanes.Presentacion
                             oPlanSelected.Id_Plan_Prueba = Convert.ToInt32(txtplan.Text);
                             oPlanSelected.Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue);
                             oPlanSelected.Nombre = txtNombre.Text;
-                            oPlanSelected.Id_Responsable = Convert.ToInt32(cboResp.SelectedValue);
+                            oPlanSelected.Id_Responsable = (int)Convert.ToInt64(cboResp.SelectedIndex);
                             oPlanSelected.Descripcion = txtDescripcion.Text;
 
                             if (oPlanService.ActualizarPlan(oPlanSelected))

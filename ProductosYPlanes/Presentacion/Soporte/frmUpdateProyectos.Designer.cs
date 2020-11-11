@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateProyectos));
             this.lblAlcance = new System.Windows.Forms.Label();
             this.txtProyecto = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblIdResponsable = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblProyecto = new System.Windows.Forms.Label();
-            this.txtVersion = new System.Windows.Forms.TextBox();
-            this.txtAlcance = new System.Windows.Forms.TextBox();
+            this.cboResponsable = new System.Windows.Forms.ComboBox();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtResponsable = new System.Windows.Forms.TextBox();
-            this.txtProducto = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtAlcance = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAlcance
@@ -62,6 +62,19 @@
             this.txtProyecto.Size = new System.Drawing.Size(259, 20);
             this.txtProyecto.TabIndex = 35;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(279, 280);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 36);
+            this.btnCancelar.TabIndex = 45;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnAceptar
             // 
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
@@ -69,7 +82,7 @@
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(80, 280);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(79, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 36);
             this.btnAceptar.TabIndex = 44;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -124,12 +137,28 @@
             this.lblProyecto.TabIndex = 34;
             this.lblProyecto.Text = "Id Proyecto :";
             // 
-            // txtVersion
+            // cboResponsable
             // 
-            this.txtVersion.Location = new System.Drawing.Point(106, 100);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(259, 20);
-            this.txtVersion.TabIndex = 55;
+            this.cboResponsable.FormattingEnabled = true;
+            this.cboResponsable.Location = new System.Drawing.Point(106, 179);
+            this.cboResponsable.Name = "cboResponsable";
+            this.cboResponsable.Size = new System.Drawing.Size(259, 21);
+            this.cboResponsable.TabIndex = 53;
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(106, 65);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(259, 21);
+            this.cboProducto.TabIndex = 54;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(106, 217);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(259, 20);
+            this.txtDescripcion.TabIndex = 55;
             // 
             // txtAlcance
             // 
@@ -138,53 +167,26 @@
             this.txtAlcance.Size = new System.Drawing.Size(259, 20);
             this.txtAlcance.TabIndex = 56;
             // 
-            // txtDescripcion
+            // txtVersion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(106, 217);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(259, 20);
-            this.txtDescripcion.TabIndex = 57;
-            // 
-            // txtResponsable
-            // 
-            this.txtResponsable.Location = new System.Drawing.Point(106, 179);
-            this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(259, 20);
-            this.txtResponsable.TabIndex = 58;
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Location = new System.Drawing.Point(105, 65);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(259, 20);
-            this.txtProducto.TabIndex = 59;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(262, 280);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(79, 44);
-            this.btnCancelar.TabIndex = 60;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtVersion.Location = new System.Drawing.Point(106, 100);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(259, 20);
+            this.txtVersion.TabIndex = 57;
             // 
             // frmUpdateProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 352);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtProducto);
-            this.Controls.Add(this.txtResponsable);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtAlcance);
             this.Controls.Add(this.txtVersion);
+            this.Controls.Add(this.txtAlcance);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.cboProducto);
+            this.Controls.Add(this.cboResponsable);
             this.Controls.Add(this.lblAlcance);
             this.Controls.Add(this.txtProyecto);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblIdResponsable);
@@ -196,6 +198,7 @@
             this.Name = "frmUpdateProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdateProyectos";
+            this.Load += new System.EventHandler(this.frmUpdateProyectos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,17 +207,17 @@
         #endregion
         private System.Windows.Forms.Label lblAlcance;
         private System.Windows.Forms.TextBox txtProyecto;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblIdResponsable;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label lblProyecto;
-        private System.Windows.Forms.TextBox txtVersion;
-        private System.Windows.Forms.TextBox txtAlcance;
+        private System.Windows.Forms.ComboBox cboResponsable;
+        private System.Windows.Forms.ComboBox cboProducto;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtResponsable;
-        private System.Windows.Forms.TextBox txtProducto;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtAlcance;
+        private System.Windows.Forms.TextBox txtVersion;
     }
 }

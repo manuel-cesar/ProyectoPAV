@@ -19,15 +19,16 @@ namespace ProductosYPlanes.Presentacion
         private FormMode formMode = FormMode.insert;
         private readonly ProyectoService oProyectoService;
         private Proyecto oProyectoSelected;
+        private UsuarioService usuarioSerive;
         private ProductoService productoService;
-        private UsuarioService usuarioService;
 
         public frmUpdateProyectos()
         {
             InitializeComponent();
             oProyectoService = new ProyectoService();
+            usuarioSerive = new UsuarioService();
             productoService = new ProductoService();
-            usuarioService = new UsuarioService();
+
 
         }
 
@@ -46,8 +47,8 @@ namespace ProductosYPlanes.Presentacion
         }
         private void frmUpdateProyectos_Load(System.Object sender, System.EventArgs e)
         {
-            LlenarCombo(cboProducto, productoService.ConsultarTodos(), "id producto", "id_producto");
-            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboProducto, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboResponsable, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
           
             switch (formMode)
             {
@@ -80,10 +81,10 @@ namespace ProductosYPlanes.Presentacion
             {
                 txtProyecto.Text = oProyectoSelected.Id_Proyecto.ToString();
                 cboProducto.Text = oProyectoSelected.Id_Producto.ToString();
-                txtDescripcion.Text = oProyectoSelected.Descripcion.ToString();
+                cboResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
                 txtAlcance.Text = oProyectoSelected.Alcance.ToString();
                 txtVersion.Text = oProyectoSelected.Version.ToString();
-                cboResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
+                txtDescripcion.Text = oProyectoSelected.Descripcion.ToString();
 
 
             }
@@ -121,12 +122,11 @@ namespace ProductosYPlanes.Presentacion
                             {
 
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
-                                Id_Producto = Convert.ToInt32(cboProducto.SelectedIndex),
-
+                                Id_Producto = Convert.ToInt32(cboProducto.SelectedValue),
                                 Descripcion = txtDescripcion.Text,
                                 Alcance = Convert.ToInt32(txtAlcance.Text),
                                 Version = Convert.ToInt32(txtVersion.Text),
-                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex),
+                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue),
 
                                 Borrado = false
                             };
@@ -149,11 +149,11 @@ namespace ProductosYPlanes.Presentacion
                         if (ValidarCampos())
                         {
                             oProyectoSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
-                            oProyectoSelected.Id_Producto = Convert.ToInt32(cboProducto.Text);
+                            oProyectoSelected.Id_Producto = Convert.ToInt32(cboProducto.SelectedValue);
                             oProyectoSelected.Descripcion = txtDescripcion.Text;
                             oProyectoSelected.Alcance = Convert.ToInt32(txtAlcance.Text);
                             oProyectoSelected.Version = Convert.ToInt32(txtVersion.Text);
-                            oProyectoSelected.Id_Responsable = Convert.ToInt32(cboResponsable.Text);
+                            oProyectoSelected.Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue);
 
 
                             if (oProyectoService.ActualizarProyecto(oProyectoSelected))

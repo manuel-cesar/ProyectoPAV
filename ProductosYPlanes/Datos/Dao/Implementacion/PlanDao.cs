@@ -125,12 +125,14 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
 
         public bool Update(Plan oPlan)
         {
-            string str_sql = "UPDATE PlanesDePrueba " +
+            string str_sql = "SET IDENTITY_INSERT PlanesDePrueba ON " + 
+                            "UPDATE PlanesDePrueba " +
                              " SET id_proyecto = @id_proyecto, " +
                              "     nombre = @nombre ," +
                              "     id_responsable = @id_responsable, " +
                              "     descripcion  = @descripcion " +
-                             " WHERE id_plan_prueba = @id_plan_prueba";
+                             " WHERE id_plan_prueba = @id_plan_prueba" +
+                             " SET IDENTITY_INSERT PlanesDePrueba Off";
            
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_plan_prueba", oPlan.Id_Plan_Prueba);

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTester" targetNamespace="http://tempuri.org/dsTester.xsd" xmlns:mstns="http://tempuri.org/dsTester.xsd" xmlns="http://tempuri.org/dsTester.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BugTrackerExtConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BugTrackerExtConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProductosYPlanes.Properties.Settings.GlobalReference.Default.BugTrackerExtConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestersTableAdapter" GeneratorDataComponentClassName="TestersTableAdapter" Name="Testers" UserDataComponentName="TestersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugTrackerExtConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Usuarios.usuario, CiclosPrueba.id_ciclo_prueba, COUNT(CiclosPruebaDetalle.id_ciclo_prueba_detalle) AS cantidad
+FROM            CiclosPruebaDetalle INNER JOIN
+                         CiclosPrueba ON CiclosPruebaDetalle.id_ciclo_prueba = CiclosPrueba.id_ciclo_prueba INNER JOIN
+                         Usuarios ON CiclosPruebaDetalle.id_usuario_tester = Usuarios.id_usuario AND CiclosPrueba.id_responsable = Usuarios.id_usuario
+GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="id_ciclo_prueba" DataSetColumn="id_ciclo_prueba" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTester" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTester" msprop:Generator_UserDSName="dsTester">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Testers" msprop:Generator_TableClassName="TestersDataTable" msprop:Generator_TableVarName="tableTesters" msprop:Generator_TablePropName="Testers" msprop:Generator_RowDeletingName="TestersRowDeleting" msprop:Generator_RowChangingName="TestersRowChanging" msprop:Generator_RowEvHandlerName="TestersRowChangeEventHandler" msprop:Generator_RowDeletedName="TestersRowDeleted" msprop:Generator_UserTableName="Testers" msprop:Generator_RowChangedName="TestersRowChanged" msprop:Generator_RowEvArgName="TestersRowChangeEvent" msprop:Generator_RowClassName="TestersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_ciclo_prueba" msprop:Generator_ColumnVarNameInTable="columnid_ciclo_prueba" msprop:Generator_ColumnPropNameInRow="id_ciclo_prueba" msprop:Generator_ColumnPropNameInTable="id_ciclo_pruebaColumn" msprop:Generator_UserColumnName="id_ciclo_prueba" type="xs:int" />
+              <xs:element name="cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Testers" />
+      <xs:field xpath="mstns:id_ciclo_prueba" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

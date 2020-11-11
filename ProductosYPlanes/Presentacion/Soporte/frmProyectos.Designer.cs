@@ -32,13 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboProd = new System.Windows.Forms.ComboBox();
             this.cboResp = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtVersion = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
-            this.txtAlcance = new System.Windows.Forms.TextBox();
             this.lblAlcance = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblIdResponsable = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvProyectos = new System.Windows.Forms.DataGridView();
@@ -48,13 +43,15 @@
             this.Alcance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdProyectos = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblIdProyecto = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txtAlcance = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
+            this.txtIdProyectos = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
@@ -62,19 +59,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.txtIdProyectos);
+            this.groupBox1.Controls.Add(this.txtVersion);
+            this.groupBox1.Controls.Add(this.txtAlcance);
             this.groupBox1.Controls.Add(this.cboProd);
             this.groupBox1.Controls.Add(this.cboResp);
-            this.groupBox1.Controls.Add(this.panel5);
-            this.groupBox1.Controls.Add(this.txtVersion);
-            this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.lblVersion);
-            this.groupBox1.Controls.Add(this.txtAlcance);
             this.groupBox1.Controls.Add(this.lblAlcance);
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.lblIdResponsable);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.dgvProyectos);
-            this.groupBox1.Controls.Add(this.txtIdProyectos);
             this.groupBox1.Controls.Add(this.lblProducto);
             this.groupBox1.Controls.Add(this.lblIdProyecto);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,6 +80,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proyectos - Filtros de busqueda";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cboProd
             // 
@@ -103,32 +98,6 @@
             this.cboResp.Size = new System.Drawing.Size(121, 23);
             this.cboResp.TabIndex = 20;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(535, 50);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(135, 1);
-            this.panel5.TabIndex = 19;
-            // 
-            // txtVersion
-            // 
-            this.txtVersion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtVersion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtVersion.Location = new System.Drawing.Point(535, 37);
-            this.txtVersion.Margin = new System.Windows.Forms.Padding(6);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(135, 14);
-            this.txtVersion.TabIndex = 17;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(321, 88);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(135, 1);
-            this.panel4.TabIndex = 16;
-            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -139,16 +108,6 @@
             this.lblVersion.TabIndex = 18;
             this.lblVersion.Text = "Version :";
             // 
-            // txtAlcance
-            // 
-            this.txtAlcance.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAlcance.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAlcance.Location = new System.Drawing.Point(322, 75);
-            this.txtAlcance.Margin = new System.Windows.Forms.Padding(6);
-            this.txtAlcance.Name = "txtAlcance";
-            this.txtAlcance.Size = new System.Drawing.Size(135, 14);
-            this.txtAlcance.TabIndex = 4;
-            // 
             // lblAlcance
             // 
             this.lblAlcance.AutoSize = true;
@@ -158,14 +117,6 @@
             this.lblAlcance.Size = new System.Drawing.Size(56, 15);
             this.lblAlcance.TabIndex = 12;
             this.lblAlcance.Text = "Alcance :";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(94, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 1);
-            this.panel1.TabIndex = 15;
             // 
             // lblIdResponsable
             // 
@@ -257,17 +208,6 @@
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             // 
-            // txtIdProyectos
-            // 
-            this.txtIdProyectos.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdProyectos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdProyectos.Location = new System.Drawing.Point(93, 37);
-            this.txtIdProyectos.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdProyectos.Name = "txtIdProyectos";
-            this.txtIdProyectos.ShortcutsEnabled = false;
-            this.txtIdProyectos.Size = new System.Drawing.Size(118, 14);
-            this.txtIdProyectos.TabIndex = 1;
-            // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
@@ -346,6 +286,27 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // txtAlcance
+            // 
+            this.txtAlcance.Location = new System.Drawing.Point(335, 74);
+            this.txtAlcance.Name = "txtAlcance";
+            this.txtAlcance.Size = new System.Drawing.Size(121, 21);
+            this.txtAlcance.TabIndex = 22;
+            // 
+            // txtVersion
+            // 
+            this.txtVersion.Location = new System.Drawing.Point(536, 38);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(107, 21);
+            this.txtVersion.TabIndex = 23;
+            // 
+            // txtIdProyectos
+            // 
+            this.txtIdProyectos.Location = new System.Drawing.Point(105, 37);
+            this.txtIdProyectos.Name = "txtIdProyectos";
+            this.txtIdProyectos.Size = new System.Drawing.Size(121, 21);
+            this.txtIdProyectos.TabIndex = 24;
+            // 
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,18 +334,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtAlcance;
         private System.Windows.Forms.Label lblAlcance;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblIdResponsable;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvProyectos;
-        private System.Windows.Forms.TextBox txtIdProyectos;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label lblIdProyecto;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txtVersion;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
@@ -396,7 +351,10 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ComboBox cboResp;
         private System.Windows.Forms.ComboBox cboProd;
+        private System.Windows.Forms.ComboBox cboResp;
+        private System.Windows.Forms.TextBox txtVersion;
+        private System.Windows.Forms.TextBox txtAlcance;
+        private System.Windows.Forms.TextBox txtIdProyectos;
     }
 }

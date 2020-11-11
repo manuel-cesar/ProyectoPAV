@@ -30,17 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCasosPrueba));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtResponsable = new System.Windows.Forms.TextBox();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvCasos = new System.Windows.Forms.DataGridView();
@@ -49,13 +39,18 @@
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdCaso = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
             this.lblIdCaso = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
+            this.txtIdCaso = new System.Windows.Forms.TextBox();
+            this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCasos)).BeginInit();
             this.SuspendLayout();
@@ -63,21 +58,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.panel5);
+            this.groupBox1.Controls.Add(this.txtIdPlan);
+            this.groupBox1.Controls.Add(this.txtIdCaso);
+            this.groupBox1.Controls.Add(this.txtResponsable);
+            this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.txtResponsable);
             this.groupBox1.Controls.Add(this.lblResponsable);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.txtIdPlan);
-            this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.lblTitulo);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.dgvCasos);
-            this.groupBox1.Controls.Add(this.txtIdCaso);
             this.groupBox1.Controls.Add(this.lblPlan);
             this.groupBox1.Controls.Add(this.lblIdCaso);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,105 +80,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de busqueda";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(577, 72);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(135, 1);
-            this.panel5.TabIndex = 17;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(577, 58);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(135, 14);
-            this.txtDescripcion.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Descripcion:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(346, 88);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(135, 1);
-            this.panel4.TabIndex = 16;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(347, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(135, 1);
-            this.panel3.TabIndex = 16;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(97, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 1);
-            this.panel2.TabIndex = 16;
-            // 
-            // txtResponsable
-            // 
-            this.txtResponsable.BackColor = System.Drawing.SystemColors.Control;
-            this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResponsable.Location = new System.Drawing.Point(347, 71);
-            this.txtResponsable.Margin = new System.Windows.Forms.Padding(6);
-            this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(135, 14);
-            this.txtResponsable.TabIndex = 4;
-            // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(241, 75);
+            this.lblResponsable.Location = new System.Drawing.Point(224, 75);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(99, 15);
             this.lblResponsable.TabIndex = 12;
             this.lblResponsable.Text = "Id Responsable :";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(97, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 1);
-            this.panel1.TabIndex = 15;
-            // 
-            // txtIdPlan
-            // 
-            this.txtIdPlan.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdPlan.Location = new System.Drawing.Point(96, 75);
-            this.txtIdPlan.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdPlan.Name = "txtIdPlan";
-            this.txtIdPlan.Size = new System.Drawing.Size(118, 14);
-            this.txtIdPlan.TabIndex = 2;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTitulo.Location = new System.Drawing.Point(347, 36);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(6);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(135, 14);
-            this.txtTitulo.TabIndex = 3;
             // 
             // lblTitulo
             // 
@@ -266,17 +166,6 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            // 
-            // txtIdCaso
-            // 
-            this.txtIdCaso.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdCaso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdCaso.Location = new System.Drawing.Point(96, 37);
-            this.txtIdCaso.Margin = new System.Windows.Forms.Padding(6);
-            this.txtIdCaso.Name = "txtIdCaso";
-            this.txtIdCaso.ShortcutsEnabled = false;
-            this.txtIdCaso.Size = new System.Drawing.Size(118, 14);
-            this.txtIdCaso.TabIndex = 1;
             // 
             // lblPlan
             // 
@@ -358,6 +247,51 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(493, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Descripcion:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(578, 58);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(129, 21);
+            this.txtDescripcion.TabIndex = 19;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(333, 37);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(126, 21);
+            this.txtTitulo.TabIndex = 20;
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.Location = new System.Drawing.Point(333, 76);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(126, 21);
+            this.txtResponsable.TabIndex = 21;
+            // 
+            // txtIdCaso
+            // 
+            this.txtIdCaso.Location = new System.Drawing.Point(99, 37);
+            this.txtIdCaso.Name = "txtIdCaso";
+            this.txtIdCaso.Size = new System.Drawing.Size(116, 21);
+            this.txtIdCaso.TabIndex = 22;
+            // 
+            // txtIdPlan
+            // 
+            this.txtIdPlan.Location = new System.Drawing.Point(99, 75);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.Size = new System.Drawing.Size(116, 21);
+            this.txtIdPlan.TabIndex = 23;
+            // 
             // frmCasosPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,31 +314,26 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtIdPlan;
-        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvCasos;
-        private System.Windows.Forms.TextBox txtIdCaso;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Label lblIdCaso;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCaso;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResponsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.TextBox txtIdPlan;
+        private System.Windows.Forms.TextBox txtIdCaso;
+        private System.Windows.Forms.TextBox txtResponsable;
+        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label1;
     }
 }

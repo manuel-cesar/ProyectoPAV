@@ -100,28 +100,28 @@
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
-            this.planesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.planesToolStripMenuItem.Text = "Planes";
             this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 
             // proyectosToolStripMenuItem
             // 
             this.proyectosToolStripMenuItem.Name = "proyectosToolStripMenuItem";
-            this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.proyectosToolStripMenuItem.Text = "Proyectos";
             this.proyectosToolStripMenuItem.Click += new System.EventHandler(this.proyectosToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
             // casosDePruebaToolStripMenuItem
             // 
             this.casosDePruebaToolStripMenuItem.Name = "casosDePruebaToolStripMenuItem";
-            this.casosDePruebaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casosDePruebaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.casosDePruebaToolStripMenuItem.Text = "Casos de Prueba";
             this.casosDePruebaToolStripMenuItem.Click += new System.EventHandler(this.casosDePruebaToolStripMenuItem_Click_1);
             // 
@@ -161,8 +161,9 @@
             // reporteDeToolStripMenuItem
             // 
             this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
-            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reporteDeToolStripMenuItem.Text = "Reporte de ";
+            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 

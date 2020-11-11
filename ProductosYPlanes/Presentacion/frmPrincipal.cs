@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductosYPlanes.Presentacion.Informes;
+using System;
 using System.Windows.Forms;
 
 
@@ -56,6 +57,12 @@ namespace ProductosYPlanes.Presentacion
         private void ciclosDePruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCicloPrueba form = new frmCicloPrueba();
+            form.ShowDialog();
+        }
+
+        private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTester form = new frmTester();
             form.ShowDialog();
         }
     }

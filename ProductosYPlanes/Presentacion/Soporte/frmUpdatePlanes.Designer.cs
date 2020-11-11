@@ -31,20 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdatePlanes));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtplanMod = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtplan = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProyecto = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
             this.cboProy = new System.Windows.Forms.ComboBox();
-            this.cboRESP = new System.Windows.Forms.ComboBox();
+            this.cboResp = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -53,36 +51,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txtplanMod
+            // txtplan
             // 
-            this.txtplanMod.Enabled = false;
-            this.txtplanMod.Location = new System.Drawing.Point(97, 24);
-            this.txtplanMod.Name = "txtplanMod";
-            this.txtplanMod.Size = new System.Drawing.Size(259, 20);
-            this.txtplanMod.TabIndex = 49;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(100, 173);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(255, 1);
-            this.panel4.TabIndex = 48;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(99, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 1);
-            this.panel1.TabIndex = 45;
+            this.txtplan.Enabled = false;
+            this.txtplan.Location = new System.Drawing.Point(100, 29);
+            this.txtplan.Name = "txtplan";
+            this.txtplan.Size = new System.Drawing.Size(247, 20);
+            this.txtplan.TabIndex = 49;
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(231, 210);
+            this.btnCancelar.Location = new System.Drawing.Point(244, 265);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 46);
@@ -96,7 +78,7 @@
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(50, 210);
+            this.btnAceptar.Location = new System.Drawing.Point(40, 265);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(125, 46);
@@ -108,47 +90,27 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(24, 162);
+            this.lblDescripcion.Location = new System.Drawing.Point(19, 200);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
             this.lblDescripcion.TabIndex = 43;
             this.lblDescripcion.Text = "Descripcion :";
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(100, 157);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(254, 13);
-            this.txtDescripcion.TabIndex = 40;
-            // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(18, 128);
+            this.lblResponsable.Location = new System.Drawing.Point(13, 154);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(75, 13);
             this.lblResponsable.TabIndex = 42;
             this.lblResponsable.Text = "Responsable :";
             // 
-            // TxtNombre
-            // 
-            this.TxtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNombre.Location = new System.Drawing.Point(100, 95);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(6);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(256, 13);
-            this.TxtNombre.TabIndex = 37;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(43, 97);
+            this.lblNombre.Location = new System.Drawing.Point(37, 110);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(50, 13);
@@ -158,7 +120,7 @@
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
-            this.lblProyecto.Location = new System.Drawing.Point(29, 63);
+            this.lblProyecto.Location = new System.Drawing.Point(24, 71);
             this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProyecto.Name = "lblProyecto";
             this.lblProyecto.Size = new System.Drawing.Size(67, 13);
@@ -168,7 +130,7 @@
             // lblPlan
             // 
             this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(47, 27);
+            this.lblPlan.Location = new System.Drawing.Point(42, 29);
             this.lblPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(46, 13);
@@ -178,37 +140,48 @@
             // cboProy
             // 
             this.cboProy.FormattingEnabled = true;
-            this.cboProy.Location = new System.Drawing.Point(97, 55);
+            this.cboProy.Location = new System.Drawing.Point(100, 71);
             this.cboProy.Name = "cboProy";
-            this.cboProy.Size = new System.Drawing.Size(259, 21);
+            this.cboProy.Size = new System.Drawing.Size(247, 21);
             this.cboProy.TabIndex = 50;
-            this.cboProy.SelectedIndexChanged += new System.EventHandler(this.cboProy_SelectedIndexChanged);
             // 
-            // cboRESP
+            // cboResp
             // 
-            this.cboRESP.FormattingEnabled = true;
-            this.cboRESP.Location = new System.Drawing.Point(97, 125);
-            this.cboRESP.Name = "cboRESP";
-            this.cboRESP.Size = new System.Drawing.Size(257, 21);
-            this.cboRESP.TabIndex = 51;
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(99, 151);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(248, 21);
+            this.cboResp.TabIndex = 51;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(100, 110);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(247, 20);
+            this.txtNombre.TabIndex = 52;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(100, 200);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(247, 20);
+            this.txtDescripcion.TabIndex = 53;
             // 
             // frmUpdatePlanes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(392, 293);
-            this.Controls.Add(this.cboRESP);
+            this.ClientSize = new System.Drawing.Size(425, 341);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.cboResp);
             this.Controls.Add(this.cboProy);
-            this.Controls.Add(this.txtplanMod);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtplan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblResponsable);
-            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblProyecto);
             this.Controls.Add(this.lblPlan);
@@ -226,21 +199,18 @@
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox txtplanMod;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtplan;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.Label lblPlan;
 
         private System.Windows.Forms.ComboBox cboProy;
-        private System.Windows.Forms.ComboBox cboRESP;
-
+        private System.Windows.Forms.ComboBox cboResp;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

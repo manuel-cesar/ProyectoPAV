@@ -48,7 +48,7 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             oProyecto.Id_Proyecto = Convert.ToInt32(PlanRow["id_proyecto"].ToString());
             oProyecto.Id_Producto = Convert.ToInt32(PlanRow["id_producto"].ToString());
             oProyecto.Version = Convert.ToInt32(PlanRow["version"].ToString());
-            //oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString()); //Arregar linea 
+            oProyecto.Alcance = Convert.ToInt32(PlanRow["alcance"].ToString()); //Arregar linea 
             oProyecto.Id_Responsable = Convert.ToInt32(PlanRow["id_responsable"].ToString());
             oProyecto.Descripcion = PlanRow["descripcion"].ToString();
             oProyecto.Borrado = PlanRow["borrado"].ToString().Equals("S");
@@ -121,8 +121,6 @@ namespace ProductosYPlanes.Datos.Dao.Implementacion
             if (parametros.ContainsKey("id_producto"))
                 strSql += " AND (P.id_producto = @id_producto) ";
 
-            if (parametros.ContainsKey("descripcion"))
-                strSql += " AND (P.descripcion LIKE '%' + @descripcion + '%') ";
 
             if (parametros.ContainsKey("version"))
                 strSql += " AND (P.version = @version) ";

@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPlan = new System.Windows.Forms.TextBox();
+            this.txtId_plan = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.cboProyecto = new System.Windows.Forms.ComboBox();
             this.cboResp = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
@@ -58,13 +56,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.txtPlan);
+            this.groupBox1.Controls.Add(this.txtId_plan);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.cboProyecto);
             this.groupBox1.Controls.Add(this.cboResp);
-            this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.lblResponsable);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.dgvPlanes);
@@ -81,15 +77,19 @@
             this.groupBox1.Text = "Planes - Filtros de busqueda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtPlan
+            // txtId_plan
             // 
-            this.txtPlan.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPlan.Location = new System.Drawing.Point(97, 30);
-            this.txtPlan.Margin = new System.Windows.Forms.Padding(6);
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.Size = new System.Drawing.Size(135, 14);
-            this.txtPlan.TabIndex = 19;
+            this.txtId_plan.Location = new System.Drawing.Point(96, 36);
+            this.txtId_plan.Name = "txtId_plan";
+            this.txtId_plan.Size = new System.Drawing.Size(118, 21);
+            this.txtId_plan.TabIndex = 21;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(349, 37);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 21);
+            this.txtNombre.TabIndex = 20;
             // 
             // cboProyecto
             // 
@@ -108,41 +108,15 @@
             this.cboResp.Size = new System.Drawing.Size(121, 23);
             this.cboResp.TabIndex = 17;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(347, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(135, 1);
-            this.panel3.TabIndex = 16;
-            // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(241, 75);
+            this.lblResponsable.Location = new System.Drawing.Point(253, 75);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(86, 15);
             this.lblResponsable.TabIndex = 12;
             this.lblResponsable.Text = "Responsable :";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(97, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 1);
-            this.panel1.TabIndex = 15;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Location = new System.Drawing.Point(347, 36);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(135, 14);
-            this.txtNombre.TabIndex = 3;
             // 
             // lblNombre
             // 
@@ -229,7 +203,7 @@
             // lblProyecto
             // 
             this.lblProyecto.AutoSize = true;
-            this.lblProyecto.Location = new System.Drawing.Point(12, 75);
+            this.lblProyecto.Location = new System.Drawing.Point(24, 78);
             this.lblProyecto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblProyecto.Name = "lblProyecto";
             this.lblProyecto.Size = new System.Drawing.Size(60, 15);
@@ -348,18 +322,16 @@
 
 
         private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlanPrueba;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResposable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cboResp;
 
         private System.Windows.Forms.ComboBox cboProyecto;
-        private System.Windows.Forms.TextBox txtPlan;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtId_plan;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }

@@ -43,6 +43,12 @@ namespace ProductosYPlanes.Presentacion
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
+        private void frmProyectos_Load(object sender, EventArgs e)
+        {
+            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "idusuario", "id_usuario");
+
+        }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -56,7 +62,7 @@ namespace ProductosYPlanes.Presentacion
 
             if (!string.IsNullOrEmpty(cboProd.Text))
             {
-                var idProducto = cboProd.SelectedValue;
+                var idProducto = cboProd.Text;
                 parametros.Add("id_producto", idProducto);
             }
             if (!string.IsNullOrEmpty(txtVersion.Text))
@@ -68,12 +74,12 @@ namespace ProductosYPlanes.Presentacion
             if (!string.IsNullOrEmpty(txtAlcance.Text))
             {
                 var Alcance = txtAlcance.Text;
-                parametros.Add("Alcance", Alcance);
+                parametros.Add("alcance", Alcance);
             }
 
             if (!string.IsNullOrEmpty(cboResp.Text))
             {
-                var idResponsable = cboResp.SelectedValue;
+                var idResponsable = cboResp.Text;
                 parametros.Add("id_responsable", idResponsable);
             }
 
@@ -107,17 +113,19 @@ namespace ProductosYPlanes.Presentacion
             dgvProyectos.Columns[1].Name = "ID Producto";
             dgvProyectos.Columns[1].DataPropertyName = "id_producto";
 
-            dgvProyectos.Columns[2].Name = "Descripcion";
-            dgvProyectos.Columns[2].DataPropertyName = "descripcion";
-
+            dgvProyectos.Columns[2].Name = "Responsable";
+            dgvProyectos.Columns[2].DataPropertyName = "id_Responsable";
+        
             dgvProyectos.Columns[3].Name = "Alcance";
-            dgvProyectos.Columns[3].DataPropertyName = "Alcance";
+            dgvProyectos.Columns[3].DataPropertyName = "alcance";
 
             dgvProyectos.Columns[4].Name = "version";
             dgvProyectos.Columns[4].DataPropertyName = "version";
 
-            dgvProyectos.Columns[5].Name = "Responsable";
-            dgvProyectos.Columns[5].DataPropertyName = "id_Responsable";
+            dgvProyectos.Columns[5].Name = "Descripcion";
+            dgvProyectos.Columns[5].DataPropertyName = "descripcion";
+
+
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             dgvProyectos.AutoResizeColumnHeadersHeight();
@@ -133,7 +141,7 @@ namespace ProductosYPlanes.Presentacion
             var proyecto = (Proyecto)dgvProyectos.CurrentRow.DataBoundItem;
             modificarVentana.InicializarFormulario(frmUpdateProyectos.FormMode.update, proyecto);
             modificarVentana.ShowDialog();
-            btnConsultar_Click(sender, e);
+            btnModificar_Click(sender, e);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -169,7 +177,7 @@ namespace ProductosYPlanes.Presentacion
             var proyecto = (Proyecto)dgvProyectos.CurrentRow.DataBoundItem;
             modificarVentana.InicializarFormulario(frmUpdateProyectos.FormMode.update, proyecto);
             modificarVentana.ShowDialog();
-            btnConsultar_Click(sender, e);
+            btnModificar_Click(sender, e);
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -193,12 +201,15 @@ namespace ProductosYPlanes.Presentacion
                 btnEliminar.Enabled = false;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
 
         private void frmProyectos_Load_1(object sender, EventArgs e)
         {
-            LlenarCombo(cboProd, productoService.ConsultarTodos(), "nombre", "id_producto");
-            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "idusuario", "id_usuario");
         }
     }
 }

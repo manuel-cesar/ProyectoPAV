@@ -41,15 +41,15 @@ namespace ProductosYPlanes.Presentacion
         {
             // Dictionary: Representa una colección de claves y valores.
             Dictionary<string, object> parametros = new Dictionary<string, object>();
-            if (!string.IsNullOrEmpty(txtPlan.Text))
+            if (!string.IsNullOrEmpty(txtId_plan.Text))
             {
-                var idPlan = txtPlan.Text;
+                var idPlan = txtId_plan.Text;
                 parametros.Add("id_plan_prueba", idPlan);
             }
 
             if (!string.IsNullOrEmpty(cboProyecto.Text))
             {
-                var idProyecto = cboProyecto.SelectedValue;
+                var idProyecto = cboProyecto.Text;
                 parametros.Add("id_proyecto", idProyecto);
             }
 
@@ -58,11 +58,11 @@ namespace ProductosYPlanes.Presentacion
                 var nombre = txtNombre.Text;
                 parametros.Add("nombre", nombre);
             }
-             
+
             if (!string.IsNullOrEmpty(cboResp.Text))
             {
-                var idResponsable = cboResp.SelectedValue;
-                parametros.Add("id_Responsable", idResponsable);
+                var idResponsable = cboResp.Text;
+                parametros.Add("id_responsable", idResponsable);
             }
 
             IList<Plan> listadoPlanes = planService.ConsultarPlanConFiltros(parametros);
@@ -93,7 +93,6 @@ namespace ProductosYPlanes.Presentacion
             dgvPlanes.Columns[0].Name = "ID";
             dgvPlanes.Columns[0].DataPropertyName = "id_plan_prueba";
 
-
             dgvPlanes.Columns[1].Name = "ID Proyecto";
             dgvPlanes.Columns[1].DataPropertyName = "id_proyecto";
 
@@ -101,7 +100,7 @@ namespace ProductosYPlanes.Presentacion
             dgvPlanes.Columns[2].DataPropertyName = "nombre";
 
             dgvPlanes.Columns[3].Name = "Responsable";
-            dgvPlanes.Columns[3].DataPropertyName = "id_Responsable";
+            dgvPlanes.Columns[3].DataPropertyName = "id_responsable";
 
             dgvPlanes.Columns[4].Name = "Descripcion";
             dgvPlanes.Columns[4].DataPropertyName = "descripcion";
@@ -183,8 +182,8 @@ namespace ProductosYPlanes.Presentacion
 
         private void frmPlanes_Load_1(object sender, EventArgs e)
         {
-            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "Id_proyecto", "Id_proyecto");
-            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "id_proyecto", "Id_proyecto");
+            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
         }
     }
 }

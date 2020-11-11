@@ -31,7 +31,7 @@ namespace ProductosYPlanes.Presentacion
             if (!string.IsNullOrEmpty(txtIdPlan.Text))
             {
                 var idPlan  = txtIdPlan.Text;
-                parametros.Add("id_plan", idPlan);
+                parametros.Add("id_plan_prueba", idPlan);
             }
 
             if (!string.IsNullOrEmpty(txtTitulo.Text))
@@ -44,6 +44,12 @@ namespace ProductosYPlanes.Presentacion
             {
                 var idResponsable = txtResponsable.Text;
                 parametros.Add("id_responsable", idResponsable);
+            }
+
+            if (!string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                var descripcion = txtDescripcion.Text;
+                parametros.Add("descripcion", descripcion);
             }
 
             IList<CasoPrueba> listadoCasos = casoPruebaService.ConsultarCasoPruebaConFiltros(parametros);

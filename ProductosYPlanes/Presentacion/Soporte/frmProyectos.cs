@@ -177,7 +177,7 @@ namespace ProductosYPlanes.Presentacion
             var proyecto = (Proyecto)dgvProyectos.CurrentRow.DataBoundItem;
             modificarVentana.InicializarFormulario(frmUpdateProyectos.FormMode.update, proyecto);
             modificarVentana.ShowDialog();
-            btnModificar_Click(sender, e);
+            btnModificar_Click_1(sender, e);
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)

@@ -47,8 +47,8 @@ namespace ProductosYPlanes.Presentacion
         }
         private void frmUpdateProyectos_Load(System.Object sender, System.EventArgs e)
         {
-            LlenarCombo(cboProducto, productoService.ConsultarTodos(), "id_producto", "id_producto");
-            LlenarCombo(cboResponsable, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
+           // LlenarCombo(cboProducto, productoService.ConsultarTodos(), "id_producto", "id_producto");
+           // LlenarCombo(cboResponsable, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
           
             switch (formMode)
             {
@@ -63,12 +63,12 @@ namespace ProductosYPlanes.Presentacion
                         this.Text = "Actualizar Proyecto";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        txtProyecto.Enabled = true;
-                        cboProducto.Enabled = true;
+                        txtProyecto.Enabled = false;
+                        txtProducto.Enabled = true;
                         txtDescripcion.Enabled = true;
                         txtAlcance.Enabled = true;
                         txtVersion.Enabled = true;
-                        cboResponsable.Enabled = true;
+                        txtResponsable.Enabled = true;
                         break;
                     }
 
@@ -80,8 +80,8 @@ namespace ProductosYPlanes.Presentacion
             if (oProyectoSelected != null)
             {
                 txtProyecto.Text = oProyectoSelected.Id_Proyecto.ToString();
-                cboProducto.Text = oProyectoSelected.Id_Producto.ToString();
-                cboResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
+                txtProducto.Text = oProyectoSelected.Id_Producto.ToString();
+                txtResponsable.Text = oProyectoSelected.Id_Responsable.ToString();
                 txtAlcance.Text = oProyectoSelected.Alcance.ToString();
                 txtVersion.Text = oProyectoSelected.Version.ToString();
                 txtDescripcion.Text = oProyectoSelected.Descripcion.ToString();
@@ -102,10 +102,7 @@ namespace ProductosYPlanes.Presentacion
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -122,11 +119,11 @@ namespace ProductosYPlanes.Presentacion
                             {
 
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
-                                Id_Producto = Convert.ToInt32(cboProducto.SelectedValue),
+                                Id_Producto = Convert.ToInt32(txtProducto.Text),
                                 Descripcion = txtDescripcion.Text,
                                 Alcance = Convert.ToInt32(txtAlcance.Text),
                                 Version = Convert.ToInt32(txtVersion.Text),
-                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue),
+                                Id_Responsable = Convert.ToInt32(txtResponsable.Text),
 
                                 Borrado = false
                             };
@@ -149,11 +146,11 @@ namespace ProductosYPlanes.Presentacion
                         if (ValidarCampos())
                         {
                             oProyectoSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
-                            oProyectoSelected.Id_Producto = Convert.ToInt32(cboProducto.SelectedValue);
+                            oProyectoSelected.Id_Producto = Convert.ToInt32(txtProducto.Text);
                             oProyectoSelected.Descripcion = txtDescripcion.Text;
                             oProyectoSelected.Alcance = Convert.ToInt32(txtAlcance.Text);
                             oProyectoSelected.Version = Convert.ToInt32(txtVersion.Text);
-                            oProyectoSelected.Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue);
+                            oProyectoSelected.Id_Responsable = Convert.ToInt32(txtResponsable.Text);
 
 
                             if (oProyectoService.ActualizarProyecto(oProyectoSelected))
@@ -183,14 +180,15 @@ namespace ProductosYPlanes.Presentacion
             else
                 txtProyecto.BackColor = Color.White;
 
-            if (cboProducto.Text == string.Empty)
+            if (txtProducto.Text == string.Empty)
             {
-                cboProducto.BackColor = Color.Red;
-                cboProducto.Focus();
+                txtProducto.BackColor = Color.Red;
+                txtProducto.Focus();
                 return false;
             }
             else
-                cboProducto.BackColor = Color.White;
+                txtProducto.BackColor = Color.White;
+
             if (txtDescripcion.Text == string.Empty)
             {
                 txtDescripcion.BackColor = Color.Red;
@@ -218,14 +216,14 @@ namespace ProductosYPlanes.Presentacion
             else
                 txtVersion.BackColor = Color.White;
 
-            if (cboResponsable.Text == string.Empty)
+            if (txtResponsable.Text == string.Empty)
             {
-                cboResponsable.BackColor = Color.Red;
-                cboResponsable.Focus();
+                txtResponsable.BackColor = Color.Red;
+                txtResponsable.Focus();
                 return false;
             }
             else
-                cboResponsable.BackColor = Color.White;
+                txtResponsable.BackColor = Color.White;
 
 
 
@@ -233,7 +231,10 @@ namespace ProductosYPlanes.Presentacion
             return true;
         }
 
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

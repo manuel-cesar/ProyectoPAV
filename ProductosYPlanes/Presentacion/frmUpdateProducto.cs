@@ -40,7 +40,6 @@ namespace ProductosYPlanes.Presentacion
                         this.Text = "Actualizar Producto";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        txtProducto.Enabled = true;
                         txtNombre.Enabled = true;
                         break;
                     }

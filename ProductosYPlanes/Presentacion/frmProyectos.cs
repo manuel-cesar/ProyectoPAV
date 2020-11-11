@@ -43,10 +43,6 @@ namespace ProductosYPlanes.Presentacion
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
-        private void frmProyectos_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -60,7 +56,7 @@ namespace ProductosYPlanes.Presentacion
 
             if (!string.IsNullOrEmpty(cboProd.Text))
             {
-                var idProducto = cboProd.Text;
+                var idProducto = cboProd.SelectedValue;
                 parametros.Add("id_producto", idProducto);
             }
             if (!string.IsNullOrEmpty(txtVersion.Text))
@@ -77,8 +73,8 @@ namespace ProductosYPlanes.Presentacion
 
             if (!string.IsNullOrEmpty(cboResp.Text))
             {
-                var idResponsable = cboResp.Text;
-                parametros.Add("id_Responsable", idResponsable);
+                var idResponsable = cboResp.SelectedValue;
+                parametros.Add("id_responsable", idResponsable);
             }
 
             IList<Proyecto> listadoProyecto = proyectoService.ConsultarProyectoConFiltros(parametros);
@@ -197,14 +193,11 @@ namespace ProductosYPlanes.Presentacion
                 btnEliminar.Enabled = false;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void frmProyectos_Load_1(object sender, EventArgs e)
         {
-            LlenarCombo(cboProd, productoService.ConsultarTodos(), "id_producto", "id_producto");
+            LlenarCombo(cboProd, productoService.ConsultarTodos(), "nombre", "id_producto");
             LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
         }
     }

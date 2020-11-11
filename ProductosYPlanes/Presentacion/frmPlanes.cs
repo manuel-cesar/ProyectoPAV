@@ -49,7 +49,7 @@ namespace ProductosYPlanes.Presentacion
 
             if (!string.IsNullOrEmpty(cboProyecto.Text))
             {
-                var idProyecto = cboProyecto.Text;
+                var idProyecto = cboProyecto.SelectedValue;
                 parametros.Add("id_proyecto", idProyecto);
             }
 
@@ -58,10 +58,10 @@ namespace ProductosYPlanes.Presentacion
                 var nombre = txtNombre.Text;
                 parametros.Add("nombre", nombre);
             }
-
-            if (!string.IsNullOrEmpty(txtNombre.Text))
+             
+            if (!string.IsNullOrEmpty(cboResp.Text))
             {
-                var idResponsable = cboResp.Text;
+                var idResponsable = cboResp.SelectedValue;
                 parametros.Add("id_Responsable", idResponsable);
             }
 

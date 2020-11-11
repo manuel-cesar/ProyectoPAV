@@ -120,9 +120,6 @@ namespace ProductosYPlanes.Presentacion
             btnModificar.Enabled = true;
         }
 
-        private void frmProducto_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

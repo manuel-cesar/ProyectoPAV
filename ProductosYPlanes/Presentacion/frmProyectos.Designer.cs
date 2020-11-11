@@ -86,7 +86,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proyectos - Filtros de busqueda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cboProd
             // 
@@ -397,7 +396,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ComboBox cboProd;
         private System.Windows.Forms.ComboBox cboResp;
+        private System.Windows.Forms.ComboBox cboProd;
     }
 }

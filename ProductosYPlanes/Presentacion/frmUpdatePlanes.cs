@@ -221,5 +221,10 @@ namespace ProductosYPlanes.Presentacion
         {
 
         }
+
+        private void cboProy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

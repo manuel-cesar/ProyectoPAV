@@ -56,7 +56,7 @@
             // txtplanMod
             // 
             this.txtplanMod.Enabled = false;
-            this.txtplanMod.Location = new System.Drawing.Point(97, 29);
+            this.txtplanMod.Location = new System.Drawing.Point(97, 24);
             this.txtplanMod.Name = "txtplanMod";
             this.txtplanMod.Size = new System.Drawing.Size(259, 20);
             this.txtplanMod.TabIndex = 49;
@@ -64,7 +64,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(100, 191);
+            this.panel4.Location = new System.Drawing.Point(100, 173);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 1);
             this.panel4.TabIndex = 48;
@@ -82,7 +82,7 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(244, 265);
+            this.btnCancelar.Location = new System.Drawing.Point(231, 210);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 46);
@@ -96,7 +96,7 @@
             this.btnAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAceptar.BackgroundImage")));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(40, 265);
+            this.btnAceptar.Location = new System.Drawing.Point(50, 210);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(125, 46);
@@ -108,7 +108,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(19, 179);
+            this.lblDescripcion.Location = new System.Drawing.Point(24, 162);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
@@ -119,18 +119,16 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(100, 179);
+            this.txtDescripcion.Location = new System.Drawing.Point(100, 157);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(6);
-            this.txtDescripcion.MaximumSize = new System.Drawing.Size(256, 60);
-            this.txtDescripcion.MinimumSize = new System.Drawing.Size(256, 60);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(256, 60);
+            this.txtDescripcion.Size = new System.Drawing.Size(254, 13);
             this.txtDescripcion.TabIndex = 40;
             // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(8, 128);
+            this.lblResponsable.Location = new System.Drawing.Point(18, 128);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(75, 13);
@@ -141,7 +139,7 @@
             // 
             this.TxtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNombre.Location = new System.Drawing.Point(91, 97);
+            this.TxtNombre.Location = new System.Drawing.Point(100, 95);
             this.TxtNombre.Margin = new System.Windows.Forms.Padding(6);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(256, 13);
@@ -170,7 +168,7 @@
             // lblPlan
             // 
             this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(42, 29);
+            this.lblPlan.Location = new System.Drawing.Point(47, 27);
             this.lblPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(46, 13);
@@ -180,17 +178,18 @@
             // cboProy
             // 
             this.cboProy.FormattingEnabled = true;
-            this.cboProy.Location = new System.Drawing.Point(100, 63);
+            this.cboProy.Location = new System.Drawing.Point(97, 55);
             this.cboProy.Name = "cboProy";
-            this.cboProy.Size = new System.Drawing.Size(247, 21);
+            this.cboProy.Size = new System.Drawing.Size(259, 21);
             this.cboProy.TabIndex = 50;
+            this.cboProy.SelectedIndexChanged += new System.EventHandler(this.cboProy_SelectedIndexChanged);
             // 
             // cboRESP
             // 
             this.cboRESP.FormattingEnabled = true;
             this.cboRESP.Location = new System.Drawing.Point(97, 125);
             this.cboRESP.Name = "cboRESP";
-            this.cboRESP.Size = new System.Drawing.Size(238, 21);
+            this.cboRESP.Size = new System.Drawing.Size(257, 21);
             this.cboRESP.TabIndex = 51;
             // 
             // frmUpdatePlanes
@@ -198,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(425, 341);
+            this.ClientSize = new System.Drawing.Size(392, 293);
             this.Controls.Add(this.cboRESP);
             this.Controls.Add(this.cboProy);
             this.Controls.Add(this.txtplanMod);

@@ -12,20 +12,35 @@ namespace ProductosYPlanes.Presentacion
 
         private readonly CasoPruebaService oCasoPruebaService;
         private CasoPrueba oCasoPruebaSelected;
+        private PlanService planService;
+        private UsuarioService usuarioService;
 
         public frmUpdateCasosPrueba()
         {
             InitializeComponent();
             oCasoPruebaService = new CasoPruebaService();
-        }
+            planService = new PlanService();
+            usuarioService = new UsuarioService();        }
         public enum FormMode
         {
             insert,
             update
         }
 
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
+        }
+
         private void frmUpdateCasosPrueba_Load(System.Object sender, System.EventArgs e)
         {
+            LlenarCombo(cboPlan, planService.ConsultarTodos(), "Id_Plan_Prueba", "Id_Plan_Prueba");
+            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "idusuario", "id_usuario");
+
+
             switch (formMode)
             {
                 case FormMode.insert:
@@ -39,9 +54,9 @@ namespace ProductosYPlanes.Presentacion
                         // Recuperar Caso de Prueba seleccionado en la grilla 
                         MostrarDatos();
                         txtCasoPrueba.Enabled = true;
-                        txtPlan.Enabled = true;
+                        cboPlan.Enabled = true;
                         TxtTitulo.Enabled = true;
-                        txtResponsable.Enabled = true;
+                        cboResponsable.Enabled = true;
                         txtDescripcion.Enabled = true;
                         break;
                     }
@@ -53,9 +68,9 @@ namespace ProductosYPlanes.Presentacion
             if (oCasoPruebaSelected != null)
             {
                 txtCasoPrueba.Text = oCasoPruebaSelected.Id_Caso_Prueba.ToString();
-                txtPlan.Text = oCasoPruebaSelected.Id_Plan_Prueba.ToString();
+                cboPlan.Text = oCasoPruebaSelected.Id_Plan_Prueba.ToString();
                 TxtTitulo.Text = oCasoPruebaSelected.Titulo.ToString();
-                txtResponsable.Text = oCasoPruebaSelected.Id_Responsable.ToString();
+                cboResponsable.Text = oCasoPruebaSelected.Id_Responsable.ToString();
                 txtDescripcion.Text = oCasoPruebaSelected.Descripcion.ToString();
             }
 
@@ -81,9 +96,9 @@ namespace ProductosYPlanes.Presentacion
                             var oCasoPrueba = new CasoPrueba
                             {
                                 Id_Caso_Prueba = newId,
-                                Id_Plan_Prueba = Convert.ToInt32(txtPlan.Text),
+                                Id_Plan_Prueba = Convert.ToInt32(cboPlan.SelectedIndex),
                                 Titulo = TxtTitulo.Text,
-                                Id_Responsable = Convert.ToInt32(txtResponsable.Text),
+                                Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex),
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
                             };
@@ -103,9 +118,9 @@ namespace ProductosYPlanes.Presentacion
                         if (ValidarCampos())
                         {
                             oCasoPruebaSelected.Id_Caso_Prueba = Convert.ToInt32(txtCasoPrueba.Text);
-                            oCasoPruebaSelected.Id_Plan_Prueba = Convert.ToInt32(txtPlan.Text);
+                            oCasoPruebaSelected.Id_Plan_Prueba = Convert.ToInt32(cboPlan.Text);
                             oCasoPruebaSelected.Titulo = TxtTitulo.Text;
-                            oCasoPruebaSelected.Id_Responsable = Convert.ToInt32(txtResponsable.Text);
+                            oCasoPruebaSelected.Id_Responsable = Convert.ToInt32(cboResponsable.Text);
                             oCasoPruebaSelected.Descripcion = txtDescripcion.Text;
 
                             if (oCasoPruebaService.ActualizarCasoPrueba(oCasoPruebaSelected))
@@ -129,14 +144,14 @@ namespace ProductosYPlanes.Presentacion
         private bool ValidarCampos()
         {
             // campos obligatorios
-            if (txtPlan.Text == string.Empty)
+            if (cboPlan.Text == string.Empty)
             {
-                txtPlan.BackColor = Color.Red;
-                txtPlan.Focus();
+                cboPlan.BackColor = Color.Red;
+                cboPlan.Focus();
                 return false;
             }
             else
-                txtPlan.BackColor = Color.White;
+                cboPlan.BackColor = Color.White;
 
             if (TxtTitulo.Text == string.Empty)
             {
@@ -146,6 +161,15 @@ namespace ProductosYPlanes.Presentacion
             }
             else
                 TxtTitulo.BackColor = Color.White;
+
+            if (cboResponsable.Text == string.Empty)
+            {
+                cboResponsable.BackColor = Color.Red;
+                cboResponsable.Focus();
+                return false;
+            }
+            else
+                cboResponsable.BackColor = Color.White;
 
 
             return true;

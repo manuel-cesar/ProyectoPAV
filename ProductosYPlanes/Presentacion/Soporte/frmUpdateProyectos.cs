@@ -121,7 +121,7 @@ namespace ProductosYPlanes.Presentacion
                             var oProyecto = new Proyecto
                             {
 
-                                Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
+                                Id_Proyecto = newId,
                                 Id_Producto = Convert.ToInt32(cboProducto.SelectedIndex),
 
                                 Descripcion = txtDescripcion.Text,

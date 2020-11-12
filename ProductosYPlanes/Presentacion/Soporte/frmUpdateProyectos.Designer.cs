@@ -57,6 +57,7 @@
             // 
             // txtProyecto
             // 
+            this.txtProyecto.Enabled = false;
             this.txtProyecto.Location = new System.Drawing.Point(106, 31);
             this.txtProyecto.Name = "txtProyecto";
             this.txtProyecto.Size = new System.Drawing.Size(259, 20);

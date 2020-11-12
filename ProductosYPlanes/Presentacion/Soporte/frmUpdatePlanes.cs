@@ -158,12 +158,13 @@ namespace ProductosYPlanes.Presentacion
                         if (ValidarCampos())
                         {
                             int newId = Convert.ToInt32(oPlanService.consultarMaxId());
+                            newId += 10;
                             newId++;
                             txtplan.Text = newId.ToString();
                             var oPlan = new Plan
                             {
 
-                                Id_Plan_Prueba = Convert.ToInt32(txtplan.Text),
+                                Id_Plan_Prueba = newId,
                                 Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue),
                                 Nombre = txtNombre.Text,
                                 Id_Responsable = Convert.ToInt32(cboResp.SelectedValue),

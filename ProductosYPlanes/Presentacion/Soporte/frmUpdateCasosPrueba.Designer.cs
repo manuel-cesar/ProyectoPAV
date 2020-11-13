@@ -37,14 +37,15 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
             this.lblCaso = new System.Windows.Forms.Label();
-            this.txtPlan = new System.Windows.Forms.TextBox();
             this.TxtTitulo = new System.Windows.Forms.TextBox();
-            this.txtResponsable = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cboPlan = new System.Windows.Forms.ComboBox();
+            this.cboResponsable = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtCasoPrueba
             // 
+            this.txtCasoPrueba.Enabled = false;
             this.txtCasoPrueba.Location = new System.Drawing.Point(100, 26);
             this.txtCasoPrueba.Name = "txtCasoPrueba";
             this.txtCasoPrueba.Size = new System.Drawing.Size(259, 20);
@@ -128,26 +129,12 @@
             this.lblCaso.TabIndex = 18;
             this.lblCaso.Text = "Id Caso :";
             // 
-            // txtPlan
-            // 
-            this.txtPlan.Location = new System.Drawing.Point(99, 67);
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.Size = new System.Drawing.Size(260, 20);
-            this.txtPlan.TabIndex = 34;
-            // 
             // TxtTitulo
             // 
             this.TxtTitulo.Location = new System.Drawing.Point(100, 105);
             this.TxtTitulo.Name = "TxtTitulo";
             this.TxtTitulo.Size = new System.Drawing.Size(259, 20);
             this.TxtTitulo.TabIndex = 35;
-            // 
-            // txtResponsable
-            // 
-            this.txtResponsable.Location = new System.Drawing.Point(99, 144);
-            this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(260, 20);
-            this.txtResponsable.TabIndex = 36;
             // 
             // txtDescripcion
             // 
@@ -156,16 +143,32 @@
             this.txtDescripcion.Size = new System.Drawing.Size(260, 20);
             this.txtDescripcion.TabIndex = 37;
             // 
+            // cboPlan
+            // 
+            this.cboPlan.FormattingEnabled = true;
+            this.cboPlan.Location = new System.Drawing.Point(100, 67);
+            this.cboPlan.Name = "cboPlan";
+            this.cboPlan.Size = new System.Drawing.Size(259, 21);
+            this.cboPlan.TabIndex = 38;
+            // 
+            // cboResponsable
+            // 
+            this.cboResponsable.FormattingEnabled = true;
+            this.cboResponsable.Location = new System.Drawing.Point(100, 141);
+            this.cboResponsable.Name = "cboResponsable";
+            this.cboResponsable.Size = new System.Drawing.Size(259, 21);
+            this.cboResponsable.TabIndex = 39;
+            // 
             // frmUpdateCasosPrueba
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 317);
+            this.Controls.Add(this.cboResponsable);
+            this.Controls.Add(this.cboPlan);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtResponsable);
             this.Controls.Add(this.TxtTitulo);
-            this.Controls.Add(this.txtPlan);
             this.Controls.Add(this.txtCasoPrueba);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -193,9 +196,9 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.Label lblCaso;
-        private System.Windows.Forms.TextBox txtPlan;
         private System.Windows.Forms.TextBox TxtTitulo;
-        private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cboPlan;
+        private System.Windows.Forms.ComboBox cboResponsable;
     }
 }

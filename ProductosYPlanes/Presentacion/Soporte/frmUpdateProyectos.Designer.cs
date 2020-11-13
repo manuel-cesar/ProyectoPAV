@@ -40,9 +40,9 @@
             this.lblProyecto = new System.Windows.Forms.Label();
             this.cboResponsable = new System.Windows.Forms.ComboBox();
             this.cboProducto = new System.Windows.Forms.ComboBox();
-            this.txtVersion = new System.Windows.Forms.TextBox();
-            this.txtAlcance = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtAlcance = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAlcance
@@ -57,6 +57,7 @@
             // 
             // txtProyecto
             // 
+            this.txtProyecto.Enabled = false;
             this.txtProyecto.Location = new System.Drawing.Point(106, 31);
             this.txtProyecto.Name = "txtProyecto";
             this.txtProyecto.Size = new System.Drawing.Size(259, 20);
@@ -67,9 +68,9 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(270, 280);
+            this.btnCancelar.Location = new System.Drawing.Point(279, 280);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(86, 36);
             this.btnCancelar.TabIndex = 45;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -82,7 +83,7 @@
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(80, 280);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(79, 44);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 36);
             this.btnAceptar.TabIndex = 44;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -140,7 +141,7 @@
             // cboResponsable
             // 
             this.cboResponsable.FormattingEnabled = true;
-            this.cboResponsable.Location = new System.Drawing.Point(106, 176);
+            this.cboResponsable.Location = new System.Drawing.Point(106, 179);
             this.cboResponsable.Name = "cboResponsable";
             this.cboResponsable.Size = new System.Drawing.Size(259, 21);
             this.cboResponsable.TabIndex = 53;
@@ -153,12 +154,12 @@
             this.cboProducto.Size = new System.Drawing.Size(259, 21);
             this.cboProducto.TabIndex = 54;
             // 
-            // txtVersion
+            // txtDescripcion
             // 
-            this.txtVersion.Location = new System.Drawing.Point(106, 100);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(259, 20);
-            this.txtVersion.TabIndex = 55;
+            this.txtDescripcion.Location = new System.Drawing.Point(106, 217);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(259, 20);
+            this.txtDescripcion.TabIndex = 55;
             // 
             // txtAlcance
             // 
@@ -167,21 +168,21 @@
             this.txtAlcance.Size = new System.Drawing.Size(259, 20);
             this.txtAlcance.TabIndex = 56;
             // 
-            // txtDescripcion
+            // txtVersion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(106, 217);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(259, 20);
-            this.txtDescripcion.TabIndex = 57;
+            this.txtVersion.Location = new System.Drawing.Point(106, 100);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(259, 20);
+            this.txtVersion.TabIndex = 57;
             // 
             // frmUpdateProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 352);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtAlcance);
             this.Controls.Add(this.txtVersion);
+            this.Controls.Add(this.txtAlcance);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.cboProducto);
             this.Controls.Add(this.cboResponsable);
             this.Controls.Add(this.lblAlcance);
@@ -198,6 +199,7 @@
             this.Name = "frmUpdateProyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdateProyectos";
+            this.Load += new System.EventHandler(this.frmUpdateProyectos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,8 +217,8 @@
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.ComboBox cboResponsable;
         private System.Windows.Forms.ComboBox cboProducto;
-        private System.Windows.Forms.TextBox txtVersion;
-        private System.Windows.Forms.TextBox txtAlcance;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtAlcance;
+        private System.Windows.Forms.TextBox txtVersion;
     }
 }

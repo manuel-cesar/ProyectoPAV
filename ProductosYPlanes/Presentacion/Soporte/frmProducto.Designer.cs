@@ -82,7 +82,7 @@
             this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.142858F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(353, 52);
+            this.btnConsultar.Location = new System.Drawing.Point(447, 52);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(81, 37);
             this.btnConsultar.TabIndex = 5;
@@ -100,13 +100,13 @@
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.NombreProducto});
-            this.dgvProducto.Location = new System.Drawing.Point(13, 111);
+            this.dgvProducto.Location = new System.Drawing.Point(6, 113);
             this.dgvProducto.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.RowHeadersVisible = false;
             this.dgvProducto.RowHeadersWidth = 72;
-            this.dgvProducto.Size = new System.Drawing.Size(455, 261);
+            this.dgvProducto.Size = new System.Drawing.Size(537, 261);
             this.dgvProducto.TabIndex = 6;
             this.dgvProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellClick);
             // 

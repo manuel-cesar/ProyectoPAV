@@ -39,10 +39,10 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProyecto = new System.Windows.Forms.Label();
             this.lblPlan = new System.Windows.Forms.Label();
-            this.cboProy = new System.Windows.Forms.ComboBox();
-            this.cboResp = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cboProy = new System.Windows.Forms.ComboBox();
+            this.cboResp = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -137,22 +137,6 @@
             this.lblPlan.TabIndex = 34;
             this.lblPlan.Text = "Id Plan :";
             // 
-            // cboProy
-            // 
-            this.cboProy.FormattingEnabled = true;
-            this.cboProy.Location = new System.Drawing.Point(100, 71);
-            this.cboProy.Name = "cboProy";
-            this.cboProy.Size = new System.Drawing.Size(247, 21);
-            this.cboProy.TabIndex = 50;
-            // 
-            // cboResp
-            // 
-            this.cboResp.FormattingEnabled = true;
-            this.cboResp.Location = new System.Drawing.Point(99, 151);
-            this.cboResp.Name = "cboResp";
-            this.cboResp.Size = new System.Drawing.Size(248, 21);
-            this.cboResp.TabIndex = 51;
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(100, 110);
@@ -167,16 +151,32 @@
             this.txtDescripcion.Size = new System.Drawing.Size(247, 20);
             this.txtDescripcion.TabIndex = 53;
             // 
+            // cboProy
+            // 
+            this.cboProy.FormattingEnabled = true;
+            this.cboProy.Location = new System.Drawing.Point(100, 71);
+            this.cboProy.Name = "cboProy";
+            this.cboProy.Size = new System.Drawing.Size(247, 21);
+            this.cboProy.TabIndex = 54;
+            // 
+            // cboResp
+            // 
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(100, 154);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(247, 21);
+            this.cboResp.TabIndex = 55;
+            // 
             // frmUpdatePlanes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(425, 341);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.cboResp);
             this.Controls.Add(this.cboProy);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtplan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -207,10 +207,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblProyecto;
         private System.Windows.Forms.Label lblPlan;
-
-        private System.Windows.Forms.ComboBox cboProy;
-        private System.Windows.Forms.ComboBox cboResp;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cboProy;
+        private System.Windows.Forms.ComboBox cboResp;
     }
 }

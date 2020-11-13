@@ -160,7 +160,6 @@
             this.dgvPlanes.Margin = new System.Windows.Forms.Padding(6);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
-            this.dgvPlanes.RowHeadersVisible = false;
             this.dgvPlanes.RowHeadersWidth = 72;
             this.dgvPlanes.Size = new System.Drawing.Size(634, 269);
             this.dgvPlanes.TabIndex = 6;

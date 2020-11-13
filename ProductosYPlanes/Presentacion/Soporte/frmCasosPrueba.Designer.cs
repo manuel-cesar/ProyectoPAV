@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCasosPrueba));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIdCaso = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblResponsable = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -49,8 +45,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cboPlan = new System.Windows.Forms.ComboBox();
-            this.cboResponsable = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
+            this.txtIdCaso = new System.Windows.Forms.TextBox();
+            this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCasos)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +58,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.cboResponsable);
-            this.groupBox1.Controls.Add(this.cboPlan);
+            this.groupBox1.Controls.Add(this.txtIdPlan);
             this.groupBox1.Controls.Add(this.txtIdCaso);
+            this.groupBox1.Controls.Add(this.txtResponsable);
             this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label1);
@@ -80,46 +80,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de busqueda";
             // 
-            // txtIdCaso
-            // 
-            this.txtIdCaso.Location = new System.Drawing.Point(99, 37);
-            this.txtIdCaso.Name = "txtIdCaso";
-            this.txtIdCaso.Size = new System.Drawing.Size(116, 21);
-            this.txtIdCaso.TabIndex = 22;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(333, 37);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(126, 21);
-            this.txtTitulo.TabIndex = 20;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(578, 58);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(129, 21);
-            this.txtDescripcion.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Descripcion:";
-            // 
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
             this.lblResponsable.Location = new System.Drawing.Point(224, 75);
             this.lblResponsable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(86, 15);
+            this.lblResponsable.Size = new System.Drawing.Size(99, 15);
             this.lblResponsable.TabIndex = 12;
-            this.lblResponsable.Text = "Responsable :";
+            this.lblResponsable.Text = "Id Responsable :";
             // 
             // lblTitulo
             // 
@@ -163,7 +132,6 @@
             this.dgvCasos.Margin = new System.Windows.Forms.Padding(6);
             this.dgvCasos.Name = "dgvCasos";
             this.dgvCasos.ReadOnly = true;
-            this.dgvCasos.RowHeadersVisible = false;
             this.dgvCasos.RowHeadersWidth = 72;
             this.dgvCasos.Size = new System.Drawing.Size(841, 269);
             this.dgvCasos.TabIndex = 6;
@@ -202,12 +170,12 @@
             // lblPlan
             // 
             this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(51, 75);
+            this.lblPlan.Location = new System.Drawing.Point(33, 75);
             this.lblPlan.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPlan.Name = "lblPlan";
-            this.lblPlan.Size = new System.Drawing.Size(38, 15);
+            this.lblPlan.Size = new System.Drawing.Size(51, 15);
             this.lblPlan.TabIndex = 3;
-            this.lblPlan.Text = "Plan :";
+            this.lblPlan.Text = "Id Plan :";
             // 
             // lblIdCaso
             // 
@@ -279,21 +247,50 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // cboPlan
+            // label1
             // 
-            this.cboPlan.FormattingEnabled = true;
-            this.cboPlan.Location = new System.Drawing.Point(98, 75);
-            this.cboPlan.Name = "cboPlan";
-            this.cboPlan.Size = new System.Drawing.Size(117, 23);
-            this.cboPlan.TabIndex = 23;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(493, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Descripcion:";
             // 
-            // cboResponsable
+            // txtDescripcion
             // 
-            this.cboResponsable.FormattingEnabled = true;
-            this.cboResponsable.Location = new System.Drawing.Point(333, 75);
-            this.cboResponsable.Name = "cboResponsable";
-            this.cboResponsable.Size = new System.Drawing.Size(126, 23);
-            this.cboResponsable.TabIndex = 24;
+            this.txtDescripcion.Location = new System.Drawing.Point(578, 58);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(129, 21);
+            this.txtDescripcion.TabIndex = 19;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(333, 37);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(126, 21);
+            this.txtTitulo.TabIndex = 20;
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.Location = new System.Drawing.Point(333, 76);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(126, 21);
+            this.txtResponsable.TabIndex = 21;
+            // 
+            // txtIdCaso
+            // 
+            this.txtIdCaso.Location = new System.Drawing.Point(99, 37);
+            this.txtIdCaso.Name = "txtIdCaso";
+            this.txtIdCaso.Size = new System.Drawing.Size(116, 21);
+            this.txtIdCaso.TabIndex = 22;
+            // 
+            // txtIdPlan
+            // 
+            this.txtIdPlan.Location = new System.Drawing.Point(99, 75);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.Size = new System.Drawing.Size(116, 21);
+            this.txtIdPlan.TabIndex = 23;
             // 
             // frmCasosPrueba
             // 
@@ -307,7 +304,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCasosPrueba";
             this.Text = "frmCasosPrueba";
-            this.Load += new System.EventHandler(this.frmCasosPrueba_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCasos)).EndInit();
@@ -333,11 +329,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdResponsable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.TextBox txtIdPlan;
         private System.Windows.Forms.TextBox txtIdCaso;
+        private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboResponsable;
-        private System.Windows.Forms.ComboBox cboPlan;
     }
 }

@@ -53,7 +53,7 @@ namespace ProductosYPlanes.Presentacion
                         this.Text = "Actualizar Caso de Prueba";
                         // Recuperar Caso de Prueba seleccionado en la grilla 
                         MostrarDatos();
-                        txtCasoPrueba.Enabled = true;
+                        txtCasoPrueba.Enabled = false;
                         cboPlan.Enabled = true;
                         TxtTitulo.Enabled = true;
                         cboResponsable.Enabled = true;
@@ -120,7 +120,7 @@ namespace ProductosYPlanes.Presentacion
                             oCasoPruebaSelected.Id_Caso_Prueba = Convert.ToInt32(txtCasoPrueba.Text);
                             oCasoPruebaSelected.Id_Plan_Prueba = Convert.ToInt32(cboPlan.Text);
                             oCasoPruebaSelected.Titulo = TxtTitulo.Text;
-                            oCasoPruebaSelected.Id_Responsable = Convert.ToInt32(cboResponsable.Text);
+                            oCasoPruebaSelected.Id_Responsable = Convert.ToInt32(cboResponsable.SelectedIndex);
                             oCasoPruebaSelected.Descripcion = txtDescripcion.Text;
 
                             if (oCasoPruebaService.ActualizarCasoPrueba(oCasoPruebaSelected))

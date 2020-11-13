@@ -9,6 +9,9 @@ namespace ProductosYPlanes.Presentacion
 {
     public partial class frmCasosPrueba : Form
     {
+        private UsuarioService usuarioService;
+        private PlanService planService;
+
         private readonly CasoPruebaService casoPruebaService;
         public frmCasosPrueba()
         {
@@ -16,6 +19,16 @@ namespace ProductosYPlanes.Presentacion
             // Inicializamos la grilla de Casos
             InitializeDataGridView();
             casoPruebaService = new CasoPruebaService();
+            usuarioService = new UsuarioService();
+            planService = new PlanService();
+        }
+
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -28,9 +41,9 @@ namespace ProductosYPlanes.Presentacion
                 parametros.Add("id_caso_prueba", idCaso);
             }
 
-            if (!string.IsNullOrEmpty(txtIdPlan.Text))
+            if (!string.IsNullOrEmpty(cboPlan.Text))
             {
-                var idPlan  = txtIdPlan.Text;
+                var idPlan  = cboPlan.SelectedValue;
                 parametros.Add("id_plan_prueba", idPlan);
             }
 
@@ -40,9 +53,9 @@ namespace ProductosYPlanes.Presentacion
                 parametros.Add("titulo", titulo);
             }
 
-            if (!string.IsNullOrEmpty(txtResponsable.Text))
+            if (!string.IsNullOrEmpty(cboResponsable.Text))
             {
-                var idResponsable = txtResponsable.Text;
+                var idResponsable = cboResponsable.SelectedValue;
                 parametros.Add("id_responsable", idResponsable);
             }
 
@@ -149,6 +162,12 @@ namespace ProductosYPlanes.Presentacion
         {
             btnEliminar.Enabled = true;
             btnUpdate.Enabled = true;
+        }
+
+        private void frmCasosPrueba_Load(object sender, EventArgs e)
+        {
+            LlenarCombo(cboPlan, planService.ConsultarTodos(), "nombre", "id_plan_prueba");
+            LlenarCombo(cboResponsable, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
         }
     }
 }

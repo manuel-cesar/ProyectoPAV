@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ProductosYPlanes.Presentacion.Informes {
+namespace ProductosYPlanes.Presentacion.Informes.CicloPeriodo {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace ProductosYPlanes.Presentacion.Informes {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsTester")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsCicloPeriodo")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsTester : global::System.Data.DataSet {
+    public partial class dsCicloPeriodo : global::System.Data.DataSet {
         
-        private TestersDataTable tableTesters;
+        private CicloPeriodoDataTable tableCicloPeriodo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public dsTester() {
+        public dsCicloPeriodo() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected dsTester(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsCicloPeriodo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ProductosYPlanes.Presentacion.Informes {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Testers"] != null)) {
-                    base.Tables.Add(new TestersDataTable(ds.Tables["Testers"]));
+                if ((ds.Tables["CicloPeriodo"] != null)) {
+                    base.Tables.Add(new CicloPeriodoDataTable(ds.Tables["CicloPeriodo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProductosYPlanes.Presentacion.Informes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TestersDataTable Testers {
+        public CicloPeriodoDataTable CicloPeriodo {
             get {
-                return this.tableTesters;
+                return this.tableCicloPeriodo;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsTester cln = ((dsTester)(base.Clone()));
+            dsCicloPeriodo cln = ((dsCicloPeriodo)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ProductosYPlanes.Presentacion.Informes {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Testers"] != null)) {
-                    base.Tables.Add(new TestersDataTable(ds.Tables["Testers"]));
+                if ((ds.Tables["CicloPeriodo"] != null)) {
+                    base.Tables.Add(new CicloPeriodoDataTable(ds.Tables["CicloPeriodo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProductosYPlanes.Presentacion.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTesters = ((TestersDataTable)(base.Tables["Testers"]));
+            this.tableCicloPeriodo = ((CicloPeriodoDataTable)(base.Tables["CicloPeriodo"]));
             if ((initTable == true)) {
-                if ((this.tableTesters != null)) {
-                    this.tableTesters.InitVars();
+                if ((this.tableCicloPeriodo != null)) {
+                    this.tableCicloPeriodo.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ProductosYPlanes.Presentacion.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsTester";
+            this.DataSetName = "dsCicloPeriodo";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsTester.xsd";
+            this.Namespace = "http://tempuri.org/dsCicloPeriodo.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTesters = new TestersDataTable();
-            base.Tables.Add(this.tableTesters);
+            this.tableCicloPeriodo = new CicloPeriodoDataTable();
+            base.Tables.Add(this.tableCicloPeriodo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTesters() {
+        private bool ShouldSerializeCicloPeriodo() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsTester ds = new dsTester();
+            dsCicloPeriodo ds = new dsCicloPeriodo();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,33 @@ namespace ProductosYPlanes.Presentacion.Informes {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TestersRowChangeEventHandler(object sender, TestersRowChangeEvent e);
+        public delegate void CicloPeriodoRowChangeEventHandler(object sender, CicloPeriodoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TestersDataTable : global::System.Data.TypedTableBase<TestersRow> {
-            
-            private global::System.Data.DataColumn columnusuario;
+        public partial class CicloPeriodoDataTable : global::System.Data.TypedTableBase<CicloPeriodoRow> {
             
             private global::System.Data.DataColumn columnid_ciclo_prueba;
             
-            private global::System.Data.DataColumn columncantidad;
+            private global::System.Data.DataColumn columntitulo;
+            
+            private global::System.Data.DataColumn columncantidad_horas;
+            
+            private global::System.Data.DataColumn columnfecha_ejecucion;
+            
+            private global::System.Data.DataColumn columnid_ciclo_prueba_detalle;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnid_plan_prueba;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersDataTable() {
-                this.TableName = "Testers";
+            public CicloPeriodoDataTable() {
+                this.TableName = "CicloPeriodo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +304,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TestersDataTable(global::System.Data.DataTable table) {
+            internal CicloPeriodoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,17 +321,9 @@ namespace ProductosYPlanes.Presentacion.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TestersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CicloPeriodoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn usuarioColumn {
-                get {
-                    return this.columnusuario;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,9 +336,49 @@ namespace ProductosYPlanes.Presentacion.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn tituloColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columntitulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidad_horasColumn {
+                get {
+                    return this.columncantidad_horas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ejecucionColumn {
+                get {
+                    return this.columnfecha_ejecucion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_ciclo_prueba_detalleColumn {
+                get {
+                    return this.columnid_ciclo_prueba_detalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_plan_pruebaColumn {
+                get {
+                    return this.columnid_plan_prueba;
                 }
             }
             
@@ -353,54 +393,51 @@ namespace ProductosYPlanes.Presentacion.Informes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRow this[int index] {
+            public CicloPeriodoRow this[int index] {
                 get {
-                    return ((TestersRow)(this.Rows[index]));
+                    return ((CicloPeriodoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestersRowChangeEventHandler TestersRowChanging;
+            public event CicloPeriodoRowChangeEventHandler CicloPeriodoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestersRowChangeEventHandler TestersRowChanged;
+            public event CicloPeriodoRowChangeEventHandler CicloPeriodoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestersRowChangeEventHandler TestersRowDeleting;
+            public event CicloPeriodoRowChangeEventHandler CicloPeriodoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestersRowChangeEventHandler TestersRowDeleted;
+            public event CicloPeriodoRowChangeEventHandler CicloPeriodoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTestersRow(TestersRow row) {
+            public void AddCicloPeriodoRow(CicloPeriodoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRow AddTestersRow(string usuario, int id_ciclo_prueba, int cantidad) {
-                TestersRow rowTestersRow = ((TestersRow)(this.NewRow()));
+            public CicloPeriodoRow AddCicloPeriodoRow(int id_ciclo_prueba, string titulo, decimal cantidad_horas, System.DateTime fecha_ejecucion, int id_ciclo_prueba_detalle, string nombre) {
+                CicloPeriodoRow rowCicloPeriodoRow = ((CicloPeriodoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        usuario,
                         id_ciclo_prueba,
-                        cantidad};
-                rowTestersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTestersRow);
-                return rowTestersRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRow FindByid_ciclo_prueba(int id_ciclo_prueba) {
-                return ((TestersRow)(this.Rows.Find(new object[] {
-                            id_ciclo_prueba})));
+                        titulo,
+                        cantidad_horas,
+                        fecha_ejecucion,
+                        id_ciclo_prueba_detalle,
+                        nombre,
+                        null};
+                rowCicloPeriodoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCicloPeriodoRow);
+                return rowCicloPeriodoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TestersDataTable cln = ((TestersDataTable)(base.Clone()));
+                CicloPeriodoDataTable cln = ((CicloPeriodoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,59 +445,73 @@ namespace ProductosYPlanes.Presentacion.Informes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TestersDataTable();
+                return new CicloPeriodoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnusuario = base.Columns["usuario"];
                 this.columnid_ciclo_prueba = base.Columns["id_ciclo_prueba"];
-                this.columncantidad = base.Columns["cantidad"];
+                this.columntitulo = base.Columns["titulo"];
+                this.columncantidad_horas = base.Columns["cantidad_horas"];
+                this.columnfecha_ejecucion = base.Columns["fecha_ejecucion"];
+                this.columnid_ciclo_prueba_detalle = base.Columns["id_ciclo_prueba_detalle"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnid_plan_prueba = base.Columns["id_plan_prueba"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusuario);
                 this.columnid_ciclo_prueba = new global::System.Data.DataColumn("id_ciclo_prueba", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_ciclo_prueba);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_ciclo_prueba}, true));
-                this.columnusuario.AllowDBNull = false;
-                this.columnusuario.MaxLength = 50;
+                this.columntitulo = new global::System.Data.DataColumn("titulo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitulo);
+                this.columncantidad_horas = new global::System.Data.DataColumn("cantidad_horas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_horas);
+                this.columnfecha_ejecucion = new global::System.Data.DataColumn("fecha_ejecucion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ejecucion);
+                this.columnid_ciclo_prueba_detalle = new global::System.Data.DataColumn("id_ciclo_prueba_detalle", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_ciclo_prueba_detalle);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnid_plan_prueba = new global::System.Data.DataColumn("id_plan_prueba", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_plan_prueba);
                 this.columnid_ciclo_prueba.AllowDBNull = false;
-                this.columnid_ciclo_prueba.Unique = true;
-                this.columncantidad.ReadOnly = true;
+                this.columntitulo.MaxLength = 50;
+                this.columnid_ciclo_prueba_detalle.AllowDBNull = false;
+                this.columnnombre.MaxLength = 50;
+                this.columnid_plan_prueba.AutoIncrement = true;
+                this.columnid_plan_prueba.AutoIncrementSeed = -1;
+                this.columnid_plan_prueba.AutoIncrementStep = -1;
+                this.columnid_plan_prueba.AllowDBNull = false;
+                this.columnid_plan_prueba.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRow NewTestersRow() {
-                return ((TestersRow)(this.NewRow()));
+            public CicloPeriodoRow NewCicloPeriodoRow() {
+                return ((CicloPeriodoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TestersRow(builder);
+                return new CicloPeriodoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TestersRow);
+                return typeof(CicloPeriodoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TestersRowChanged != null)) {
-                    this.TestersRowChanged(this, new TestersRowChangeEvent(((TestersRow)(e.Row)), e.Action));
+                if ((this.CicloPeriodoRowChanged != null)) {
+                    this.CicloPeriodoRowChanged(this, new CicloPeriodoRowChangeEvent(((CicloPeriodoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +519,8 @@ namespace ProductosYPlanes.Presentacion.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TestersRowChanging != null)) {
-                    this.TestersRowChanging(this, new TestersRowChangeEvent(((TestersRow)(e.Row)), e.Action));
+                if ((this.CicloPeriodoRowChanging != null)) {
+                    this.CicloPeriodoRowChanging(this, new CicloPeriodoRowChangeEvent(((CicloPeriodoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +528,8 @@ namespace ProductosYPlanes.Presentacion.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TestersRowDeleted != null)) {
-                    this.TestersRowDeleted(this, new TestersRowChangeEvent(((TestersRow)(e.Row)), e.Action));
+                if ((this.CicloPeriodoRowDeleted != null)) {
+                    this.CicloPeriodoRowDeleted(this, new CicloPeriodoRowChangeEvent(((CicloPeriodoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +537,14 @@ namespace ProductosYPlanes.Presentacion.Informes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TestersRowDeleting != null)) {
-                    this.TestersRowDeleting(this, new TestersRowChangeEvent(((TestersRow)(e.Row)), e.Action));
+                if ((this.CicloPeriodoRowDeleting != null)) {
+                    this.CicloPeriodoRowDeleting(this, new CicloPeriodoRowChangeEvent(((CicloPeriodoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTestersRow(TestersRow row) {
+            public void RemoveCicloPeriodoRow(CicloPeriodoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -502,7 +553,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsTester ds = new dsTester();
+                dsCicloPeriodo ds = new dsCicloPeriodo();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -520,7 +571,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TestersDataTable";
+                attribute2.FixedValue = "CicloPeriodoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,65 +615,160 @@ namespace ProductosYPlanes.Presentacion.Informes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TestersRow : global::System.Data.DataRow {
+        public partial class CicloPeriodoRow : global::System.Data.DataRow {
             
-            private TestersDataTable tableTesters;
+            private CicloPeriodoDataTable tableCicloPeriodo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TestersRow(global::System.Data.DataRowBuilder rb) : 
+            internal CicloPeriodoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTesters = ((TestersDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string usuario {
-                get {
-                    return ((string)(this[this.tableTesters.usuarioColumn]));
-                }
-                set {
-                    this[this.tableTesters.usuarioColumn] = value;
-                }
+                this.tableCicloPeriodo = ((CicloPeriodoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_ciclo_prueba {
                 get {
-                    return ((int)(this[this.tableTesters.id_ciclo_pruebaColumn]));
+                    return ((int)(this[this.tableCicloPeriodo.id_ciclo_pruebaColumn]));
                 }
                 set {
-                    this[this.tableTesters.id_ciclo_pruebaColumn] = value;
+                    this[this.tableCicloPeriodo.id_ciclo_pruebaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int cantidad {
+            public string titulo {
                 get {
                     try {
-                        return ((int)(this[this.tableTesters.cantidadColumn]));
+                        return ((string)(this[this.tableCicloPeriodo.tituloColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'Testers\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'titulo\' de la tabla \'CicloPeriodo\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTesters.cantidadColumn] = value;
+                    this[this.tableCicloPeriodo.tituloColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tableTesters.cantidadColumn);
+            public decimal cantidad_horas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCicloPeriodo.cantidad_horasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_horas\' de la tabla \'CicloPeriodo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCicloPeriodo.cantidad_horasColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tableTesters.cantidadColumn] = global::System.Convert.DBNull;
+            public System.DateTime fecha_ejecucion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCicloPeriodo.fecha_ejecucionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ejecucion\' de la tabla \'CicloPeriodo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCicloPeriodo.fecha_ejecucionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_ciclo_prueba_detalle {
+                get {
+                    return ((int)(this[this.tableCicloPeriodo.id_ciclo_prueba_detalleColumn]));
+                }
+                set {
+                    this[this.tableCicloPeriodo.id_ciclo_prueba_detalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableCicloPeriodo.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'CicloPeriodo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCicloPeriodo.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_plan_prueba {
+                get {
+                    return ((int)(this[this.tableCicloPeriodo.id_plan_pruebaColumn]));
+                }
+                set {
+                    this[this.tableCicloPeriodo.id_plan_pruebaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IstituloNull() {
+                return this.IsNull(this.tableCicloPeriodo.tituloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SettituloNull() {
+                this[this.tableCicloPeriodo.tituloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscantidad_horasNull() {
+                return this.IsNull(this.tableCicloPeriodo.cantidad_horasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcantidad_horasNull() {
+                this[this.tableCicloPeriodo.cantidad_horasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ejecucionNull() {
+                return this.IsNull(this.tableCicloPeriodo.fecha_ejecucionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ejecucionNull() {
+                this[this.tableCicloPeriodo.fecha_ejecucionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableCicloPeriodo.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tableCicloPeriodo.nombreColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -630,22 +776,22 @@ namespace ProductosYPlanes.Presentacion.Informes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TestersRowChangeEvent : global::System.EventArgs {
+        public class CicloPeriodoRowChangeEvent : global::System.EventArgs {
             
-            private TestersRow eventRow;
+            private CicloPeriodoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRowChangeEvent(TestersRow row, global::System.Data.DataRowAction action) {
+            public CicloPeriodoRowChangeEvent(CicloPeriodoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestersRow Row {
+            public CicloPeriodoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -661,7 +807,7 @@ namespace ProductosYPlanes.Presentacion.Informes {
         }
     }
 }
-namespace ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters {
+namespace ProductosYPlanes.Presentacion.Informes.CicloPeriodo.dsCicloPeriodoTableAdapters {
     
     
     /// <summary>
@@ -673,7 +819,7 @@ namespace ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TestersTableAdapter : global::System.ComponentModel.Component {
+    public partial class CicloPeriodoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -687,7 +833,7 @@ namespace ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public TestersTableAdapter() {
+        public CicloPeriodoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -784,10 +930,14 @@ namespace ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Testers";
-            tableMapping.ColumnMappings.Add("usuario", "usuario");
+            tableMapping.DataSetTable = "CicloPeriodo";
             tableMapping.ColumnMappings.Add("id_ciclo_prueba", "id_ciclo_prueba");
-            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
+            tableMapping.ColumnMappings.Add("titulo", "titulo");
+            tableMapping.ColumnMappings.Add("cantidad_horas", "cantidad_horas");
+            tableMapping.ColumnMappings.Add("fecha_ejecucion", "fecha_ejecucion");
+            tableMapping.ColumnMappings.Add("id_ciclo_prueba_detalle", "id_ciclo_prueba_detalle");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("id_plan_prueba", "id_plan_prueba");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -804,20 +954,37 @@ namespace ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Usuarios.usuario, CiclosPrueba.id_ciclo_prueba, COUNT(CiclosPruebaDetalle.id_ciclo_prueba_detalle) AS cantidad
-FROM            CiclosPruebaDetalle INNER JOIN
-                         CiclosPrueba ON CiclosPruebaDetalle.id_ciclo_prueba = CiclosPrueba.id_ciclo_prueba INNER JOIN
-                         Usuarios ON CiclosPruebaDetalle.id_usuario_tester = Usuarios.id_usuario AND CiclosPrueba.id_responsable = Usuarios.id_usuario
-GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
+            this._commandCollection[0].CommandText = @"/*WHERE        (CiclosPruebaDetalle.fecha_ejecucion BETWEEN @fecha_min AND @fecha_max)*/
+SELECT        CiclosPrueba.id_ciclo_prueba, CasosDePrueba.titulo, CiclosPruebaDetalle.cantidad_horas, CiclosPruebaDetalle.fecha_ejecucion, CiclosPruebaDetalle.id_ciclo_prueba_detalle, PlanesDePrueba.nombre, 
+                         PlanesDePrueba.id_plan_prueba
+FROM            CiclosPrueba INNER JOIN
+                         CiclosPruebaDetalle ON CiclosPrueba.id_ciclo_prueba = CiclosPruebaDetalle.id_ciclo_prueba INNER JOIN
+                         CasosDePrueba ON CiclosPruebaDetalle.id_caso_prueba = CasosDePrueba.id_caso_prueba INNER JOIN
+                         PlanesDePrueba ON CiclosPrueba.id_plan_prueba = PlanesDePrueba.id_plan_prueba AND CasosDePrueba.id_plan_prueba = PlanesDePrueba.id_plan_prueba
+WHERE        (CiclosPruebaDetalle.fecha_ejecucion BETWEEN @fecha_desde AND @fecha_hasta)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha_desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_ejecucion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha_hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_ejecucion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsTester.TestersDataTable dataTable) {
+        public virtual int Fill(dsCicloPeriodo.CicloPeriodoDataTable dataTable, global::System.Nullable<global::System.DateTime> fecha_desde, global::System.Nullable<global::System.DateTime> fecha_hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((fecha_desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -829,9 +996,21 @@ GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsTester.TestersDataTable GetData() {
+        public virtual dsCicloPeriodo.CicloPeriodoDataTable GetData(global::System.Nullable<global::System.DateTime> fecha_desde, global::System.Nullable<global::System.DateTime> fecha_hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsTester.TestersDataTable dataTable = new dsTester.TestersDataTable();
+            if ((fecha_desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha_desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fecha_hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fecha_hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            dsCicloPeriodo.CicloPeriodoDataTable dataTable = new dsCicloPeriodo.CicloPeriodoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -905,7 +1084,7 @@ GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(dsTester dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsCicloPeriodo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -915,7 +1094,7 @@ GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(dsTester dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsCicloPeriodo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -925,7 +1104,7 @@ GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(dsTester dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsCicloPeriodo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -959,7 +1138,7 @@ GROUP BY Usuarios.usuario, CiclosPrueba.id_ciclo_prueba";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(dsTester dataSet) {
+        public virtual int UpdateAll(dsCicloPeriodo dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

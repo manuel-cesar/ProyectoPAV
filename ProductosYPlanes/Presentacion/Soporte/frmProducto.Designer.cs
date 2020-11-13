@@ -104,6 +104,7 @@
             this.dgvProducto.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.RowHeadersVisible = false;
             this.dgvProducto.RowHeadersWidth = 72;
             this.dgvProducto.Size = new System.Drawing.Size(537, 261);
             this.dgvProducto.TabIndex = 6;

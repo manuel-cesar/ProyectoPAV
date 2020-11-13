@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyectos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+
+            this.txtIdProyectos = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
+            this.txtAlcance = new System.Windows.Forms.TextBox();
+            this.cboProd = new System.Windows.Forms.ComboBox();
+            this.cboResp = new System.Windows.Forms.ComboBox();
+
             this.lblVersion = new System.Windows.Forms.Label();
             this.lblAlcance = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -46,12 +53,14 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+
             this.lblIdResp = new System.Windows.Forms.Label();
             this.txtAlcance = new System.Windows.Forms.TextBox();
             this.txtVersion = new System.Windows.Forms.TextBox();
             this.txtIdProyectos = new System.Windows.Forms.TextBox();
             this.txtResponsable = new System.Windows.Forms.TextBox();
             this.txtProducto = new System.Windows.Forms.TextBox();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +89,46 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proyectos - Filtros de busqueda";
+
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtIdProyectos
+            // 
+            this.txtIdProyectos.Location = new System.Drawing.Point(105, 37);
+            this.txtIdProyectos.Name = "txtIdProyectos";
+            this.txtIdProyectos.Size = new System.Drawing.Size(121, 21);
+            this.txtIdProyectos.TabIndex = 24;
+            // 
+            // txtVersion
+            // 
+            this.txtVersion.Location = new System.Drawing.Point(536, 38);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(107, 21);
+            this.txtVersion.TabIndex = 23;
+            // 
+            // txtAlcance
+            // 
+            this.txtAlcance.Location = new System.Drawing.Point(335, 74);
+            this.txtAlcance.Name = "txtAlcance";
+            this.txtAlcance.Size = new System.Drawing.Size(121, 21);
+            this.txtAlcance.TabIndex = 22;
+            // 
+            // cboProd
+            // 
+            this.cboProd.FormattingEnabled = true;
+            this.cboProd.Location = new System.Drawing.Point(105, 72);
+            this.cboProd.Name = "cboProd";
+            this.cboProd.Size = new System.Drawing.Size(121, 23);
+            this.cboProd.TabIndex = 21;
+            // 
+            // cboResp
+            // 
+            this.cboResp.FormattingEnabled = true;
+            this.cboResp.Location = new System.Drawing.Point(335, 36);
+            this.cboResp.Name = "cboResp";
+            this.cboResp.Size = new System.Drawing.Size(121, 23);
+            this.cboResp.TabIndex = 20;
+
             // 
             // lblVersion
             // 
@@ -134,6 +183,7 @@
             this.dgvProyectos.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.ReadOnly = true;
+            this.dgvProyectos.RowHeadersVisible = false;
             this.dgvProyectos.RowHeadersWidth = 72;
             this.dgvProyectos.Size = new System.Drawing.Size(791, 269);
             this.dgvProyectos.TabIndex = 6;
@@ -259,6 +309,7 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+
             // lblIdResp
             // 
             this.lblIdResp.AutoSize = true;
@@ -304,6 +355,7 @@
             this.txtProducto.Size = new System.Drawing.Size(121, 21);
             this.txtProducto.TabIndex = 27;
             // 
+
             // frmProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

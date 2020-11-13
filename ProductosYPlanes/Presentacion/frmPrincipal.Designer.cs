@@ -48,6 +48,7 @@
             this.toolStripStatusLabelUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.informeCiclosPorPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +154,8 @@
             // informesToolStripMenuItem
             // 
             this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeToolStripMenuItem});
+            this.reporteDeToolStripMenuItem,
+            this.informeCiclosPorPeriodoToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -161,8 +163,8 @@
             // reporteDeToolStripMenuItem
             // 
             this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
-            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteDeToolStripMenuItem.Text = "Reporte de ";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.reporteDeToolStripMenuItem.Text = "Reporte de Tester";
             this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
@@ -204,6 +206,13 @@
             this.label1.Size = new System.Drawing.Size(351, 59);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bug Tracker";
+            // 
+            // informeCiclosPorPeriodoToolStripMenuItem
+            // 
+            this.informeCiclosPorPeriodoToolStripMenuItem.Name = "informeCiclosPorPeriodoToolStripMenuItem";
+            this.informeCiclosPorPeriodoToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.informeCiclosPorPeriodoToolStripMenuItem.Text = "Informe Ciclos por Periodo";
+            this.informeCiclosPorPeriodoToolStripMenuItem.Click += new System.EventHandler(this.informeCiclosPorPeriodoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -248,5 +257,6 @@
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem informeCiclosPorPeriodoToolStripMenuItem;
     }
 }

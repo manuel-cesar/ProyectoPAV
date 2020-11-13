@@ -16,7 +16,7 @@ namespace ProductosYPlanes.Presentacion
         private readonly PlanService oPlanService;
         private Plan oPlanSelected;
 
-        private  UsuarioService usuarioService;
+        private  UsuarioService usuarioSerive;
         private  ProyectoService proyectoService;
 
 
@@ -25,7 +25,7 @@ namespace ProductosYPlanes.Presentacion
             InitializeComponent();
             oPlanService = new PlanService();
 
-            usuarioService = new UsuarioService();
+            usuarioSerive = new UsuarioService();
             proyectoService = new ProyectoService();
 
         }
@@ -46,10 +46,8 @@ namespace ProductosYPlanes.Presentacion
         
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
-
             LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "descripcion", "id_proyecto");
             LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
-
 
             switch (formMode)
             {
@@ -95,6 +93,14 @@ namespace ProductosYPlanes.Presentacion
         {
 
             // campos obligatorios
+            if (txtplan.Text == string.Empty)
+            {
+                txtplan.BackColor = Color.Red;
+                txtplan.Focus();
+                return false;
+            }
+            else
+                txtplan.BackColor = Color.White;
 
             if (cboProy.SelectedIndex == -1)
             {

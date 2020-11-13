@@ -59,5 +59,15 @@ namespace ProductosYPlanes.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gestión_de_proyectos {
+            get {
+                object obj = ResourceManager.GetObject("gestión_de_proyectos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

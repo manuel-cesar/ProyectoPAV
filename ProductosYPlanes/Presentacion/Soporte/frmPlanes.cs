@@ -122,9 +122,9 @@ namespace ProductosYPlanes.Presentacion
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmUpdatePlanes agregarVentana = new frmUpdatePlanes();
-            var plan = (Plan) null;
-            agregarVentana.InicializarFormulario(frmUpdatePlanes.FormMode.insert, plan);
-            agregarVentana.ShowDialog();
+            agregarVentana.Text = "Agregar Plan";
+            agregarVentana.Show();
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -182,8 +182,8 @@ namespace ProductosYPlanes.Presentacion
 
         private void frmPlanes_Load_1(object sender, EventArgs e)
         {
-            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "descripcion", "id_proyecto");
-            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "usuario", "id_usuario");
+            LlenarCombo(cboProyecto, proyectoService.ConsultarTodos(), "id_proyecto", "Id_proyecto");
+            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
         }
     }
 }

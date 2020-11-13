@@ -72,6 +72,7 @@ namespace ProductosYPlanes.Presentacion
         {
             frmCicloPeriodo form = new frmCicloPeriodo();
             form.ShowDialog();
+            //fin
         }
     }
 }

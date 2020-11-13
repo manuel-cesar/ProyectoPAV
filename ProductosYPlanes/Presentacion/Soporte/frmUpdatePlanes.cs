@@ -16,7 +16,7 @@ namespace ProductosYPlanes.Presentacion
         private readonly PlanService oPlanService;
         private Plan oPlanSelected;
 
-        private  UsuarioService usuarioSerive;
+        private  UsuarioService usuarioService;
         private  ProyectoService proyectoService;
 
 
@@ -25,7 +25,7 @@ namespace ProductosYPlanes.Presentacion
             InitializeComponent();
             oPlanService = new PlanService();
 
-            usuarioSerive = new UsuarioService();
+            usuarioService = new UsuarioService();
             proyectoService = new ProyectoService();
 
         }
@@ -47,7 +47,7 @@ namespace ProductosYPlanes.Presentacion
         private void frmUpdatePlanes_Load(System.Object sender, System.EventArgs e)
         {
             LlenarCombo(cboProy, proyectoService.ConsultarTodos(), "id_proyecto", "id_proyecto");
-            LlenarCombo(cboResp, usuarioSerive.ObtenerTodos(), "idusuario", "id_usuario");
+            LlenarCombo(cboResp, usuarioService.ObtenerTodos(), "usuario", "id_usuario");
 
             switch (formMode)
             {
@@ -93,14 +93,6 @@ namespace ProductosYPlanes.Presentacion
         {
 
             // campos obligatorios
-            if (txtplan.Text == string.Empty)
-            {
-                txtplan.BackColor = Color.Red;
-                txtplan.Focus();
-                return false;
-            }
-            else
-                txtplan.BackColor = Color.White;
 
             if (cboProy.SelectedIndex == -1)
             {
@@ -166,7 +158,7 @@ namespace ProductosYPlanes.Presentacion
                                 Id_Plan_Prueba = Convert.ToInt32(txtplan.Text),
                                 Id_Proyecto = Convert.ToInt32(cboProy.SelectedValue),
                                 Nombre = txtNombre.Text,
-                                Id_Responsable = Convert.ToInt32(cboResp.SelectedIndex),
+                                Id_Responsable = Convert.ToInt32(cboResp.SelectedValue),
                                 Descripcion = txtDescripcion.Text,
                                 Borrado = false
                             };

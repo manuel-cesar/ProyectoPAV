@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnInforme = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsCicloPeriodo = new ProductosYPlanes.Presentacion.Informes.CicloPeriodo.dsCicloPeriodo();
             this.CicloPeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsCicloPeriodo = new ProductosYPlanes.Presentacion.Informes.CicloPeriodo.dsCicloPeriodo();
             this.CicloPeriodoTableAdapter = new ProductosYPlanes.Presentacion.Informes.CicloPeriodo.dsCicloPeriodoTableAdapters.CicloPeriodoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCicloPeriodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CicloPeriodoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCicloPeriodo)).BeginInit();
             this.SuspendLayout();
             // 
             // fecha_desde2
@@ -50,6 +50,7 @@
             this.fecha_desde2.Name = "fecha_desde2";
             this.fecha_desde2.Size = new System.Drawing.Size(87, 20);
             this.fecha_desde2.TabIndex = 1;
+            this.fecha_desde2.Value = new System.DateTime(2019, 11, 11, 0, 0, 0, 0);
             // 
             // fecha_hasta2
             // 
@@ -98,18 +99,18 @@
             this.reportViewer1.Location = new System.Drawing.Point(12, 52);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 312);
+            this.reportViewer1.Size = new System.Drawing.Size(776, 386);
             this.reportViewer1.TabIndex = 7;
-            // 
-            // dsCicloPeriodo
-            // 
-            this.dsCicloPeriodo.DataSetName = "dsCicloPeriodo";
-            this.dsCicloPeriodo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CicloPeriodoBindingSource
             // 
             this.CicloPeriodoBindingSource.DataMember = "CicloPeriodo";
             this.CicloPeriodoBindingSource.DataSource = this.dsCicloPeriodo;
+            // 
+            // dsCicloPeriodo
+            // 
+            this.dsCicloPeriodo.DataSetName = "dsCicloPeriodo";
+            this.dsCicloPeriodo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CicloPeriodoTableAdapter
             // 
@@ -129,8 +130,8 @@
             this.Name = "frmCicloPeriodo";
             this.Text = "frmCicloPeriodo";
             this.Load += new System.EventHandler(this.frmCicloPeriodo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsCicloPeriodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CicloPeriodoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCicloPeriodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

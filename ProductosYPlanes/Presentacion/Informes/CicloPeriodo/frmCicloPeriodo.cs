@@ -20,19 +20,16 @@ namespace ProductosYPlanes.Presentacion.Informes.CicloPeriodo
         private void frmCicloPeriodo_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dsCicloPeriodo.CicloPeriodo' Puede moverla o quitarla según sea necesario.
-            this.CicloPeriodoTableAdapter.Fill(this.dsCicloPeriodo.CicloPeriodo);
-
-
-            this.reportViewer1.RefreshReport();
+            this.CicloPeriodoTableAdapter.Fill(this.dsCicloPeriodo.CicloPeriodo, fecha_desde2.Value, fecha_hasta2.Value);
 
             this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
         {
             reportViewer1.RefreshReport();
+            this.CicloPeriodoTableAdapter.Fill(this.dsCicloPeriodo.CicloPeriodo, fecha_desde2.Value, fecha_hasta2.Value);
         }
     }
 }

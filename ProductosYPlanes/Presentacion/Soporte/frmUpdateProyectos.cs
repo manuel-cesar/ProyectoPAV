@@ -124,7 +124,7 @@ namespace ProductosYPlanes.Presentacion
                                 Id_Proyecto = Convert.ToInt32(txtProyecto.Text),
                                 Id_Producto = Convert.ToInt32(cboProducto.SelectedValue),
                                 Descripcion = txtDescripcion.Text,
-                                Alcance = Convert.ToInt32(txtAlcance.Text),
+                                Alcance = (txtAlcance.Text),
                                 Version = Convert.ToInt32(txtVersion.Text),
                                 Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue),
 
@@ -151,7 +151,7 @@ namespace ProductosYPlanes.Presentacion
                             oProyectoSelected.Id_Proyecto = Convert.ToInt32(txtProyecto.Text);
                             oProyectoSelected.Id_Producto = Convert.ToInt32(cboProducto.SelectedValue);
                             oProyectoSelected.Descripcion = txtDescripcion.Text;
-                            oProyectoSelected.Alcance = Convert.ToInt32(txtAlcance.Text);
+                            oProyectoSelected.Alcance = (txtAlcance.Text);
                             oProyectoSelected.Version = Convert.ToInt32(txtVersion.Text);
                             oProyectoSelected.Id_Responsable = Convert.ToInt32(cboResponsable.SelectedValue);
 

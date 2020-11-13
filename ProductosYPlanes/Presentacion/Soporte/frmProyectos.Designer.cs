@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyectos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdProyectos = new System.Windows.Forms.TextBox();
+            this.txtVersion = new System.Windows.Forms.TextBox();
+            this.txtAlcance = new System.Windows.Forms.TextBox();
             this.cboProd = new System.Windows.Forms.ComboBox();
             this.cboResp = new System.Windows.Forms.ComboBox();
             this.lblVersion = new System.Windows.Forms.Label();
@@ -49,9 +52,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtAlcance = new System.Windows.Forms.TextBox();
-            this.txtVersion = new System.Windows.Forms.TextBox();
-            this.txtIdProyectos = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proyectos - Filtros de busqueda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtIdProyectos
+            // 
+            this.txtIdProyectos.Location = new System.Drawing.Point(105, 37);
+            this.txtIdProyectos.Name = "txtIdProyectos";
+            this.txtIdProyectos.Size = new System.Drawing.Size(121, 21);
+            this.txtIdProyectos.TabIndex = 24;
+            // 
+            // txtVersion
+            // 
+            this.txtVersion.Location = new System.Drawing.Point(536, 38);
+            this.txtVersion.Name = "txtVersion";
+            this.txtVersion.Size = new System.Drawing.Size(107, 21);
+            this.txtVersion.TabIndex = 23;
+            // 
+            // txtAlcance
+            // 
+            this.txtAlcance.Location = new System.Drawing.Point(335, 74);
+            this.txtAlcance.Name = "txtAlcance";
+            this.txtAlcance.Size = new System.Drawing.Size(121, 21);
+            this.txtAlcance.TabIndex = 22;
             // 
             // cboProd
             // 
@@ -161,6 +182,7 @@
             this.dgvProyectos.Margin = new System.Windows.Forms.Padding(6);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.ReadOnly = true;
+            this.dgvProyectos.RowHeadersVisible = false;
             this.dgvProyectos.RowHeadersWidth = 72;
             this.dgvProyectos.Size = new System.Drawing.Size(791, 269);
             this.dgvProyectos.TabIndex = 6;
@@ -285,27 +307,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtAlcance
-            // 
-            this.txtAlcance.Location = new System.Drawing.Point(335, 74);
-            this.txtAlcance.Name = "txtAlcance";
-            this.txtAlcance.Size = new System.Drawing.Size(121, 21);
-            this.txtAlcance.TabIndex = 22;
-            // 
-            // txtVersion
-            // 
-            this.txtVersion.Location = new System.Drawing.Point(536, 38);
-            this.txtVersion.Name = "txtVersion";
-            this.txtVersion.Size = new System.Drawing.Size(107, 21);
-            this.txtVersion.TabIndex = 23;
-            // 
-            // txtIdProyectos
-            // 
-            this.txtIdProyectos.Location = new System.Drawing.Point(105, 37);
-            this.txtIdProyectos.Name = "txtIdProyectos";
-            this.txtIdProyectos.Size = new System.Drawing.Size(121, 21);
-            this.txtIdProyectos.TabIndex = 24;
             // 
             // frmProyectos
             // 

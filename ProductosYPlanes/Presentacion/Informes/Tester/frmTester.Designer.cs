@@ -1,4 +1,4 @@
-﻿namespace ProductosYPlanes.Presentacion.Informes
+﻿namespace ProductosYPlanes.Presentacion.Informes.Tester
 {
     partial class frmTester
     {
@@ -30,31 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dsTester = new ProductosYPlanes.Presentacion.Informes.dsTester();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dsTester = new ProductosYPlanes.Presentacion.Informes.Tester.dsTester();
             this.TestersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TestersTableAdapter = new ProductosYPlanes.Presentacion.Informes.dsTesterTableAdapters.TestersTableAdapter();
+            this.TestersTableAdapter = new ProductosYPlanes.Presentacion.Informes.Tester.dsTesterTableAdapters.TestersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsTester)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestersBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "dsTester";
+            reportDataSource1.Value = this.TestersBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProductosYPlanes.Presentacion.Informes.Tester.ReporteTester.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 13);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(785, 329);
+            this.reportViewer1.TabIndex = 0;
             // 
             // dsTester
             // 
             this.dsTester.DataSetName = "dsTester";
             this.dsTester.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsTester";
-            reportDataSource1.Value = this.TestersBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProductosYPlanes.Presentacion.Informes.ReporteTester.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
             // 
             // TestersBindingSource
             // 
@@ -81,9 +80,10 @@
         }
 
         #endregion
-        private dsTester dsTester;
+
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource TestersBindingSource;
+        private dsTester dsTester;
         private dsTesterTableAdapters.TestersTableAdapter TestersTableAdapter;
     }
 }

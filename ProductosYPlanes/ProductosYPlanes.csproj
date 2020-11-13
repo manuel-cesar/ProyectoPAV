@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -86,18 +101,29 @@
     <Compile Include="Negocio\Servicios\ProductoService.cs" />
     <Compile Include="Negocio\Servicios\ProyectoService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
-    <Compile Include="Presentacion\Informes\dsTester.cs">
-      <DependentUpon>dsTester.xsd</DependentUpon>
+    <Compile Include="Presentacion\Informes\CicloPeriodo\dsCicloPeriodo.cs">
+      <DependentUpon>dsCicloPeriodo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Informes\dsTester.Designer.cs">
+    <Compile Include="Presentacion\Informes\CicloPeriodo\dsCicloPeriodo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCicloPeriodo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Informes\CicloPeriodo\frmCicloPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Informes\CicloPeriodo\frmCicloPeriodo.Designer.cs">
+      <DependentUpon>frmCicloPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Informes\Tester\dsTester.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTester.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Informes\frmTester.cs">
+    <Compile Include="Presentacion\Informes\Tester\frmTester.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Informes\frmTester.Designer.cs">
+    <Compile Include="Presentacion\Informes\Tester\frmTester.Designer.cs">
       <DependentUpon>frmTester.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Soporte\frmCasosPrueba.cs">
@@ -169,10 +195,14 @@
     <Compile Include="Presentacion\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Presentacion\Informes\frmTester.resx">
+    <EmbeddedResource Include="Presentacion\Informes\CicloPeriodo\frmCicloPeriodo.resx">
+      <DependentUpon>frmCicloPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Informes\CicloPeriodo\ReporteCicloPeriodo.rdlc" />
+    <EmbeddedResource Include="Presentacion\Informes\Tester\frmTester.resx">
       <DependentUpon>frmTester.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Informes\ReporteTester.rdlc" />
+    <EmbeddedResource Include="Presentacion\Informes\Tester\ReporteTester.rdlc" />
     <EmbeddedResource Include="Presentacion\Soporte\frmCasosPrueba.resx">
       <DependentUpon>frmCasosPrueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,15 +248,26 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Presentacion\Informes\dsTester.xsc">
-      <DependentUpon>dsTester.xsd</DependentUpon>
+    <None Include="Presentacion\Informes\CicloPeriodo\dsCicloPeriodo.xsc">
+      <DependentUpon>dsCicloPeriodo.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Informes\dsTester.xsd">
+    <None Include="Presentacion\Informes\CicloPeriodo\dsCicloPeriodo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTester.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsCicloPeriodo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Informes\dsTester.xss">
+    <None Include="Presentacion\Informes\CicloPeriodo\dsCicloPeriodo.xss">
+      <DependentUpon>dsCicloPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Informes\Tester\dsTester.xsc">
+      <DependentUpon>dsTester.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Informes\Tester\dsTester.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTester.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Presentacion\Informes\Tester\dsTester.xss">
       <DependentUpon>dsTester.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -247,6 +288,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
